@@ -1,0 +1,349 @@
+    /*
+      Flaticon icon font: Flaticon
+      Creation date: 21/09/2017 09:36
+      */
+
+    @font-face {
+      font-family: "Flaticon";
+      src: url("./d-element.eot");
+      src: url("./d-element.eot?#iefix") format("embedded-opentype"), url("./d-element.woff") format("woff"), url("./d-element.ttf") format("truetype"), url("./d-element.svg#Flaticon") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      @font-face {
+        font-family: "Flaticon";
+        src: url("./d-element.svg#Flaticon") format("svg");
+      }
+    }
+
+    [class^="flaticon-"]:before,
+    [class*=" editoricon-"]:before,
+    [class^="editoricon-"]:after,
+    [class*=" editoricon-"]:after {
+      font-family: Flaticon;
+      font-size: 20px;
+      font-style: normal;
+      margin-left: 20px;
+    }
+
+    .flaticon-001-elements:before {
+      content: "\f100";
+    }
+
+    .flaticon-002-paint-brush:before {
+      content: "\f101";
+    }
+
+    .flaticon-003-text-2:before {
+      content: "\f102";
+    }
+
+    .flaticon-004-file-2:before {
+      content: "\f103";
+    }
+
+    .flaticon-005-sharpener:before {
+      content: "\f104";
+    }
+
+    .flaticon-006-shapes:before {
+      content: "\f105";
+    }
+
+    .flaticon-007-drop-3:before {
+      content: "\f106";
+    }
+
+    .flaticon-008-shape:before {
+      content: "\f107";
+    }
+
+    .flaticon-009-squares:before {
+      content: "\f108";
+    }
+
+    .flaticon-010-select-4:before {
+      content: "\f109";
+    }
+
+    .flaticon-011-select-3:before {
+      content: "\f10a";
+    }
+
+    .flaticon-012-magic-wand:before {
+      content: "\f10b";
+    }
+
+    .flaticon-013-select-2:before {
+      content: "\f10c";
+    }
+
+    .flaticon-014-select-1:before {
+      content: "\f10d";
+    }
+
+    .flaticon-015-add:before {
+      content: "\f10e";
+    }
+
+    .flaticon-016-image-1:before {
+      content: "\f10f";
+    }
+
+    .editoricon-copy:before {
+      content: "\f110";
+    }
+
+    .flaticon-018-cutter:before {
+      content: "\f111";
+    }
+
+    .flaticon-019-computer-1:before {
+      content: "\f112";
+    }
+
+    .editoricon-paste:before {
+      content: "\f113";
+    }
+
+    .flaticon-021-ink:before {
+      content: "\f114";
+    }
+
+    .flaticon-022-target-2:before {
+      content: "\f115";
+    }
+
+    .flaticon-023-target-1:before {
+      content: "\f116";
+    }
+
+    .flaticon-024-drop-2:before {
+      content: "\f117";
+    }
+
+    .flaticon-025-text-1:before {
+      content: "\f118";
+    }
+
+    .flaticon-026-drop-1:before {
+      content: "\f119";
+    }
+
+    .flaticon-027-drop:before {
+      content: "\f11a";
+    }
+
+    .flaticon-028-eye-2:before {
+      content: "\f11b";
+    }
+
+    .flaticon-029-eye-1:before {
+      content: "\f11c";
+    }
+
+    .flaticon-030-eye:before {
+      content: "\f11d";
+    }
+
+    .flaticon-031-paint-roller-2:before {
+      content: "\f11e";
+    }
+
+    .flaticon-032-image:before {
+      content: "\f11f";
+    }
+
+    .flaticon-033-writing-1:before {
+      content: "\f120";
+    }
+
+    .flaticon-034-writing:before {
+      content: "\f121";
+    }
+
+    .flaticon-035-canvas-8:before {
+      content: "\f122";
+    }
+
+    .flaticon-036-select:before {
+      content: "\f123";
+    }
+
+    .flaticon-037-canvas-7:before {
+      content: "\f124";
+    }
+
+    .flaticon-038-push-pin:before {
+      content: "\f125";
+    }
+
+    .flaticon-039-scale:before {
+      content: "\f126";
+    }
+
+    .flaticon-040-paint-bucket:before {
+      content: "\f127";
+    }
+
+    .flaticon-041-vector-2:before {
+      content: "\f128";
+    }
+
+    .flaticon-042-canvas-6:before {
+      content: "\f129";
+    }
+
+    .flaticon-043-canvas-5:before {
+      content: "\f12a";
+    }
+
+    .flaticon-044-canvas-4:before {
+      content: "\f12b";
+    }
+
+    .flaticon-045-computer:before {
+      content: "\f12c";
+    }
+
+    .flaticon-046-graphic-tablet-1:before {
+      content: "\f12d";
+    }
+
+    .flaticon-047-contrast:before {
+      content: "\f12e";
+    }
+
+    .flaticon-048-graphic-tablet:before {
+      content: "\f12f";
+    }
+
+    .flaticon-049-file-1:before {
+      content: "\f130";
+    }
+
+    .flaticon-050-scissors:before {
+      content: "\f131";
+    }
+
+    .editoricon-erase:before {
+      content: "\f132";
+    }
+
+    .flaticon-052-magnet:before {
+      content: "\f133";
+    }
+
+    .flaticon-053-minimize:before {
+      content: "\f134";
+    }
+
+    .editoricon-fullscreen:before {
+      content: "\f135";
+    }
+
+    .flaticon-055-draw:before {
+      content: "\f136";
+    }
+
+    .flaticon-056-zoom-out:before {
+      content: "\f137";
+    }
+
+    .flaticon-057-zoom-in:before {
+      content: "\f138";
+    }
+
+    .flaticon-058-pen-1:before {
+      content: "\f139";
+    }
+
+    .flaticon-059-search:before {
+      content: "\f13a";
+    }
+
+    .flaticon-060-canvas-3:before {
+      content: "\f13b";
+    }
+
+    .flaticon-061-canvas-2:before {
+      content: "\f13c";
+    }
+
+    .flaticon-062-canvas-1:before {
+      content: "\f13d";
+    }
+
+    .flaticon-063-canvas:before {
+      content: "\f13e";
+    }
+
+    .flaticon-064-vector-1:before {
+      content: "\f13f";
+    }
+
+    .flaticon-065-vector:before {
+      content: "\f140";
+    }
+
+    .flaticon-066-idea:before {
+      content: "\f141";
+    }
+
+    .flaticon-067-target:before {
+      content: "\f142";
+    }
+
+    .flaticon-068-pantone:before {
+      content: "\f143";
+    }
+
+    .editoricon-inline:before {
+      content: "\f144";
+    }
+
+    .flaticon-070-crop:before {
+      content: "\f145";
+    }
+
+    .flaticon-071-paint-roller-1:before {
+      content: "\f146";
+    }
+
+    .flaticon-072-paint-roller:before {
+      content: "\f147";
+    }
+
+    .flaticon-073-paint-spray:before {
+      content: "\f148";
+    }
+
+    .flaticon-074-rgb-1:before {
+      content: "\f149";
+    }
+
+    .flaticon-075-rgb:before {
+      content: "\f14a";
+    }
+
+    .flaticon-076-focus:before {
+      content: "\f14b";
+    }
+
+    .flaticon-077-text:before {
+      content: "\f14c";
+    }
+
+    .flaticon-078-ruler-1:before {
+      content: "\f14d";
+    }
+
+    .flaticon-079-ruler:before {
+      content: "\f14e";
+    }
+
+    .flaticon-080-file:before {
+      content: "\f14f";
+    }

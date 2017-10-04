@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Easy Editor</title>
+    <meta name="author" content="Blake Connally">
+    <meta name="description" content="Editor designed to organize and structure web components">
+    <meta name="keywords" content="Editor,components,HTML,JS,PHP,Theme Builder">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/src/assets/fonts/d-element/d-element.css">
+
+    <link rel="stylesheet" href="/node_modules/dragula/dist/dragula.css">
+</head>
+
+<body>
+    <!-- Editor Special -->
+    <div class="editable-toolbar">
+
+    </div>
+
+    <div class="expanded-editor">
+        <div class="editor-content">
+
+        </div>
+    </div>
+
+
+    <nav class="notification-nav">
+        You have unsaved changes.
+    </nav>
+
+    <!-- Page Content -->
+    <div class="main-content">
+        <!-- Left Side  -->
+        <div class="sidebar-left">
+            <div class="sidebar-header text-center">
+                <h5>Component List</h5>
+            </div>
+            <ul class="component-list">
+                <li data-find-component="html">HTML Block</li>
+                <li data-find-component="image">Image</li>
+                <li>Video</li>
+            </ul>
+        </div>
+        <!-- Page Content -->
+        <div class="page-content">
+            <div class="row addContent" data-component="html">
+                <div class="col-md-12">
+                    <span class="col-title">col-md-12</span>
+                    <div class="section-header">
+                        <h4>Terms of Service</h4>
+                    </div>
+                    <div class="section-body">
+                        <div class="terms-section">
+                            <h5>General & Liabilities</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
+                                Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis accumsan
+                                tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus at quam id nisl vestibulum
+                                rutrum ut in orci. Praesent iaculis sit amet ligula sit amet ornare. Maecenas et convallis
+                                quam. Vestibulum suscipit rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam
+                                euismod erat, ac bibendum nibh. Proin massa justo, varius eget neque a, convallis facilisis
+                                dui.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 addContent">
+                    <span class="col-title">col-md-6</span>
+                </div>
+                <div class="col-md-6 addContent">
+                    <span class="col-title">col-md-6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Editor Scripts  -->
+    <script src="/src/scripts/jquery.js"></script>
+    <script src='/node_modules/dragula/dist/dragula.min.js'></script>
+    <script src="/src/scripts/editor.js"></script>
+
+    <!-- Dynamic Scripts  -->
+</body>
+
+</html>

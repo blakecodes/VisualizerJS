@@ -1,0 +1,15 @@
+{
+    "Component": {
+        "Name": "HTML Component",
+        "Selector": "component.html",
+        "Editor": "editor.html",
+        "Tools": ["inline", "erase", "copy", "paste", "fullscreen"],
+        "SpecialEditor": "editor.special.tinymce",
+        "Version": 1.0,
+        "Content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" />\n    <span class=\"image-sub-text\">Small caption for the above image</span>\n</div>",
+        "Scripts": [
+            "/src/scripts/script1.js",
+            "/src/scripts/script2.js"
+        ]
+    }
+}
