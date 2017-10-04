@@ -1,6 +1,7 @@
+$(function () {
     tinymce.init({
-        selector: 'textarea',
-        height: 500,
+        selector: '#tinymce',
+        height: "450px",
         menubar: false,
         plugins: [
             'advlist autolink lists link image charmap print preview anchor textcolor',
@@ -13,3 +14,11 @@
             '//www.tinymce.com/css/codepen.min.css'
         ]
     });
+
+    function setContent() {
+        var selected = $('.selected-content').html();
+        $('#tinymce').html(selected);
+    }
+
+    setContent();
+})

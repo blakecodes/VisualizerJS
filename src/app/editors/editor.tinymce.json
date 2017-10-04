@@ -3,7 +3,7 @@
         "Name": "HTML Component",
         "Selector": "component.html",
         "Version": 1.0,
-        "Content": "<textarea></textarea>",
+        "Content": "<textarea id=\"tinymce\"></textarea>",
         "Scripts": [
             "/node_modules/tinymce/tinymce.min.js",
             "/src/app/editors/editor.tinymce.js"

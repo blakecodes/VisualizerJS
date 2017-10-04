@@ -7,6 +7,7 @@ $(function () {
     var editingOn = false;
     var componentSelector = "[data-component]";
     var editableToolbar = $('.editable-toolbar');
+    var specialEditorHolder = $('.expanded-editor');
     var specialEditor = $('#special-editor');
 
     var builder;
@@ -40,8 +41,10 @@ $(function () {
 
     $('body').on('click', '[data-special-tool]', function () {
         var type = $(this).data('special-tool');
-        loadSpecialEditor(type);
-    })
+        loadSpecialEditor(type, function () {
+            specialEditorHolder.show();
+        });
+    });
 
     // Initialize the component
     function componentInit(e) {
@@ -154,7 +157,7 @@ $(function () {
     }
 
 
-    function loadSpecialEditor(type) {
+    function loadSpecialEditor(type, callback) {
         $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
             specialEditor.html(data.Editor.Content);
 
@@ -164,6 +167,8 @@ $(function () {
                 s.src = this;
                 $('body').append(s);
             });
+
+            callback();
         });
     }
 
