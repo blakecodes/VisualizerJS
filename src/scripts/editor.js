@@ -1,7 +1,13 @@
+// TODO:
+// 1. Rememberance of loaded components
+// 2. Rememberance of scripts loaded
+
+
 $(function () {
     var editingOn = false;
     var componentSelector = "[data-component]";
     var editableToolbar = $('.editable-toolbar');
+    var specialEditor = $('#special-editor');
 
     var builder;
 
@@ -18,7 +24,7 @@ $(function () {
     });
 
     // Event bindings
-    $('[data-trigger="inline-editor"]').on('click', function () {
+    $('body').on('click', '[data-tool="inline"]', function () {
         editingOn = !editingOn;
         editingOn ? enableEditing('.selected-content') : disableEditing('.selected-content');
     });
@@ -31,6 +37,11 @@ $(function () {
             componentInit(this);
         }
     });
+
+    $('body').on('click', '[data-special-tool]', function () {
+        var type = $(this).data('special-tool');
+        loadSpecialEditor(type);
+    })
 
     // Initialize the component
     function componentInit(e) {
@@ -64,7 +75,14 @@ $(function () {
 
         $.each(tools, function () {
             var li = document.createElement("i");
-            li.className = "glyph-icon editoricon-" + this;
+            li.className = "glyph-icon editoricon-" + this.name;
+
+            if (this.special) {
+                li.setAttribute("data-special-tool", this.tool);
+            } else {
+                li.setAttribute("data-tool", this.tool);
+            }
+
             toolBar.append(li);
         });
     }
@@ -92,6 +110,8 @@ $(function () {
 
     }
 
+
+    //Initial load of coponent
     function loadComponent(url) {
         $.getJSON("/src/app/components/singles/component." + url + ".json", function (data) {
             $.each(data.Component.Scripts, function () {
@@ -101,6 +121,7 @@ $(function () {
         });
     }
 
+    //Find component structure information
     function findComponent(component) {
         var data;
 
@@ -117,6 +138,7 @@ $(function () {
         return data;
     }
 
+    //Find component bindings and replace them with the content
     function replaceComponentHandler() {
         $('.page-content [data-find-component]').each(function () {
             var type = $(this).data('find-component');
@@ -126,6 +148,25 @@ $(function () {
             $(this).replaceWith(component.Component.Content);
         });
     }
+
+    function openSpecialEditor(type) {
+
+    }
+
+
+    function loadSpecialEditor(type) {
+        $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
+            specialEditor.html(data.Editor.Content);
+
+            $.each(data.Editor.Scripts, function () {
+                var s = document.createElement('script');
+                s.type = "text/javascript";
+                s.src = this;
+                $('body').append(s);
+            });
+        });
+    }
+
 
 
 

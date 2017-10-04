@@ -3,7 +3,31 @@
         "Name": "HTML Component",
         "Selector": "component.html",
         "Editor": "editor.html",
-        "Tools": ["inline", "erase", "copy", "paste", "fullscreen"],
+        "Tools": [{
+                "name": "special",
+                "tool": "tinymce"
+            },
+            {
+                "name": "inline",
+                "tool": "inline"
+            },
+            {
+                "name": "erase",
+                "tool": "erase"
+            },
+            {
+                "name": "copy",
+                "tool": "copy"
+            },
+            {
+                "name": "paste",
+                "tool": "paste"
+            },
+            {
+                "name": "fullscreen",
+                "tool": "fullscreen"
+            }
+        ],
         "SpecialEditor": "editor.special.tinymce",
         "Version": 1.0,
         "Content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" />\n    <span class=\"image-sub-text\">Small caption for the above image</span>\n</div>",

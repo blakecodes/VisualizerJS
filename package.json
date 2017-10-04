@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dragula": "^3.7.2"
+    "dragula": "^3.7.2",
+    "tinymce": "^4.7.0"
   }
 }

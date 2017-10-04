@@ -1,0 +1,12 @@
+{
+    "Editor": {
+        "Name": "HTML Component",
+        "Selector": "component.html",
+        "Version": 1.0,
+        "Content": "<textarea></textarea>",
+        "Scripts": [
+            "/node_modules/tinymce/tinymce.min.js",
+            "/src/app/editors/editor.tinymce.js"
+        ]
+    }
+}
