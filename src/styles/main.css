@@ -165,3 +165,10 @@ ul {
 #special-editor {
     height: 100%;
 }
+
+.editor-btn {
+    float: right;
+    margin-top: 10px;
+    width: 150px;
+    margin-left: 20px;
+}

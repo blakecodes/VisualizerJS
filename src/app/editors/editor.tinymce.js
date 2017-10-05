@@ -15,10 +15,29 @@ $(function () {
         ]
     });
 
+    $('#save-tiny').on('click', function () {
+        saveContent();
+    });
+
+    $('#cancel-tiny').on('click', function () {
+        hideModal();
+    });
+
     function setContent() {
         var selected = $('.selected-content').html();
         $('#tinymce').html(selected);
     }
 
+    function saveContent() {
+        var tiny = tinymce.activeEditor.getContent();
+        $('.selected-content').html(tiny);
+        hideModal();
+    }
+
+
+    function hideModal() {
+        $('.expanded-editor').hide();
+    }
+
     setContent();
-})
+});
