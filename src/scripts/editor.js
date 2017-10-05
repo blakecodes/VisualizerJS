@@ -9,8 +9,15 @@ $(function () {
     var editableToolbar = $('.editable-toolbar');
     var specialEditorHolder = $('.expanded-editor');
     var specialEditor = $('#special-editor');
+    var selectedContent = $('.selected-content');
 
     var builder;
+
+    var components = [];
+
+    //
+    // ─── PLUGIN MANAGEMENT ──────────────────────────────────────────────────────────
+    //
 
     var builder = dragula({
         containers: [document.querySelector('.component-list')],
@@ -20,14 +27,23 @@ $(function () {
         }
     });
 
+    // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── EVENT BINDINGS ─────────────────────────────────────────────────────────────
+    //
+
     builder.on('drop', function (el, target, source, sibling) {
         replaceComponentHandler();
     });
 
-    // Event bindings
     $('body').on('click', '[data-tool="inline"]', function () {
         editingOn = !editingOn;
         editingOn ? enableEditing('.selected-content') : disableEditing('.selected-content');
+    });
+
+    $('body').on('click', '[data-tool="erase"]', function () {
+        eraseComponent();
     });
 
     // Toolbar selection
@@ -39,6 +55,7 @@ $(function () {
         }
     });
 
+
     $('body').on('click', '[data-special-tool]', function () {
         var type = $(this).data('special-tool');
         loadSpecialEditor(type, function () {
@@ -46,8 +63,15 @@ $(function () {
         });
     });
 
+    // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── EDITING FUNCTIONALITIES ────────────────────────────────────────────────────
+    //
+
     // Initialize the component
     function componentInit(e) {
+        $('.selected-content').removeClass('selected-content');
         $(e).addClass('selected-content');
         editableToolbar.show();
 
@@ -90,6 +114,11 @@ $(function () {
         });
     }
 
+    function eraseComponent() {
+        $('.selected-content').remove();
+        editableToolbar.hide();
+    }
+
     // Inline editing methods
     function enableEditing(selector) {
         $(selector).attr('contenteditable', true)
@@ -104,15 +133,11 @@ $(function () {
         editableToolbar.hide();
     }
 
-    // Component duplication
-    function copyComponent(selector) {
+    // ────────────────────────────────────────────────────────────────────────────────
 
-    }
-
-    function pasteComponent() {
-
-    }
-
+    //
+    // ─── COMPONENT MANAGEMENT ───────────────────────────────────────────────────────
+    //
 
     //Initial load of coponent
     function loadComponent(url) {
@@ -152,27 +177,57 @@ $(function () {
         });
     }
 
+    // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── EDITOR MANAGEMENT ──────────────────────────────────────────────────────────
+    //
+
     function openSpecialEditor(type) {
 
     }
 
-
     function loadSpecialEditor(type, callback) {
-        $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
-            specialEditor.html(data.Editor.Content);
+        checkRecord(type);
 
-            $.each(data.Editor.Scripts, function () {
-                var s = document.createElement('script');
-                s.type = "text/javascript";
-                s.src = this;
-                $('body').append(s);
+        // FIXME: not working when trying to reopen the item
+        if (!checkRecord()) {
+            $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
+                specialEditor.html(data.Editor.Content);
+
+                $.each(data.Editor.Scripts, function () {
+                    var s = document.createElement('script');
+                    s.type = "text/javascript";
+                    s.src = this;
+                    $('body').append(s);
+                });
+
+                callback();
             });
-
+        } else {
             callback();
-        });
+        }
     }
 
+    // ────────────────────────────────────────────────────────────────────────────────
 
+    //
+    // ─── RECORD MANAGEMENT ────────────────────────────────────────────────────
+    //
 
+    function checkRecord(type) {
+        if ($.inArray(type, components) !== -1) {
+            return true;
+        } else {
+            addComponentRecord(type);
+            return false;
+        }
+    }
+
+    function addComponentRecord(type) {
+        components.push(type);
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
 
 });

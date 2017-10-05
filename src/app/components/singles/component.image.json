@@ -16,14 +16,6 @@
                 "tool": "erase"
             },
             {
-                "name": "copy",
-                "tool": "copy"
-            },
-            {
-                "name": "paste",
-                "tool": "paste"
-            },
-            {
                 "name": "fullscreen",
                 "tool": "fullscreen"
             }

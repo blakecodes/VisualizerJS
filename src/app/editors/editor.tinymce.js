@@ -23,9 +23,15 @@ $(function () {
         hideModal();
     });
 
+    $(document).on('click', '[data-special-tool]', function () {
+        setContent();
+    });
+
     function setContent() {
         var selected = $('.selected-content').html();
-        $('#tinymce').html(selected);
+        setTimeout(function () {
+            tinymce.activeEditor.setContent(selected);
+        }, 100);
     }
 
     function saveContent() {
