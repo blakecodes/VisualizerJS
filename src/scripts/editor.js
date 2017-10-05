@@ -183,14 +183,9 @@ $(function () {
     // ─── EDITOR MANAGEMENT ──────────────────────────────────────────────────────────
     //
 
-    function openSpecialEditor(type) {
-
-    }
-
     function loadSpecialEditor(type, callback) {
         checkRecord(type);
 
-        // FIXME: not working when trying to reopen the item
         if (!checkRecord()) {
             $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
                 specialEditor.html(data.Editor.Content);

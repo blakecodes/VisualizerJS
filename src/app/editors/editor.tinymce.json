@@ -3,9 +3,9 @@
         "Name": "HTML Component",
         "Selector": "component.html",
         "Version": 1.0,
-        "Content": "<textarea id=\"tinymce\"></textarea><button class=\"btn btn-primary editor-btn\" id=\"save-tiny\">Save</button><button class=\"btn btn-secondary editor-btn\" id=\"cancel-tiny\">Cancel</button>",
+        "Content": " <textarea id=\"tinymce\"></textarea><button class=\"btn btn-primary editor-btn\" id=\"save-tiny\">Save</button > <button class = \"btn btn-secondary editor-btn\" id=\"cancel-tiny\">Cancel</button>",
         "Scripts": [
-            "/node_modules/tinymce/tinymce.min.js",
+            "/node_modules/tinymce/tinymce.js",
             "/src/app/editors/editor.tinymce.js"
         ]
     }
