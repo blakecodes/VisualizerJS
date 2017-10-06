@@ -1,0 +1,19 @@
+{
+    "name": "Video Component",
+    "selector": "component.VIDEO",
+    "editor": "editor.html",
+    "tools": [{
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "fullscreen"
+        }
+    ],
+    "version": 1.0,
+    "content": "<div data-jw-player data-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\">test video</div>",
+    "scripts": [
+        "/src/app/components/singles/component.video.js"
+    ]
+}

@@ -8,6 +8,8 @@ body {
     background-color: #407FE3;
     color: white;
     padding: 15px 20px;
+    position: fixed;
+    z-index: 9;
 }
 
 .notification-nav>.left,
@@ -27,6 +29,10 @@ body {
 .page-content {
     margin-left: 250px;
     padding: 20px;
+}
+
+.main-content {
+    padding-top: 55px;
 }
 
 .component-list {

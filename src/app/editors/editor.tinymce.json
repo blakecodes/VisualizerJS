@@ -1,12 +1,10 @@
 {
-    "Editor": {
-        "Name": "HTML Component",
-        "Selector": "component.html",
-        "Version": 1.0,
-        "Content": " <textarea id=\"tinymce\"></textarea><button class=\"btn btn-primary editor-btn\" id=\"save-tiny\">Save</button > <button class = \"btn btn-secondary editor-btn\" id=\"cancel-tiny\">Cancel</button>",
-        "Scripts": [
-            "/node_modules/tinymce/tinymce.js",
-            "/src/app/editors/editor.tinymce.js"
-        ]
-    }
+    "name": "HTML Component",
+    "selector": "editor.tinymce",
+    "version": 1.0,
+    "content": " <textarea id=\"tinymce\"></textarea><button class=\"btn btn-primary editor-btn\" id=\"save-tiny\">Save</button > <button class = \"btn btn-secondary editor-btn\" id=\"cancel-tiny\">Cancel</button>",
+    "scripts": [
+        "/node_modules/tinymce/tinymce.min.js",
+        "/src/app/editors/editor.tinymce.js"
+    ]
 }

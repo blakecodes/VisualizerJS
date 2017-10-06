@@ -1,32 +1,30 @@
 {
-    "Component": {
-        "Name": "HTML Component",
-        "Selector": "component.html",
-        "Editor": "editor.html",
-        "Tools": [{
-                "name": "special",
-                "tool": "tinymce",
-                "special": true
-            },
-            {
-                "name": "inline",
-                "tool": "inline"
-            },
-            {
-                "name": "erase",
-                "tool": "erase"
-            },
-            {
-                "name": "fullscreen",
-                "tool": "fullscreen"
-            }
-        ],
-        "SpecialEditor": "editor.special.tinymce",
-        "Version": 1.0,
-        "Content": "<div data-component=\"html\">\n                <div class=\"section-header\">\n                    <h4>Terms of Service</h4>\n                </div>\n                <div class=\"section-body\">\n                    <div class=\"terms-section\">\n                        <h5>General & Liabilities</h5>\n                        <p>\n                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.\n                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis accumsan tempor.\n                            Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus at quam id nisl vestibulum rutrum\n                            ut in orci. Praesent iaculis sit amet ligula sit amet ornare. Maecenas et convallis quam. Vestibulum\n                            suscipit rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum\n                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.\n                        </p>\n                    </div>\n                </div>\n            </div>",
-        "Scripts": [
-            "/src/scripts/script1.js",
-            "/src/scripts/script2.js"
-        ]
-    }
+    "name": "HTML Component",
+    "selector": "component.html",
+    "editor": "editor.html",
+    "tools": [{
+            "name": "special",
+            "tool": "tinymce",
+            "special": true
+        },
+        {
+            "name": "inline",
+            "tool": "inline"
+        },
+        {
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "fullscreen"
+        }
+    ],
+    "specialEditor": "editor.special.tinymce",
+    "version": 1.0,
+    "content": "<div data-component=\"html\">\n                <div class=\"section-header\">\n                    <h4>Terms of Service</h4>\n                </div>\n                <div class=\"section-body\">\n                    <div class=\"terms-section\">\n                        <h5>General & Liabilities</h5>\n                        <p>\n                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.\n                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis accumsan tempor.\n                            Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus at quam id nisl vestibulum rutrum\n                            ut in orci. Praesent iaculis sit amet ligula sit amet ornare. Maecenas et convallis quam. Vestibulum\n                            suscipit rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum\n                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.\n                        </p>\n                    </div>\n                </div>\n            </div>",
+    "scripts": [
+        "/src/scripts/script1.js",
+        "/src/scripts/script2.js"
+    ]
 }

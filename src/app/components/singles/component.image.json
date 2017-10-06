@@ -1,31 +1,29 @@
 {
-    "Component": {
-        "Name": "HTML Component",
-        "Selector": "component.html",
-        "Editor": "editor.html",
-        "Tools": [{
-                "name": "special",
-                "tool": "tinymce"
-            },
-            {
-                "name": "inline",
-                "tool": "inline"
-            },
-            {
-                "name": "erase",
-                "tool": "erase"
-            },
-            {
-                "name": "fullscreen",
-                "tool": "fullscreen"
-            }
-        ],
-        "SpecialEditor": "editor.special.tinymce",
-        "Version": 1.0,
-        "Content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" />\n    <span class=\"image-sub-text\">Small caption for the above image</span>\n</div>",
-        "Scripts": [
-            "/src/scripts/script1.js",
-            "/src/scripts/script2.js"
-        ]
-    }
+    "name": "HTML Component",
+    "selector": "component.html",
+    "editor": "editor.html",
+    "tools": [{
+            "name": "special",
+            "tool": "tinymce"
+        },
+        {
+            "name": "inline",
+            "tool": "inline"
+        },
+        {
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "fullscreen"
+        }
+    ],
+    "specialEditor": "editor.special.tinymce",
+    "version": 1.0,
+    "content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" />\n    <span class=\"image-sub-text\">Small caption for the above image</span>\n</div>",
+    "scripts": [
+        "/src/scripts/script1.js",
+        "/src/scripts/script2.js"
+    ]
 }

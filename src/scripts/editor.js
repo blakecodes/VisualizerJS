@@ -4,6 +4,7 @@
 
 
 $(function () {
+    var editMode = true; //Set to false to disable component checks globally
     var editingOn = false;
     var componentSelector = "[data-component]";
     var editableToolbar = $('.editable-toolbar');
@@ -11,8 +12,7 @@ $(function () {
     var specialEditor = $('#special-editor');
     var selectedContent = $('.selected-content');
 
-    var builder;
-
+    var editors = [];
     var components = [];
 
     //
@@ -26,6 +26,12 @@ $(function () {
             return el.classList.contains('addContent');
         }
     });
+
+    jwplayer.key = "X5QKI+p+VegDxS5LBErjiUUECLkNzvJO0rwdfBCMPpE=";
+
+    // var player = jwplayer('player').setup({
+    //     file: "https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4"
+    // });
 
     // ────────────────────────────────────────────────────────────────────────────────
 
@@ -142,10 +148,7 @@ $(function () {
     //Initial load of coponent
     function loadComponent(url) {
         $.getJSON("/src/app/components/singles/component." + url + ".json", function (data) {
-            $.each(data.Component.Scripts, function () {
-                console.log('Loading script: ' + this);
-            });
-            determineTools(data.Component.Tools);
+            determineTools(data.tools);
         });
     }
 
@@ -173,7 +176,16 @@ $(function () {
 
             var component = findComponent(type);
 
-            $(this).replaceWith(component.Component.Content);
+            $(this).replaceWith(component.content);
+
+            if (!checkComponentRecord(type)) {
+                $.each(component.scripts, function () {
+                    var s = document.createElement('script');
+                    s.type = "text/javascript";
+                    s.src = this;
+                    $('body').append(s);
+                });
+            }
         });
     }
 
@@ -188,9 +200,9 @@ $(function () {
 
         if (!checkRecord()) {
             $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
-                specialEditor.html(data.Editor.Content);
+                specialEditor.html(data.content);
 
-                $.each(data.Editor.Scripts, function () {
+                $.each(data.scripts, function () {
                     var s = document.createElement('script');
                     s.type = "text/javascript";
                     s.src = this;
@@ -210,7 +222,20 @@ $(function () {
     // ─── RECORD MANAGEMENT ────────────────────────────────────────────────────
     //
 
-    function checkRecord(type) {
+    function checkEditorRecord(type) {
+        if ($.inArray(type, editors) !== -1) {
+            return true;
+        } else {
+            addEditorRecord(type);
+            return false;
+        }
+    }
+
+    function addEditorRecord(type) {
+        editors.push(type);
+    }
+
+    function checkComponentRecord(type) {
         if ($.inArray(type, components) !== -1) {
             return true;
         } else {
