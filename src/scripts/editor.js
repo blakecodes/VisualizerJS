@@ -52,6 +52,10 @@ $(function () {
         eraseComponent();
     });
 
+    $('body').on('click', '[data-tool="settings"]', function () {
+        loadSettingsEditor(getCurrentComponent());
+    });
+
     // Toolbar selection
     $("body").on('click', componentSelector, function () {
         if (editableToolbar.is(':visible') && editingOn == false) {
@@ -216,6 +220,51 @@ $(function () {
         }
     }
 
+    // Basic level editor
+    // Dynamically generate fields based on config settings
+    function loadSettingsEditor(type) {
+        var form = document.createElement('form');
+
+        settingsEditorService(type, data => {
+            // Create a group for each set
+            $.each(data.config, function () {
+                var g = document.createElement("div");
+                g.className = "form-group";
+                g.append(generateField(this));
+                form.append(generateField(this));
+            });
+
+            // WORK -- need to finish adding of labels and element
+            // Generate editing field
+            function generateField(obj) {
+                var e = document.createElement(obj.type);
+                var l = generateLabel(obj.name);
+                e.setAttribute('data-node-set', obj.node);
+
+                // Craft element by type
+                switch (obj.type) {
+                    case 'Input':
+                        e.type = "text";
+                        e.className = "form-control";
+                        break;
+                }
+                return $.parseHTML(l.outerHTML + e.outerHTML);
+            }
+
+            // Generate input labels
+            function generateLabel(name) {
+                var l = document.createElement("label");
+                l.innerHTML = name;
+
+                return l;
+            }
+        });
+
+        console.log(form);
+        $('#special-editor').append(form);
+        specialEditorHolder.show();
+    }
+
     // ────────────────────────────────────────────────────────────────────────────────
 
     //
@@ -249,5 +298,34 @@ $(function () {
     }
 
     // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── GLOBAL COMMANDS ────────────────────────────────────────────────────────────
+    //
+
+    function getCurrentComponent() {
+        return $('.selected-content').data('component');
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── SERVICE CALLS ──────────────────────────────────────────────────────────────
+    //
+
+    function settingsEditorService(type, callback) {
+        $.ajax({
+            url: "/src/app/components/singles/component." + type + ".json",
+            type: "GET",
+            dataType: "JSON",
+            async: false,
+            success: function (data) {
+                callback(data);
+            }
+        });
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
+
 
 });

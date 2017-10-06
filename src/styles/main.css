@@ -24,11 +24,12 @@ body {
     position: fixed;
     background: #E9E9E9;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
 }
 
 .page-content {
     margin-left: 250px;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .main-content {
@@ -177,4 +178,17 @@ ul {
     margin-top: 10px;
     width: 150px;
     margin-left: 20px;
+}
+
+.addContent {
+    min-height: 50px;
+    border: 1px solid #efefef;
+    margin-bottom: 1px;
+}
+
+.component-header {
+    background: #f1efec;
+    padding: 2px;
+    text-align: center;
+    color: #676767;
 }
