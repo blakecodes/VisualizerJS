@@ -7,7 +7,7 @@ body {
     width: 100%;
     background-color: #407FE3;
     color: white;
-    padding: 15px 20px;
+    padding: 11px 20px;
     position: fixed;
     z-index: 9;
 }
@@ -133,7 +133,7 @@ p {
 }
 
 .selected-content {
-    border: 1px solid #ebebeb;
+    border: 1px solid #417ee3 !important;
 }
 
 .editing-content {
@@ -190,6 +190,7 @@ ul {
     height: 20rem;
     background-color: #555;
     border: .0625rem solid #333;
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
 #regular-editor input,
@@ -254,4 +255,48 @@ ul {
 
 .jwplayer {
     width: 100% !important;
+}
+
+
+/* Hero  */
+
+.hero {
+    height: 600px;
+    width: 100%;
+    background-color: #417ee3;
+    background: url("/src/assets/images/pup.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.hero-body {
+    margin-top: 200px;
+    padding: 20px;
+}
+
+.hero-body h4 {
+    color: white;
+    font-size: 28px;
+    font-family: "lato", sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero-body p {
+    color: white;
+    font-family: "lato", sans-serif;
+}
+
+.hero-input input {
+    display: inline-block;
+    width: 250px;
+}
+
+.hero-input button {
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.nav-btn {
+    float: right;
+    background: #efefef;
 }

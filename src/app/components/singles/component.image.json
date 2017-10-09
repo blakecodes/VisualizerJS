@@ -3,10 +3,6 @@
     "selector": "component.html",
     "editor": "editor.html",
     "tools": [{
-            "name": "special",
-            "tool": "tinymce"
-        },
-        {
             "name": "inline",
             "tool": "inline"
         },

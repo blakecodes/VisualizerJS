@@ -6,6 +6,7 @@
 $(function () {
     var editMode = true; //Set to false to disable component checks globally
     var editingOn = false;
+    var previewMode = false;
     var componentSelector = "[data-component]";
     var editableToolbar = $('.editable-toolbar');
     var specialEditorHolder = $('.expanded-editor');
@@ -90,11 +91,25 @@ $(function () {
         });
     });
 
+    $('#preview-mode').on('click', function () {
+        togglePreview();
+    })
+
     // ────────────────────────────────────────────────────────────────────────────────
 
     //
     // ─── EDITING FUNCTIONALITIES ────────────────────────────────────────────────────
     //
+
+    function togglePreview() {
+        if (previewMode == true) {
+            $('.col-title').show();
+            previewMode = false;
+        } else {
+            $('.col-title').hide();
+            previewMode = true;
+        }
+    }
 
     // Initialize the component
     function componentInit(e) {
@@ -350,8 +365,13 @@ $(function () {
                     $('.selected-content [data-retrieve="' + set + '"]').html(value);
                     break;
                 case 'video':
-                    var video = $('.selected-content[data-retrieve="' + set + '"]').find('.jwplayer').attr('id');
-                    jwplayer(video).load(value);
+                    var component = $('.selected-content[data-retrieve="' + set + '"]');
+                    var video = component.find('.jwplayer').attr('id');
+
+                    component.data('jw-video', value);
+                    jwplayer("jw-0").load([{
+                        file: value
+                    }]);
                     break;
             }
         });
