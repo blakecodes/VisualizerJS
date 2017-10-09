@@ -16,14 +16,23 @@
         },
         {
             "name": "fullscreen",
-            "tool": "fullscreen"
+            "tool": "settings"
         }
     ],
     "specialEditor": "editor.special.tinymce",
     "version": 1.0,
-    "content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" />\n    <span class=\"image-sub-text\">Small caption for the above image</span>\n</div>",
-    "scripts": [
-        "/src/scripts/script1.js",
-        "/src/scripts/script2.js"
+    "content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" data-retrieve=\"iURL\" />\n    <span class=\"image-sub-text\" data-retrieve=\"iSubText\">Small caption for the above image</span>\n</div>",
+    "config": [{
+            "name": "Image URL",
+            "type": "Input",
+            "elementType": "image",
+            "node": "iURL"
+        },
+        {
+            "name": "Image Sub Text",
+            "type": "Input",
+            "elementType": "text",
+            "node": "iSubText"
+        }
     ]
 }

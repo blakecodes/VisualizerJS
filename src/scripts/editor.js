@@ -65,6 +65,15 @@ $(function () {
         }
     });
 
+    $('#close-settings').on('click', function () {
+        closeSettings();
+    });
+
+    $('#save-settings').on('click', function () {
+        saveSettings();
+        closeSettings();
+    });
+
 
     $('body').on('click', '[data-special-tool]', function () {
         var type = $(this).data('special-tool');
@@ -200,9 +209,11 @@ $(function () {
     //
 
     function loadSpecialEditor(type, callback) {
-        checkRecord(type);
+        checkEditorRecord(type);
 
-        if (!checkRecord()) {
+        determineEditorView('#regular-editor', '#special-editor');
+
+        if (!checkEditorRecord()) {
             $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
                 specialEditor.html(data.content);
 
@@ -225,44 +236,88 @@ $(function () {
     function loadSettingsEditor(type) {
         var form = document.createElement('form');
 
+        determineEditorView('#special-editor', '#regular-editor');
+
         settingsEditorService(type, data => {
             // Create a group for each set
             $.each(data.config, function () {
                 var g = document.createElement("div");
                 g.className = "form-group";
+                g.append(generateLabel(this));
                 g.append(generateField(this));
-                form.append(generateField(this));
+                form.append(g);
             });
 
             // WORK -- need to finish adding of labels and element
             // Generate editing field
             function generateField(obj) {
                 var e = document.createElement(obj.type);
-                var l = generateLabel(obj.name);
-                e.setAttribute('data-node-set', obj.node);
+                e.setAttribute('data-set', obj.node);
+                e.setAttribute('data-element-type', obj.elementType);
 
                 // Craft element by type
                 switch (obj.type) {
                     case 'Input':
                         e.type = "text";
                         e.className = "form-control";
+                        e.value = generateValue(obj);
                         break;
                 }
-                return $.parseHTML(l.outerHTML + e.outerHTML);
+                return e;
             }
 
             // Generate input labels
-            function generateLabel(name) {
+            function generateLabel(obj) {
                 var l = document.createElement("label");
-                l.innerHTML = name;
+                l.innerHTML = obj.name;
 
                 return l;
             }
+
+            // Auto load the elements value into the editor
+            function generateValue(obj) {
+                var e = $('.selected-content [data-retrieve="' + obj.node + '"]');
+
+                switch (obj.elementType) {
+                    case 'image':
+                        return e.attr('src');
+                    case 'text':
+                        return e.html();
+                    default:
+                        return ' ';
+                }
+            }
+        });
+        $('#regular-editor .editor-body').html('');
+        $('#regular-editor .editor-body').append(form);
+        specialEditorHolder.show();
+    }
+
+    function saveSettings() {
+        $('.editor-body [data-set]').each(function () {
+            var set = $(this).data('set');
+            var type = $(this).data('element-type');
+            var value = $(this).val();
+
+            switch (type) {
+                case 'image':
+                    $('.selected-content [data-retrieve="' + set + '"]').attr('src', value);
+                    break;
+                case 'text':
+                    $('.selected-content [data-retrieve="' + set + '"]').html(value);
+                    break;
+            }
         });
 
-        console.log(form);
-        $('#special-editor').append(form);
-        specialEditorHolder.show();
+    }
+
+    function closeSettings() {
+        specialEditorHolder.hide();
+    }
+
+    function determineEditorView(hide, show) {
+        $(hide).hide();
+        $(show).show()
     }
 
     // ────────────────────────────────────────────────────────────────────────────────
