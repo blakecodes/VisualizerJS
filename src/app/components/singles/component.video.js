@@ -19,11 +19,11 @@ $(function () {
             // Check if the video already exists before initializing
             if (!checkInit(current)) {
                 var generated = genId("jw-");
-                this.src = $(this).data('jw-video');
+                this.src = $(this).parent('div').data('jw-video');
                 $(this).attr('id', generated);
 
                 var player = jwplayer(generated).setup({
-                    file: "https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4"
+                    file: this.src
                 });
 
                 videos.push(generated);
@@ -31,9 +31,20 @@ $(function () {
         });
     }
 
+    // Garauntee all videos are displayed in 16:9 format
+    function set169Size() {
+        $('.jwplayer').each(function () {
+            var width = $(this).width();
+            var height = (9 / 16) * width;
+
+            $(this).height(height);
+        });
+    }
+
     // NOPROD - These should be loaded only once
     setInterval(function () {
         loadVideos();
+        set169Size();
     }, 500);
 
     loadVideos();

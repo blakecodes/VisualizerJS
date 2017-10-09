@@ -192,7 +192,8 @@ ul {
     border: .0625rem solid #333;
 }
 
-#regular-editor input {
+#regular-editor input,
+#regular-editor select {
     color: #fff;
     background-color: #464646;
     border-color: #3c3c3c;
@@ -245,4 +246,12 @@ ul {
     padding: 2px;
     text-align: center;
     color: #676767;
+}
+
+.form-check-label span {
+    line-height: 44px;
+}
+
+.jwplayer {
+    width: 100% !important;
 }

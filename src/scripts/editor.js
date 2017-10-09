@@ -57,11 +57,19 @@ $(function () {
     });
 
     // Toolbar selection
-    $("body").on('click', componentSelector, function () {
+    $("body").on('click', componentSelector, function (event) {
+        event.stopPropagation();
         if (editableToolbar.is(':visible') && editingOn == false) {
             componentDestroy(this);
         } else {
             componentInit(this);
+        }
+    });
+
+    $('body').on("keyup", "#regular-editor input", function (e) {
+        if (e.which == 13) {
+            saveSettings();
+            closeSettings();
         }
     });
 
@@ -262,6 +270,30 @@ $(function () {
                         e.className = "form-control";
                         e.value = generateValue(obj);
                         break;
+                        // WORK -- need to finish setup for check boxes
+                    case 'Checkbox':
+                        var label = document.createElement('label');
+                        var input = document.createElement('input');
+                        var span = document.createElement('span');
+
+                        label.className = 'form-check-label';
+                        input.type = "checkbox";
+                        input.className = 'form-check-input';
+                        span.innerHTML = obj.name;
+
+                        input.append(span);
+                        label.append(input);
+
+                        e = label;
+
+                        break;
+                    case 'Select':
+                        e.className = "form-control";
+                        $.each(obj.options, function () {
+                            e.append(generateOption(this));
+                        });
+                        console.log(e);
+                        break;
                 }
                 return e;
             }
@@ -283,9 +315,20 @@ $(function () {
                         return e.attr('src');
                     case 'text':
                         return e.html();
+                    case 'video':
+                        e = $('.selected-content[data-retrieve="' + obj.node + '"]');
+                        return e.data('jw-video');
                     default:
-                        return ' ';
+                        return '';
                 }
+            }
+
+            function generateOption(obj) {
+                var option = document.createElement("option");
+                option.text = obj.label;
+                option.value = obj.value;
+
+                return option;
             }
         });
         $('#regular-editor .editor-body').html('');
@@ -305,6 +348,10 @@ $(function () {
                     break;
                 case 'text':
                     $('.selected-content [data-retrieve="' + set + '"]').html(value);
+                    break;
+                case 'video':
+                    var video = $('.selected-content[data-retrieve="' + set + '"]').find('.jwplayer').attr('id');
+                    jwplayer(video).load(value);
                     break;
             }
         });

@@ -1,0 +1,32 @@
+{
+    "name": "Row Component",
+    "selector": "component.row",
+    "editor": "editor.html",
+    "tools": [{
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "settings"
+        }
+    ],
+    "specialEditor": "editor.special.tinymce",
+    "version": 1.0,
+    "content": "<div data-component=\"row\" class=\"row addContent\">\n</div>",
+    "config": [{
+        "name": "Column Size",
+        "type": "Select",
+        "options": [{
+                "label": "Medium-1",
+                "value": "col-md-1"
+            },
+            {
+                "label": "Medium-2",
+                "value": "col-md-2"
+            }
+        ],
+        "node": "cSize",
+        "elementType": "text"
+    }]
+}

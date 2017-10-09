@@ -12,29 +12,14 @@
         }
     ],
     "version": 1.0,
-    "content": "<div data-component=\"video\"><div class=\"component-header\">JW Player</div><div data-jw-player data-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\">test video</div></div>",
+    "content": "<div data-component=\"video\" data-retrieve=\"vUrl\" data-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\"><div class=\"component-header\">JW Player</div><div data-jw-player>test video</div></div>",
     "scripts": [
         "/src/app/components/singles/component.video.js"
     ],
     "config": [{
-            "name": "Video URL",
-            "type": "Input",
-            "node": "vUrl"
-        },
-        {
-            "name": "Autoplay",
-            "type": "Input",
-            "node": "vAutoplay"
-        },
-        {
-            "name": "Video Height",
-            "type": "Input",
-            "node": "vHeight"
-        },
-        {
-            "name": "Video Width",
-            "type": "Input",
-            "node": "vWidth"
-        }
-    ]
+        "name": "Video URL",
+        "type": "Input",
+        "node": "vUrl",
+        "elementType": "video"
+    }]
 }
