@@ -3,6 +3,10 @@ body {
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+[ref-component] {
+    width: 100%;
+}
+
 .notification-nav {
     border-bottom: 1px solid #eaeaea;
     width: 100%;
@@ -37,8 +41,9 @@ body {
 .page-content {
     margin-left: 250px;
     padding: 60px 20px;
-    padding-left: 15px;
-    padding-right: 0px;
+    padding-left: 21px;
+    padding-right: 15px;
+    overflow-x: hidden;
 }
 
 .main-content {
@@ -314,6 +319,10 @@ ul {
     margin-right: 5px;
     color: #d8d8df;
     transition: ease-in 0.2s;
+}
+
+.nav-icons a {
+    color: #676d7b;
 }
 
 .nav-icons i:hover {

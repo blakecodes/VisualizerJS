@@ -13,7 +13,7 @@
     ],
     "specialEditor": "editor.special.tinymce",
     "version": 1.0,
-    "content": "<div ref-component=\"column\" ref-retrieve=\"cSize\" class=\"col-md-1\">\n    <span class=\"col-title\">col-md-1</span>\n</div>",
+    "content": "<div ref-component=\"column\" ref-retrieve=\"cSize\" class=\"col-md-2 addContent\">\n    <span class=\"col-title\">column</span>\n</div>",
     "config": [{
         "name": "Column Size",
         "type": "Select",
@@ -48,6 +48,22 @@
             {
                 "label": "Medium-8",
                 "value": "col-md-8"
+            },
+            {
+                "label": "Medium-9",
+                "value": "col-md-9"
+            },
+            {
+                "label": "Medium-10",
+                "value": "col-md-10"
+            },
+            {
+                "label": "Medium-11",
+                "value": "col-md-11"
+            },
+            {
+                "label": "Medium-12",
+                "value": "col-md-12"
             }
         ],
         "node": "cSize",

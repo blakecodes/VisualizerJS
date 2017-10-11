@@ -53,13 +53,19 @@ $(function () {
     // Toolbar selection
     $("body").on('click', componentSelector, function (event) {
         event.stopPropagation();
-        if (editableToolbar.is(':visible') && editingOn == false) {
-            componentDestroy(this);
-        } else {
+
+        if (!$(this).hasClass('selected-content')) {
             componentInit(this);
+        } else {
+            if (editableToolbar.is(':visible') && editingOn == false) {
+                componentDestroy(this);
+            } else {
+                componentInit(this);
+            }
         }
     });
 
+    // On enter of editor modal, close and save
     $('body').on("keyup", "#regular-editor input", function (e) {
         if (e.which == 13) {
             saveSettings();
@@ -87,6 +93,19 @@ $(function () {
     $('#preview-mode').on('click', function () {
         togglePreview();
     })
+
+    // Export current theme
+    $('#export').on('click', function () {
+        let content = $('.page-content').html();
+
+        console.log(content);
+    });
+
+    $('#import').on('click', function () {
+        var importData = window.prompt('Import data');
+
+        $('.page-content').html(importData);
+    });
 
     // ────────────────────────────────────────────────────────────────────────────────
 
@@ -399,9 +418,11 @@ $(function () {
     function updateClassContent(target, value, bootstrap = false) {
         let e = findTarget(target, true);
         let classes = e.attr('class');
+
         //If targeting column widths
         //Pass through full class, replace with new size
         classes = bootstrap ? classes.replace(/(\bcol-\w*-(\w{1,2}))/, value) : classes.concat(` ${value}`);
+
         e.attr('class', classes);
     }
 

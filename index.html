@@ -3,28 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Easy Editor</title>
-    <meta name="author" content="Blake Connally">
-    <meta name="description" content="Editor designed to organize and structure web components">
-    <meta name="keywords" content="Editor,components,HTML,JS,PHP,Theme Builder">
-
+    <meta content="Blake Connally" name="author">
+    <meta content="Editor designed to organize and structure web components" name="description">
+    <meta content="Editor,components,HTML,JS,PHP,Theme Builder" name="keywords">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="/src/assets/fonts/d-element/d-element.css">
-    <link rel="stylesheet" type="text/css" href="/src/assets/fonts/devices/devices.css">
-
-    <link rel="stylesheet" href="/node_modules/dragula/dist/dragula.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/src/styles/main.css" rel="stylesheet">
+    <link href="/src/assets/fonts/d-element/d-element.css" rel="stylesheet" type="text/css">
+    <link href="/src/assets/fonts/devices/devices.css" rel="stylesheet" type="text/css">
+    <link href="/node_modules/dragula/dist/dragula.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Editor Special -->
-    <div class="editable-toolbar">
-
-    </div>
-
+    <div class="editable-toolbar"></div>
     <div class="expanded-editor">
         <div class="editor-content">
             <div id="special-editor"></div>
@@ -32,117 +26,57 @@
                 <div class="editor-header">
                     <h2>Main Component</h2>
                 </div>
-                <div class="editor-body">
-
-                </div>
+                <div class="editor-body"></div>
                 <div class="editor-buttons">
-                    <button class="btn btn-secondary editor-btn no-float" id="close-settings">Cancel</button>
-                    <button class="btn btn-primary editor-btn no-float" id="save-settings">Save</button > 
+                    <button class="btn btn-secondary editor-btn no-float" id="close-settings">Cancel</button> <button class="btn btn-primary editor-btn no-float"
+                        id="save-settings">Save</button>
                 </div>
             </div>
         </div>
     </div>
-
-
     <nav class="notification-nav">
         <div class="float-left navbar-left">
             Website Template Editor
         </div>
         <div class="float-right nav-icons">
-            <i class="glyph-icon devices-iphone"></i>
-            <i class="glyph-icon devices-tablet-1"></i>
-            <i class="glyph-icon devices-apple-monitor selected-icon"></i>
+            <a href="#" id="export">Export</a>
+            <a href="#" id="import">Import</a>
+            <i class="glyph-icon devices-iphone"></i> <i class="glyph-icon devices-tablet-1"></i> <i class="glyph-icon devices-apple-monitor selected-icon"></i>
         </div>
-                    </nav>
-
-                    <!-- Page Content -->
-                    <div class="content">
-                        <!-- Left Side  -->
-                        <div class="sidebar-left">
-                            <div class="sidebar-header text-center">
-                                <h5>Component List</h5>
-                            </div>
-                            <ul class="component-list">
-                                <li ref-find-component="html">HTML Block</li>
-                                <li ref-find-component="image">Image</li>
-                                <li ref-find-component="video">Video</li>
-                                <li ref-find-component="row">Row</li>
-                                <li ref-find-component="column">Column</li>
-                                <li ref-find-component="hero">Hero</li>
-                            </ul>
-                        </div>
-                        <!-- Page Content -->
-                        <div class="page-content">
-                            <div class="row addContent" ref-component="hero">
-                                <div class="hero">
-                                    <div class="hero-body">
-                                        <h4 class="hero-title">Find a top vet!</h4>
-                                        <p>Exclusive membership singups available today only!</p>
-                                        <div class="hero-input">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Email Address">
-                                                <button class="btn btn-primary">Sign Up</button>
-                </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Left Side  -->
+        <div class="sidebar-left">
+            <div class="sidebar-header text-center">
+                <h5>Component List</h5>
             </div>
+            <ul class="component-list">
+                <li ref-find-component="html">HTML Block</li>
+                <li ref-find-component="image">Image</li>
+                <li ref-find-component="video">Video</li>
+                <li ref-find-component="row">Row</li>
+                <li ref-find-component="column">Column</li>
+                <li ref-find-component="hero">Hero</li>
+            </ul>
+        </div>
+        <!-- Page Content -->
+        <div class="page-content">
+            <div class="container-fluid addContent"></div>
         </div>
     </div>
-    </div>
-    <div class="row addContent" ref-component="html">
-        <div class="col-md-12">
-            <span class="col-title">col-md-12</span>
-            <div class="section-header">
-                <h4>Template Editor</h4>
-            </div>
-            <div class="section-body">
-                <div class="terms-section">
-                    <h5>Welcome to eVetSites</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                        Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis accumsan tempor.
-                        Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus at quam id nisl vestibulum rutrum ut
-                        in orci. Praesent iaculis sit amet ligula sit amet ornare. Maecenas et convallis quam. Vestibulum
-                        suscipit rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                        nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 addContent">
-            <span class="col-title">col-md-6</span>
-        </div>
-        <div class="col-md-6 addContent">
-            <span class="col-title">col-md-6</span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 addContent">
-            <span class="col-title">col-md-4</span>
-        </div>
-        <div class="col-md-4 addContent">
-            <span class="col-title">col-md-4</span>
-        </div>
-        <div class="col-md-4 addContent">
-            <span class="col-title">col-md-4</span>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
     <!-- <div id="player"></div> -->
-
-
     <!-- Editor Scripts  -->
-    <script src="/src/scripts/jquery.js"></script>
-    <script src='/node_modules/dragula/dist/dragula.min.js'></script>
+    <script src="/src/scripts/jquery.js">
+    </script>
+    <script src='/node_modules/dragula/dist/dragula.min.js'>
+    </script>
     <!-- JW Player -->
-    <script src="/src/libraries/jwplayer/jwplayer.js"></script>
 
-    <script src="/src/scripts/editor.js"></script>
-
-
+    <script src="/src/libraries/jwplayer/jwplayer.js">
+    </script>
+    <script src="/src/scripts/editor.js">
+    </script>
     <!-- Dynamic Scripts  -->
 </body>
 
