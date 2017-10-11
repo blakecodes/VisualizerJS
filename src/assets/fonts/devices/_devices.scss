@@ -1,0 +1,239 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:13
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-apple-monitor:before { content: "\f100"; }
+.flaticon-blackberry:before { content: "\f101"; }
+.flaticon-blackberry-mobile-phone:before { content: "\f102"; }
+.flaticon-computer-case:before { content: "\f103"; }
+.flaticon-computer-case-1:before { content: "\f104"; }
+.flaticon-game-controller:before { content: "\f105"; }
+.flaticon-handheld-game-console:before { content: "\f106"; }
+.flaticon-handheld-game-console-1:before { content: "\f107"; }
+.flaticon-handheld-game-console-2:before { content: "\f108"; }
+.flaticon-handheld-video-console:before { content: "\f109"; }
+.flaticon-htc-mobile-phone:before { content: "\f10a"; }
+.flaticon-htc-mobile-phone-1:before { content: "\f10b"; }
+.flaticon-htc-mobile-phone-2:before { content: "\f10c"; }
+.flaticon-ipad:before { content: "\f10d"; }
+.flaticon-ipad-1:before { content: "\f10e"; }
+.flaticon-ipad-2:before { content: "\f10f"; }
+.flaticon-ipad-3:before { content: "\f110"; }
+.flaticon-ipad-4:before { content: "\f111"; }
+.flaticon-ipad-reverse:before { content: "\f112"; }
+.flaticon-ipad-reverse-1:before { content: "\f113"; }
+.flaticon-ipad-reverse-2:before { content: "\f114"; }
+.flaticon-ipad-reverse-3:before { content: "\f115"; }
+.flaticon-ipad-reverse-4:before { content: "\f116"; }
+.flaticon-iphone:before { content: "\f117"; }
+.flaticon-iphone-reverse:before { content: "\f118"; }
+.flaticon-iphone-reverse-1:before { content: "\f119"; }
+.flaticon-iphone-reverse-2:before { content: "\f11a"; }
+.flaticon-iphone-reverse-3:before { content: "\f11b"; }
+.flaticon-iphone-reverse-4:before { content: "\f11c"; }
+.flaticon-iphone-reverse-5:before { content: "\f11d"; }
+.flaticon-iphone-reverse-6:before { content: "\f11e"; }
+.flaticon-iphone-reverse-7:before { content: "\f11f"; }
+.flaticon-iphone-reverse-8:before { content: "\f120"; }
+.flaticon-iphone-reverse-9:before { content: "\f121"; }
+.flaticon-iphone-reverse-with-cover:before { content: "\f122"; }
+.flaticon-ipod-reverse:before { content: "\f123"; }
+.flaticon-ipod-touch:before { content: "\f124"; }
+.flaticon-mobile-phone-cover:before { content: "\f125"; }
+.flaticon-monitor:before { content: "\f126"; }
+.flaticon-monitor-1:before { content: "\f127"; }
+.flaticon-monitor-2:before { content: "\f128"; }
+.flaticon-mp3-player:before { content: "\f129"; }
+.flaticon-mp3-player-1:before { content: "\f12a"; }
+.flaticon-mp4-player:before { content: "\f12b"; }
+.flaticon-mp4-player-1:before { content: "\f12c"; }
+.flaticon-mp4-player-2:before { content: "\f12d"; }
+.flaticon-mp4-player-3:before { content: "\f12e"; }
+.flaticon-notebook:before { content: "\f12f"; }
+.flaticon-notebook-1:before { content: "\f130"; }
+.flaticon-notebook-2:before { content: "\f131"; }
+.flaticon-notebook-3:before { content: "\f132"; }
+.flaticon-notebook-computer:before { content: "\f133"; }
+.flaticon-notebook-computer-1:before { content: "\f134"; }
+.flaticon-ps4-controller:before { content: "\f135"; }
+.flaticon-ps4-gamepad:before { content: "\f136"; }
+.flaticon-samsung-galaxy:before { content: "\f137"; }
+.flaticon-samsung-galaxy-1:before { content: "\f138"; }
+.flaticon-samsung-galaxy-2:before { content: "\f139"; }
+.flaticon-smartphone:before { content: "\f13a"; }
+.flaticon-smartphone-1:before { content: "\f13b"; }
+.flaticon-smartphone-10:before { content: "\f13c"; }
+.flaticon-smartphone-11:before { content: "\f13d"; }
+.flaticon-smartphone-12:before { content: "\f13e"; }
+.flaticon-smartphone-13:before { content: "\f13f"; }
+.flaticon-smartphone-14:before { content: "\f140"; }
+.flaticon-smartphone-15:before { content: "\f141"; }
+.flaticon-smartphone-2:before { content: "\f142"; }
+.flaticon-smartphone-3:before { content: "\f143"; }
+.flaticon-smartphone-4:before { content: "\f144"; }
+.flaticon-smartphone-5:before { content: "\f145"; }
+.flaticon-smartphone-6:before { content: "\f146"; }
+.flaticon-smartphone-7:before { content: "\f147"; }
+.flaticon-smartphone-8:before { content: "\f148"; }
+.flaticon-smartphone-9:before { content: "\f149"; }
+.flaticon-smartphone-htc:before { content: "\f14a"; }
+.flaticon-smartphone-with-front-camera:before { content: "\f14b"; }
+.flaticon-sony-ericsson-mobile-phone:before { content: "\f14c"; }
+.flaticon-sony-ericsson-mobile-phone-1:before { content: "\f14d"; }
+.flaticon-tablet:before { content: "\f14e"; }
+.flaticon-tablet-1:before { content: "\f14f"; }
+.flaticon-tablet-2:before { content: "\f150"; }
+.flaticon-video-game-console:before { content: "\f151"; }
+.flaticon-video-game-console-1:before { content: "\f152"; }
+.flaticon-video-game-console-ps3:before { content: "\f153"; }
+.flaticon-video-game-console-ps3-1:before { content: "\f154"; }
+.flaticon-video-game-console-ps4:before { content: "\f155"; }
+.flaticon-video-game-console-ps4-1:before { content: "\f156"; }
+.flaticon-video-game-console-with-gamepad:before { content: "\f157"; }
+.flaticon-video-game-console-with-gamepad-1:before { content: "\f158"; }
+.flaticon-video-game-console-with-gamepad-2:before { content: "\f159"; }
+.flaticon-video-game-console-with-gamepad-3:before { content: "\f15a"; }
+.flaticon-video-game-console-with-gamepad-4:before { content: "\f15b"; }
+.flaticon-video-game-console-with-gamepad-5:before { content: "\f15c"; }
+.flaticon-windows-mobile-phone:before { content: "\f15d"; }
+.flaticon-windows-mobile-phone-1:before { content: "\f15e"; }
+.flaticon-windows-mobile-phone-2:before { content: "\f15f"; }
+.flaticon-windows-phone:before { content: "\f160"; }
+.flaticon-windows-tablet:before { content: "\f161"; }
+.flaticon-windows-touch-screen:before { content: "\f162"; }
+.flaticon-xbox-gamepad:before { content: "\f163"; }
+    
+    $font-Flaticon-apple-monitor: "\f100";
+    $font-Flaticon-blackberry: "\f101";
+    $font-Flaticon-blackberry-mobile-phone: "\f102";
+    $font-Flaticon-computer-case: "\f103";
+    $font-Flaticon-computer-case-1: "\f104";
+    $font-Flaticon-game-controller: "\f105";
+    $font-Flaticon-handheld-game-console: "\f106";
+    $font-Flaticon-handheld-game-console-1: "\f107";
+    $font-Flaticon-handheld-game-console-2: "\f108";
+    $font-Flaticon-handheld-video-console: "\f109";
+    $font-Flaticon-htc-mobile-phone: "\f10a";
+    $font-Flaticon-htc-mobile-phone-1: "\f10b";
+    $font-Flaticon-htc-mobile-phone-2: "\f10c";
+    $font-Flaticon-ipad: "\f10d";
+    $font-Flaticon-ipad-1: "\f10e";
+    $font-Flaticon-ipad-2: "\f10f";
+    $font-Flaticon-ipad-3: "\f110";
+    $font-Flaticon-ipad-4: "\f111";
+    $font-Flaticon-ipad-reverse: "\f112";
+    $font-Flaticon-ipad-reverse-1: "\f113";
+    $font-Flaticon-ipad-reverse-2: "\f114";
+    $font-Flaticon-ipad-reverse-3: "\f115";
+    $font-Flaticon-ipad-reverse-4: "\f116";
+    $font-Flaticon-iphone: "\f117";
+    $font-Flaticon-iphone-reverse: "\f118";
+    $font-Flaticon-iphone-reverse-1: "\f119";
+    $font-Flaticon-iphone-reverse-2: "\f11a";
+    $font-Flaticon-iphone-reverse-3: "\f11b";
+    $font-Flaticon-iphone-reverse-4: "\f11c";
+    $font-Flaticon-iphone-reverse-5: "\f11d";
+    $font-Flaticon-iphone-reverse-6: "\f11e";
+    $font-Flaticon-iphone-reverse-7: "\f11f";
+    $font-Flaticon-iphone-reverse-8: "\f120";
+    $font-Flaticon-iphone-reverse-9: "\f121";
+    $font-Flaticon-iphone-reverse-with-cover: "\f122";
+    $font-Flaticon-ipod-reverse: "\f123";
+    $font-Flaticon-ipod-touch: "\f124";
+    $font-Flaticon-mobile-phone-cover: "\f125";
+    $font-Flaticon-monitor: "\f126";
+    $font-Flaticon-monitor-1: "\f127";
+    $font-Flaticon-monitor-2: "\f128";
+    $font-Flaticon-mp3-player: "\f129";
+    $font-Flaticon-mp3-player-1: "\f12a";
+    $font-Flaticon-mp4-player: "\f12b";
+    $font-Flaticon-mp4-player-1: "\f12c";
+    $font-Flaticon-mp4-player-2: "\f12d";
+    $font-Flaticon-mp4-player-3: "\f12e";
+    $font-Flaticon-notebook: "\f12f";
+    $font-Flaticon-notebook-1: "\f130";
+    $font-Flaticon-notebook-2: "\f131";
+    $font-Flaticon-notebook-3: "\f132";
+    $font-Flaticon-notebook-computer: "\f133";
+    $font-Flaticon-notebook-computer-1: "\f134";
+    $font-Flaticon-ps4-controller: "\f135";
+    $font-Flaticon-ps4-gamepad: "\f136";
+    $font-Flaticon-samsung-galaxy: "\f137";
+    $font-Flaticon-samsung-galaxy-1: "\f138";
+    $font-Flaticon-samsung-galaxy-2: "\f139";
+    $font-Flaticon-smartphone: "\f13a";
+    $font-Flaticon-smartphone-1: "\f13b";
+    $font-Flaticon-smartphone-10: "\f13c";
+    $font-Flaticon-smartphone-11: "\f13d";
+    $font-Flaticon-smartphone-12: "\f13e";
+    $font-Flaticon-smartphone-13: "\f13f";
+    $font-Flaticon-smartphone-14: "\f140";
+    $font-Flaticon-smartphone-15: "\f141";
+    $font-Flaticon-smartphone-2: "\f142";
+    $font-Flaticon-smartphone-3: "\f143";
+    $font-Flaticon-smartphone-4: "\f144";
+    $font-Flaticon-smartphone-5: "\f145";
+    $font-Flaticon-smartphone-6: "\f146";
+    $font-Flaticon-smartphone-7: "\f147";
+    $font-Flaticon-smartphone-8: "\f148";
+    $font-Flaticon-smartphone-9: "\f149";
+    $font-Flaticon-smartphone-htc: "\f14a";
+    $font-Flaticon-smartphone-with-front-camera: "\f14b";
+    $font-Flaticon-sony-ericsson-mobile-phone: "\f14c";
+    $font-Flaticon-sony-ericsson-mobile-phone-1: "\f14d";
+    $font-Flaticon-tablet: "\f14e";
+    $font-Flaticon-tablet-1: "\f14f";
+    $font-Flaticon-tablet-2: "\f150";
+    $font-Flaticon-video-game-console: "\f151";
+    $font-Flaticon-video-game-console-1: "\f152";
+    $font-Flaticon-video-game-console-ps3: "\f153";
+    $font-Flaticon-video-game-console-ps3-1: "\f154";
+    $font-Flaticon-video-game-console-ps4: "\f155";
+    $font-Flaticon-video-game-console-ps4-1: "\f156";
+    $font-Flaticon-video-game-console-with-gamepad: "\f157";
+    $font-Flaticon-video-game-console-with-gamepad-1: "\f158";
+    $font-Flaticon-video-game-console-with-gamepad-2: "\f159";
+    $font-Flaticon-video-game-console-with-gamepad-3: "\f15a";
+    $font-Flaticon-video-game-console-with-gamepad-4: "\f15b";
+    $font-Flaticon-video-game-console-with-gamepad-5: "\f15c";
+    $font-Flaticon-windows-mobile-phone: "\f15d";
+    $font-Flaticon-windows-mobile-phone-1: "\f15e";
+    $font-Flaticon-windows-mobile-phone-2: "\f15f";
+    $font-Flaticon-windows-phone: "\f160";
+    $font-Flaticon-windows-tablet: "\f161";
+    $font-Flaticon-windows-touch-screen: "\f162";
+    $font-Flaticon-xbox-gamepad: "\f163";

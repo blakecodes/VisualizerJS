@@ -4,12 +4,19 @@ body {
 }
 
 .notification-nav {
+    border-bottom: 1px solid #eaeaea;
     width: 100%;
-    background-color: #407FE3;
+    background-color: #fefefe;
     color: white;
     padding: 11px 20px;
     position: fixed;
     z-index: 9;
+}
+
+.float-left {
+    padding-top: 5px;
+    color: #383838;
+    font-size: 17px;
 }
 
 .notification-nav>.left,
@@ -24,12 +31,14 @@ body {
     position: fixed;
     background: #E9E9E9;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
+    margin-top: 62px;
 }
 
 .page-content {
     margin-left: 250px;
     padding: 60px 20px;
+    padding-left: 15px;
+    padding-right: 0px;
 }
 
 .main-content {
@@ -299,4 +308,18 @@ ul {
 .nav-btn {
     float: right;
     background: #efefef;
+}
+
+.nav-icons i {
+    margin-right: 5px;
+    color: #d8d8df;
+    transition: ease-in 0.2s;
+}
+
+.nav-icons i:hover {
+    color: #676d7b;
+}
+
+.selected-icon {
+    color: #676d7b !important;
 }

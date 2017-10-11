@@ -12,7 +12,7 @@
         }
     ],
     "version": 1.0,
-    "content": "<div data-component=\"video\" data-retrieve=\"vUrl\" data-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\"><div class=\"component-header\">JW Player</div><div data-jw-player>test video</div></div>",
+    "content": "<div ref-component=\"video\" ref-retrieve=\"vUrl\" ref-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\"><div class=\"component-header\">JW Player</div><div ref-jw-player>test video</div></div>",
     "scripts": [
         "/src/app/components/singles/component.video.js"
     ],

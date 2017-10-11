@@ -1,17 +1,14 @@
-// TODO:
-// 1. Rememberance of loaded components
-// 2. Rememberance of scripts loaded
-
-
 $(function () {
     var editMode = true; //Set to false to disable component checks globally
     var editingOn = false;
     var previewMode = false;
-    var componentSelector = "[data-component]";
+    var componentSelector = "[ref-component]";
     var editableToolbar = $('.editable-toolbar');
     var specialEditorHolder = $('.expanded-editor');
     var specialEditor = $('#special-editor');
     var selectedContent = $('.selected-content');
+
+    const selectedText = '.selected-content';
 
     var editors = [];
     var components = [];
@@ -30,10 +27,6 @@ $(function () {
 
     jwplayer.key = "X5QKI+p+VegDxS5LBErjiUUECLkNzvJO0rwdfBCMPpE=";
 
-    // var player = jwplayer('player').setup({
-    //     file: "https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4"
-    // });
-
     // ────────────────────────────────────────────────────────────────────────────────
 
     //
@@ -44,16 +37,16 @@ $(function () {
         replaceComponentHandler();
     });
 
-    $('body').on('click', '[data-tool="inline"]', function () {
+    $('body').on('click', '[ref-tool="inline"]', function () {
         editingOn = !editingOn;
         editingOn ? enableEditing('.selected-content') : disableEditing('.selected-content');
     });
 
-    $('body').on('click', '[data-tool="erase"]', function () {
+    $('body').on('click', '[ref-tool="erase"]', function () {
         eraseComponent();
     });
 
-    $('body').on('click', '[data-tool="settings"]', function () {
+    $('body').on('click', '[ref-tool="settings"]', function () {
         loadSettingsEditor(getCurrentComponent());
     });
 
@@ -84,8 +77,8 @@ $(function () {
     });
 
 
-    $('body').on('click', '[data-special-tool]', function () {
-        var type = $(this).data('special-tool');
+    $('body').on('click', '[ref-special-tool]', function () {
+        var type = $(this).attr('ref-special-tool');
         loadSpecialEditor(type, function () {
             specialEditorHolder.show();
         });
@@ -119,7 +112,7 @@ $(function () {
 
         var top = $(e).offset().top;
         var left = $(e).offset().left;
-        var componentType = $(e).data('component');
+        var componentType = $(e).attr('ref-component');
 
         top = top - editableToolbar.outerHeight();
 
@@ -147,9 +140,9 @@ $(function () {
             li.className = "glyph-icon editoricon-" + this.name;
 
             if (this.special) {
-                li.setAttribute("data-special-tool", this.tool);
+                li.setAttribute("ref-special-tool", this.tool);
             } else {
-                li.setAttribute("data-tool", this.tool);
+                li.setAttribute("ref-tool", this.tool);
             }
 
             toolBar.append(li);
@@ -207,8 +200,8 @@ $(function () {
 
     //Find component bindings and replace them with the content
     function replaceComponentHandler() {
-        $('.page-content [data-find-component]').each(function () {
-            var type = $(this).data('find-component');
+        $('.page-content [ref-find-component]').each(function () {
+            var type = $(this).attr('ref-find-component');
 
             var component = findComponent(type);
 
@@ -275,8 +268,8 @@ $(function () {
             // Generate editing field
             function generateField(obj) {
                 var e = document.createElement(obj.type);
-                e.setAttribute('data-set', obj.node);
-                e.setAttribute('data-element-type', obj.elementType);
+                e.setAttribute('ref-set', obj.node);
+                e.setAttribute('ref-element-type', obj.elementType);
 
                 // Craft element by type
                 switch (obj.type) {
@@ -304,10 +297,11 @@ $(function () {
                         break;
                     case 'Select':
                         e.className = "form-control";
-                        $.each(obj.options, function () {
-                            e.append(generateOption(this));
+
+                        obj.options.map((item) => {
+                            e.append(generateOption(item));
+                            console.log(item);
                         });
-                        console.log(e);
                         break;
                 }
                 return e;
@@ -323,7 +317,7 @@ $(function () {
 
             // Auto load the elements value into the editor
             function generateValue(obj) {
-                var e = $('.selected-content [data-retrieve="' + obj.node + '"]');
+                var e = $('.selected-content [ref-retrieve="' + obj.node + '"]');
 
                 switch (obj.elementType) {
                     case 'image':
@@ -331,8 +325,8 @@ $(function () {
                     case 'text':
                         return e.html();
                     case 'video':
-                        e = $('.selected-content[data-retrieve="' + obj.node + '"]');
-                        return e.data('jw-video');
+                        e = $('.selected-content[ref-retrieve="' + obj.node + '"]');
+                        return e.attr('ref-jw-video');
                     default:
                         return '';
                 }
@@ -352,30 +346,26 @@ $(function () {
     }
 
     function saveSettings() {
-        $('.editor-body [data-set]').each(function () {
-            var set = $(this).data('set');
-            var type = $(this).data('element-type');
+        $('.editor-body [ref-set]').each(function () {
+            var target = $(this).attr('ref-set');
+            var type = $(this).attr('ref-element-type');
             var value = $(this).val();
 
             switch (type) {
                 case 'image':
-                    $('.selected-content [data-retrieve="' + set + '"]').attr('src', value);
+                    findTarget(target).attr('src', value);
                     break;
                 case 'text':
-                    $('.selected-content [data-retrieve="' + set + '"]').html(value);
+                    findTarget(target).html(value);
                     break;
                 case 'video':
-                    var component = $('.selected-content[data-retrieve="' + set + '"]');
-                    var video = component.find('.jwplayer').attr('id');
-
-                    component.data('jw-video', value);
-                    jwplayer("jw-0").load([{
-                        file: value
-                    }]);
+                    updateVideoContent(target, value);
+                    break;
+                case 'style':
+                    console.log(updateClassContent(target, value, true));
                     break;
             }
         });
-
     }
 
     function closeSettings() {
@@ -384,8 +374,39 @@ $(function () {
 
     function determineEditorView(hide, show) {
         $(hide).hide();
-        $(show).show()
+        $(show).show();
     }
+
+    //
+    // ─── CONTENT HANDLERS ───────────────────────────────────────────────────────────
+    //
+
+    function findTarget(target, joined = false) {
+        return !joined ? $(`.selected-content [ref-retrieve="${ target }"]`) : $(`.selected-content[ref-retrieve="${ target }"]`);
+    }
+
+    function updateVideoContent(target, value) {
+        var component = $(`.selected-content[ref-retrieve="${ target }"]`);
+        var video = component.find('.jwplayer').attr('id');
+
+        component.attr('ref-jw-video', value);
+        jwplayer(video).load([{
+            file: value
+        }]);
+    }
+
+    // Checks for an exisiting class 
+    function updateClassContent(target, value, bootstrap = false) {
+        let e = findTarget(target, true);
+        let classes = e.attr('class');
+        //If targeting column widths
+        //Pass through full class, replace with new size
+        classes = bootstrap ? classes.replace(/(\bcol-\w*-(\w{1,2}))/, value) : classes.concat(` ${value}`);
+        e.attr('class', classes);
+    }
+
+
+    // ────────────────────────────────────────────────────────────────────────────────
 
     // ────────────────────────────────────────────────────────────────────────────────
 
@@ -426,7 +447,7 @@ $(function () {
     //
 
     function getCurrentComponent() {
-        return $('.selected-content').data('component');
+        return $('.selected-content').attr('ref-component');
     }
 
     // ────────────────────────────────────────────────────────────────────────────────

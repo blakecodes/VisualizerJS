@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/src/assets/fonts/d-element/d-element.css">
+    <link rel="stylesheet" type="text/css" href="/src/assets/fonts/devices/devices.css">
 
     <link rel="stylesheet" href="/node_modules/dragula/dist/dragula.css">
 </head>
@@ -44,8 +45,14 @@
 
 
     <nav class="notification-nav">
-        <span>Theme Editor</span>
-        <button class="btn btn-default nav-btn" id="preview-mode">Preview</button>
+        <div class="float-left navbar-left">
+            Website Template Editor
+        </div>
+        <div class="float-right nav-icons">
+            <i class="glyph-icon devices-iphone"></i>
+            <i class="glyph-icon devices-tablet-1"></i>
+            <i class="glyph-icon devices-apple-monitor selected-icon"></i>
+        </div>
                     </nav>
 
                     <!-- Page Content -->
@@ -56,17 +63,17 @@
                                 <h5>Component List</h5>
                             </div>
                             <ul class="component-list">
-                                <li data-find-component="html">HTML Block</li>
-                                <li data-find-component="image">Image</li>
-                                <li data-find-component="video">Video</li>
-                                <li data-find-component="row">Row</li>
-                                <li data-find-component="column">Column</li>
-                                <li data-find-component="hero">Hero</li>
+                                <li ref-find-component="html">HTML Block</li>
+                                <li ref-find-component="image">Image</li>
+                                <li ref-find-component="video">Video</li>
+                                <li ref-find-component="row">Row</li>
+                                <li ref-find-component="column">Column</li>
+                                <li ref-find-component="hero">Hero</li>
                             </ul>
                         </div>
                         <!-- Page Content -->
                         <div class="page-content">
-                            <div class="row addContent" data-component="hero">
+                            <div class="row addContent" ref-component="hero">
                                 <div class="hero">
                                     <div class="hero-body">
                                         <h4 class="hero-title">Find a top vet!</h4>
@@ -75,70 +82,68 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Email Address">
                                                 <button class="btn btn-primary">Sign Up</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row addContent" data-component="html">
-                                <div class="col-md-12">
-                                    <span class="col-title">col-md-12</span>
-                                    <div class="section-header">
-                                        <h4>Template Editor</h4>
-                                    </div>
-                                    <div class="section-body">
-                                        <div class="terms-section">
-                                            <h5>Welcome to eVetSites</h5>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                                Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus
-                                                quis accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor.
-                                                Vivamus at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit
-                                                amet ligula sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit
-                                                rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam euismod erat,
-                                                ac bibendum nibh. Proin massa justo, varius eget neque a, convallis facilisis
-                                                dui.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 addContent">
-                                    <span class="col-title">col-md-6</span>
-                                </div>
-                                <div class="col-md-6 addContent">
-                                    <span class="col-title">col-md-6</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 addContent">
-                                    <span class="col-title">col-md-4</span>
-                                </div>
-                                <div class="col-md-4 addContent">
-                                    <span class="col-title">col-md-4</span>
-                                </div>
-                                <div class="col-md-4 addContent">
-                                    <span class="col-title">col-md-4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row addContent" ref-component="html">
+        <div class="col-md-12">
+            <span class="col-title">col-md-12</span>
+            <div class="section-header">
+                <h4>Template Editor</h4>
+            </div>
+            <div class="section-body">
+                <div class="terms-section">
+                    <h5>Welcome to eVetSites</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
+                        Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis accumsan tempor.
+                        Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus at quam id nisl vestibulum rutrum ut
+                        in orci. Praesent iaculis sit amet ligula sit amet ornare. Maecenas et convallis quam. Vestibulum
+                        suscipit rhoncus est, ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
+                        nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 addContent">
+            <span class="col-title">col-md-6</span>
+        </div>
+        <div class="col-md-6 addContent">
+            <span class="col-title">col-md-6</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 addContent">
+            <span class="col-title">col-md-4</span>
+        </div>
+        <div class="col-md-4 addContent">
+            <span class="col-title">col-md-4</span>
+        </div>
+        <div class="col-md-4 addContent">
+            <span class="col-title">col-md-4</span>
+        </div>
+    </div>
+    </div>
+    </div>
 
 
-                    <!-- <div id="player"></div> -->
+    <!-- <div id="player"></div> -->
 
 
-                    <!-- Editor Scripts  -->
-                    <script src="/src/scripts/jquery.js"></script>
-                    <script src='/node_modules/dragula/dist/dragula.min.js'></script>
-                    <!-- JW Player -->
-                    <script src="/src/libraries/jwplayer/jwplayer.js"></script>
+    <!-- Editor Scripts  -->
+    <script src="/src/scripts/jquery.js"></script>
+    <script src='/node_modules/dragula/dist/dragula.min.js'></script>
+    <!-- JW Player -->
+    <script src="/src/libraries/jwplayer/jwplayer.js"></script>
 
-                    <script src="/src/scripts/editor.js"></script>
+    <script src="/src/scripts/editor.js"></script>
 
 
-                    <!-- Dynamic Scripts  -->
+    <!-- Dynamic Scripts  -->
 </body>
 
 </html>

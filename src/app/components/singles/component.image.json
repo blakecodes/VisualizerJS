@@ -17,7 +17,7 @@
     ],
     "specialEditor": "editor.special.tinymce",
     "version": 1.0,
-    "content": "<div data-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" data-retrieve=\"iURL\" />\n    <span class=\"image-sub-text\" data-retrieve=\"iSubText\">Small caption for the above image</span>\n</div>",
+    "content": "<div ref-component=\"image\">\n    <img src=\"/src/assets/images/clean-office.jpg\" class=\"img-responsive img-component\" ref-retrieve=\"iURL\" />\n    <span class=\"image-sub-text\" ref-retrieve=\"iSubText\">Small caption for the above image</span>\n</div>",
     "config": [{
             "name": "Image URL",
             "type": "Input",

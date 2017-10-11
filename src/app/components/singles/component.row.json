@@ -13,7 +13,7 @@
     ],
     "specialEditor": "editor.special.tinymce",
     "version": 1.0,
-    "content": "<div data-component=\"row\" class=\"row addContent\">\n</div>",
+    "content": "<div ref-component=\"row\" class=\"row addContent\">\n</div>",
     "config": [{
         "name": "Column Size",
         "type": "Select",

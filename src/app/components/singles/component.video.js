@@ -13,13 +13,13 @@ $(function () {
     }
 
     function loadVideos() {
-        $('[data-jw-player]').each(function () {
+        $('[ref-jw-player]').each(function () {
             var current = $(this).attr('id');
 
             // Check if the video already exists before initializing
             if (!checkInit(current)) {
                 var generated = genId("jw-");
-                this.src = $(this).parent('div').data('jw-video');
+                this.src = $(this).parent('div').attr('ref-jw-video');
                 $(this).attr('id', generated);
 
                 var player = jwplayer(generated).setup({

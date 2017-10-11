@@ -1,0 +1,430 @@
+    /*
+      Flaticon icon font: Flaticon
+      Creation date: 22/06/2016 15:13
+      */
+
+    @font-face {
+      font-family: "Devices";
+      src: url("./devices.eot");
+      src: url("./devices.eot?#iefix") format("embedded-opentype"), url("./devices.woff") format("woff"), url("./devices.ttf") format("truetype"), url("./devices.svg#Flaticon") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      @font-face {
+        font-family: "Flaticon";
+        src: url("./Flaticon.svg#Flaticon") format("svg");
+      }
+    }
+
+    [class^="devices-"]:before,
+    [class*=" devices-"]:before,
+    [class^="devices-"]:after,
+    [class*=" devices-"]:after {
+      font-family: Devices;
+      font-size: 23px;
+      font-style: normal;
+      margin-left: 20px;
+    }
+
+    .devices-apple-monitor:before {
+      content: "\f100";
+    }
+
+    .devices-blackberry:before {
+      content: "\f101";
+    }
+
+    .devices-blackberry-mobile-phone:before {
+      content: "\f102";
+    }
+
+    .devices-computer-case:before {
+      content: "\f103";
+    }
+
+    .devices-computer-case-1:before {
+      content: "\f104";
+    }
+
+    .devices-game-controller:before {
+      content: "\f105";
+    }
+
+    .devices-handheld-game-console:before {
+      content: "\f106";
+    }
+
+    .devices-handheld-game-console-1:before {
+      content: "\f107";
+    }
+
+    .devices-handheld-game-console-2:before {
+      content: "\f108";
+    }
+
+    .devices-handheld-video-console:before {
+      content: "\f109";
+    }
+
+    .devices-htc-mobile-phone:before {
+      content: "\f10a";
+    }
+
+    .devices-htc-mobile-phone-1:before {
+      content: "\f10b";
+    }
+
+    .devices-htc-mobile-phone-2:before {
+      content: "\f10c";
+    }
+
+    .devices-ipad:before {
+      content: "\f10d";
+    }
+
+    .devices-ipad-1:before {
+      content: "\f10e";
+    }
+
+    .devices-ipad-2:before {
+      content: "\f10f";
+    }
+
+    .devices-ipad-3:before {
+      content: "\f110";
+    }
+
+    .devices-ipad-4:before {
+      content: "\f111";
+    }
+
+    .devices-ipad-reverse:before {
+      content: "\f112";
+    }
+
+    .devices-ipad-reverse-1:before {
+      content: "\f113";
+    }
+
+    .devices-ipad-reverse-2:before {
+      content: "\f114";
+    }
+
+    .devices-ipad-reverse-3:before {
+      content: "\f115";
+    }
+
+    .devices-ipad-reverse-4:before {
+      content: "\f116";
+    }
+
+    .devices-iphone:before {
+      content: "\f117";
+    }
+
+    .devices-iphone-reverse:before {
+      content: "\f118";
+    }
+
+    .devices-iphone-reverse-1:before {
+      content: "\f119";
+    }
+
+    .devices-iphone-reverse-2:before {
+      content: "\f11a";
+    }
+
+    .devices-iphone-reverse-3:before {
+      content: "\f11b";
+    }
+
+    .devices-iphone-reverse-4:before {
+      content: "\f11c";
+    }
+
+    .devices-iphone-reverse-5:before {
+      content: "\f11d";
+    }
+
+    .devices-iphone-reverse-6:before {
+      content: "\f11e";
+    }
+
+    .devices-iphone-reverse-7:before {
+      content: "\f11f";
+    }
+
+    .devices-iphone-reverse-8:before {
+      content: "\f120";
+    }
+
+    .devices-iphone-reverse-9:before {
+      content: "\f121";
+    }
+
+    .devices-iphone-reverse-with-cover:before {
+      content: "\f122";
+    }
+
+    .devices-ipod-reverse:before {
+      content: "\f123";
+    }
+
+    .devices-ipod-touch:before {
+      content: "\f124";
+    }
+
+    .devices-mobile-phone-cover:before {
+      content: "\f125";
+    }
+
+    .devices-monitor:before {
+      content: "\f126";
+    }
+
+    .devices-monitor-1:before {
+      content: "\f127";
+    }
+
+    .devices-monitor-2:before {
+      content: "\f128";
+    }
+
+    .devices-mp3-player:before {
+      content: "\f129";
+    }
+
+    .devices-mp3-player-1:before {
+      content: "\f12a";
+    }
+
+    .devices-mp4-player:before {
+      content: "\f12b";
+    }
+
+    .devices-mp4-player-1:before {
+      content: "\f12c";
+    }
+
+    .devices-mp4-player-2:before {
+      content: "\f12d";
+    }
+
+    .devices-mp4-player-3:before {
+      content: "\f12e";
+    }
+
+    .devices-notebook:before {
+      content: "\f12f";
+    }
+
+    .devices-notebook-1:before {
+      content: "\f130";
+    }
+
+    .devices-notebook-2:before {
+      content: "\f131";
+    }
+
+    .devices-notebook-3:before {
+      content: "\f132";
+    }
+
+    .devices-notebook-computer:before {
+      content: "\f133";
+    }
+
+    .devices-notebook-computer-1:before {
+      content: "\f134";
+    }
+
+    .devices-ps4-controller:before {
+      content: "\f135";
+    }
+
+    .devices-ps4-gamepad:before {
+      content: "\f136";
+    }
+
+    .devices-samsung-galaxy:before {
+      content: "\f137";
+    }
+
+    .devices-samsung-galaxy-1:before {
+      content: "\f138";
+    }
+
+    .devices-samsung-galaxy-2:before {
+      content: "\f139";
+    }
+
+    .devices-smartphone:before {
+      content: "\f13a";
+    }
+
+    .devices-smartphone-1:before {
+      content: "\f13b";
+    }
+
+    .devices-smartphone-10:before {
+      content: "\f13c";
+    }
+
+    .devices-smartphone-11:before {
+      content: "\f13d";
+    }
+
+    .devices-smartphone-12:before {
+      content: "\f13e";
+    }
+
+    .devices-smartphone-13:before {
+      content: "\f13f";
+    }
+
+    .devices-smartphone-14:before {
+      content: "\f140";
+    }
+
+    .devices-smartphone-15:before {
+      content: "\f141";
+    }
+
+    .devices-smartphone-2:before {
+      content: "\f142";
+    }
+
+    .devices-smartphone-3:before {
+      content: "\f143";
+    }
+
+    .devices-smartphone-4:before {
+      content: "\f144";
+    }
+
+    .devices-smartphone-5:before {
+      content: "\f145";
+    }
+
+    .devices-smartphone-6:before {
+      content: "\f146";
+    }
+
+    .devices-smartphone-7:before {
+      content: "\f147";
+    }
+
+    .devices-smartphone-8:before {
+      content: "\f148";
+    }
+
+    .devices-smartphone-9:before {
+      content: "\f149";
+    }
+
+    .devices-smartphone-htc:before {
+      content: "\f14a";
+    }
+
+    .devices-smartphone-with-front-camera:before {
+      content: "\f14b";
+    }
+
+    .devices-sony-ericsson-mobile-phone:before {
+      content: "\f14c";
+    }
+
+    .devices-sony-ericsson-mobile-phone-1:before {
+      content: "\f14d";
+    }
+
+    .devices-tablet:before {
+      content: "\f14e";
+    }
+
+    .devices-tablet-1:before {
+      content: "\f14f";
+    }
+
+    .devices-tablet-2:before {
+      content: "\f150";
+    }
+
+    .devices-video-game-console:before {
+      content: "\f15
+
+    }
+
+    .devices-video-game-console-1:before {
+      content: "\f152";
+    }
+
+    .devices-video-game-console-ps3:before {
+      content: "\f153"
+    }
+
+    .devices-video-game-console-ps3-1:before {
+      content: "\f154";
+    }
+
+    .devices-video-game-console-ps4:before {
+      content: "\f155";
+    }
+
+    .devices-video-game-console-ps4-1:before {
+      content: "\f156";
+    }
+
+    .devices-video-game-console-with-gamepad:before {
+      content: "\f157";
+    }
+
+    .devices-video-game-console-with-gamepad-1:before {
+      content: "\f158";
+    }
+
+    .devices-video-game-console-with-gamepad-2:before {
+      content: "\f159";
+    }
+
+    .devices-video-game-console-with-gamepad-3:before {
+      content: "\f15a";
+    }
+
+    .devices-video-game-console-with-gamepad-4:before {
+      content: "\f15b";
+    }
+
+    .devices-video-game-console-with-gamepad-5:before {
+      content: "\f15c";
+    }
+
+    .devices-windows-mobile-phone:before {
+      content: "\f15d";
+    }
+
+    .devices-windows-mobile-phone-1:before {
+      content: "\f15e";
+    }
+
+    .devices-windows-mobile-phone-2:before {
+      content: "\f15f";
+    }
+
+    .devices-windows-phone:before {
+      content: "\f160";
+    }
+
+    .devices-windows-tablet:before {
+      content: "\f161";
+    }
+
+    .devices-windows-touch-screen:before {
+      content: "\f162";
+    }
+
+    .devices-xbox-gamepad:before {
+      content: "\f163";
+    }
