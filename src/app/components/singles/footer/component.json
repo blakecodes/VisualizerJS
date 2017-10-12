@@ -1,0 +1,14 @@
+{
+    "name": "Footer Component",
+    "tools": [{
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "settings"
+        }
+    ],
+    "version": 1.0,
+    "content": "<footer class=\"comp-footer\" ref-component=\"footer\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col\">\n                <h5>Get started</h5>\n                <ul>\n                    <li><a href=\"#\">Home</a></li>\n                    <li><a href=\"#\">Sign up</a></li>\n                    <li><a href=\"#\">Downloads</a></li>\n                </ul>\n            </div>\n            <div class=\"col\">\n                <h5>About us</h5>\n                <ul>\n                    <li><a href=\"#\">Company Information</a></li>\n                    <li><a href=\"#\">Contact us</a></li>\n                    <li><a href=\"#\">Reviews</a></li>\n                </ul>\n            </div>\n            <div class=\"col\">\n                <h5>Support</h5>\n                <ul>\n                    <li><a href=\"#\">FAQ</a></li>\n                    <li><a href=\"#\">Help desk</a></li>\n                    <li><a href=\"#\">Forums</a></li>\n                </ul>\n            </div>\n            <div class=\"col-sm-3 info\">\n                <h5>Information</h5>\n                <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet. Interdum et malesuada\n                    fames ac ante ipsum primis in faucibus. </p>\n            </div>\n        </div>\n    </div>\n    <div class=\"second-bar\">\n        <div class=\"container\">\n            <h2 class=\"logo\"><a href=\"#\"> LOGO </a></h2>\n            <div class=\"social-icons\">\n                <a href=\"#\" class=\"twitter\"><i class=\"fa fa-twitter\"></i></a>\n                <a href=\"#\" class=\"facebook\"><i class=\"fa fa-facebook\"></i></a>\n                <a href=\"#\" class=\"google\"><i class=\"fa fa-google-plus\"></i></a>\n            </div>\n        </div>\n    </div>\n</footer>"
+}

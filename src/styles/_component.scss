@@ -1,0 +1,100 @@
+.comp-footer {
+    background-color: #3a3f46;
+    color: white;
+}
+
+.comp-footer .row {
+    margin-bottom: 60px;
+}
+
+.comp-footer .info {
+    text-align: justify;
+    color: #afb0b1;
+}
+
+.comp-footer ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+.comp-footer h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.comp-footer .logo {
+    margin-top: 10px;
+}
+
+.comp-footer .second-bar .logo a {
+    color: white;
+    font-size: 28px;
+    float: left;
+    font-weight: bold;
+    line-height: 68px;
+    margin: 0;
+    padding: 0;
+}
+
+.comp-footer a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+.comp-footer a:hover,
+.comp-footer a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.comp-footer .second-bar {
+    text-align: center;
+    background-color: #33373e;
+    text-align: center;
+}
+
+.comp-footer .second-bar a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+}
+
+.comp-footer .second-bar a:hover {
+    text-decoration: none;
+}
+
+.comp-footer .social-icons {
+    float: right;
+}
+
+.comp-footer .facebook:hover {
+    color: #0077e2;
+}
+
+.comp-footer .google:hover {
+    color: #ef1a1a;
+}
+
+.comp-footer .twitter:hover {
+    color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+    .comp-footer {
+        text-align: center;
+    }
+    .comp-footer .info {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+
+
+/* You can remove this. */

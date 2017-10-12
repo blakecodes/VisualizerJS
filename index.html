@@ -14,6 +14,7 @@
     <link href="/src/assets/fonts/d-element/d-element.css" rel="stylesheet" type="text/css">
     <link href="/src/assets/fonts/devices/devices.css" rel="stylesheet" type="text/css">
     <link href="/node_modules/dragula/dist/dragula.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -39,8 +40,8 @@
             Website Template Editor
         </div>
         <div class="float-right nav-icons">
-            <a href="#" id="export">Export</a>
             <a href="#" id="import">Import</a>
+            <a href="#" id="export">Export</a>
             <i class="glyph-icon devices-iphone"></i> <i class="glyph-icon devices-tablet-1"></i> <i class="glyph-icon devices-apple-monitor selected-icon"></i>
         </div>
     </nav>
@@ -58,11 +59,15 @@
                 <li ref-find-component="row">Row</li>
                 <li ref-find-component="column">Column</li>
                 <li ref-find-component="hero">Hero</li>
+                <li ref-find-component="navigation">Navigation</li>
+                <li ref-find-component="footer">Footer</li>
             </ul>
         </div>
         <!-- Page Content -->
         <div class="page-content">
-            <div class="container-fluid addContent"></div>
+            <div class="container-fluid addContent" id="mainContent">
+
+            </div>
         </div>
     </div>
     <!-- <div id="player"></div> -->

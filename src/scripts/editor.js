@@ -194,18 +194,18 @@ $(function () {
     //
 
     //Initial load of coponent
-    function loadComponent(url) {
-        $.getJSON("/src/app/components/singles/component." + url + ".json", function (data) {
+    function loadComponent(type) {
+        $.getJSON(`/src/app/components/singles/${type}/component.json`, function (data) {
             determineTools(data.tools);
         });
     }
 
     //Find component structure information
-    function findComponent(component) {
+    function findComponent(type) {
         var data;
 
         $.ajax({
-            url: "/src/app/components/singles/component." + component + ".json",
+            url: `/src/app/components/singles/${type}/component.json`,
             async: false,
             type: 'GET',
             dataType: "JSON",
@@ -479,7 +479,7 @@ $(function () {
 
     function settingsEditorService(type, callback) {
         $.ajax({
-            url: "/src/app/components/singles/component." + type + ".json",
+            url: `/src/app/components/singles/${type}/component.json`,
             type: "GET",
             dataType: "JSON",
             async: false,
