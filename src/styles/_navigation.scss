@@ -1,0 +1,41 @@
+.link-visualizer {
+    background: #f0f0f0;
+    min-height: 400px;
+    margin: 20px 0px;
+    box-shadow: 0px 2px 9px 2px rgba(0, 0, 0, 0.1);
+    .control-bar {
+        height: 35px;
+        background: #d8d8d8;
+        padding: 6px;
+        img {
+            height: 22px;
+            margin-right: 10px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .link-body {
+        padding: 10px;
+        .link-list {
+            padding: 5px;
+            li {
+                margin-bottom: 10px;
+                img {
+                    float: left;
+                    display: inline-block;
+                    height: 20px;
+                    margin-top: 1px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .link-list-sub {
+            @extend .link-list;
+            padding-left: 15px;
+            li {
+                margin-bottom: 2px;
+            }
+        }
+    }
+}

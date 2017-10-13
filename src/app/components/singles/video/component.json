@@ -14,7 +14,7 @@
     "version": 1.0,
     "content": "<div ref-component=\"video\" ref-retrieve=\"vUrl\" ref-jw-video=\"https://cdn.jwplayer.com/videos/xJ7Wcodt-Zq6530MP.mp4\"><div class=\"component-header\">JW Player</div><div ref-jw-player>test video</div></div>",
     "scripts": [
-        "/src/app/components/singles/component.video.js"
+        "/src/app/components/singles/video/component.js"
     ],
     "config": [{
         "name": "Video URL",

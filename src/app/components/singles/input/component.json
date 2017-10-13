@@ -1,0 +1,20 @@
+{
+    "name": "Input Component",
+    "tools": [{
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "settings"
+        }
+    ],
+    "version": 1.0,
+    "content": "",
+    "config": [{
+        "name": "Placeholder",
+        "type": "Input",
+        "elementType": "text",
+        "node": "iURL"
+    }]
+}

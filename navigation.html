@@ -69,36 +69,57 @@
         </div>
         <!-- Page Content -->
         <div class="page-content">
-            <div class="container-fluid addContent desktopViewPort" id="mainContent">
-
+            <div class="container-fluid navigation-editor addContent" id="mainContent">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="link-visualizer">
+                            <div class="control-bar">
+                                <span>Link Editor</span>
+                                <div class="float-right">
+                                    <img src="/src/assets/icons/path-finder/folder.png">
+                                    <img src="/src/assets/icons/path-finder/document.png">
+                                </div>
+                            </div>
+                            <div class="link-body">
+                                <ul class="link-list">
+                                    <li><img src="/src/assets/icons/path-finder/folder.png"> Home
+                                        <ul class="link-list-sub">
+                                            <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
+                                            <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
+                                            <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
+                                            <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
+                                        </ul>
+                                    </li>
+                                    <li><img src="/src/assets/icons/path-finder/folder.png">About</li>
+                                    <li><img src="/src/assets/icons/path-finder/folder.png">Others</li>
+                                    <li><img src="/src/assets/icons/path-finder/folder.png">Admin</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-8 "></div>
+                </div>
             </div>
         </div>
-        <div class="viewPorts">
-            <div class="container-fluid text-center" id="iPadViewPort">
-                <img src="/src/assets/images/renders/iPad.png" alt="">
+        <div class="viewPorts ">
+            <div class="container-fluid text-center " id="iPadViewPort ">
+                <img src="/src/assets/images/renders/iPad.png " alt=" ">
             </div>
-            <div class="container-fluid text-center" id="iPhoneViewPort">
-                <img src="/src/assets/images/renders/iPhone.png" alt="">
+            <div class="container-fluid text-center " id="iPhoneViewPort ">
+                <img src="/src/assets/images/renders/iPhone.png " alt=" ">
             </div>
         </div>
     </div>
-    <!-- <div id="player"></div> -->
+    <!-- <div id="player "></div> -->
     <!-- Editor Scripts  -->
-    <script src="/src/scripts/jquery.js">
+    <script src="/src/scripts/jquery.js ">
     </script>
     <script src='/node_modules/dragula/dist/dragula.min.js'>
-    </script>
-    <!-- JW Player -->
-    <script src="/src/libraries/jwplayer/jwplayer.js">
     </script>
 
 
     <!-- Editing Scripts  -->
-    <script src="/src/scripts/editor/visualizer.js"></script>
-    <script src="/src/scripts/editor/content-editor.js"></script>
-    <script src="/src/scripts/editor/navigation.js"></script>
-
-
+    <script src="/src/scripts/editor/navigation.js "></script>
     <!-- Dynamic Scripts  -->
 </body>
 

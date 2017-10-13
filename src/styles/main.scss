@@ -1,4 +1,6 @@
 @import 'component';
+@import 'navigation';
+@import 'visualizer';
 html,
 body {
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -11,6 +13,10 @@ body {
     flex-direction: column;
     -webkit-flex-direction: column;
     height: 100%;
+    padding: 0;
+    background: white;
+    box-shadow: 0px 4px 13px -4px rgba(0, 0, 0, 0.4);
+    margin-top: 2px;
 }
 
 [ref-component] {
@@ -239,6 +245,10 @@ ul {
     float: none !important;
 }
 
+.no-right-pad {
+    padding-right: 0;
+}
+
 .editor-buttons {
     text-align: center;
     margin-bottom: 20px;
@@ -336,6 +346,7 @@ ul {
         transition: ease-in 0.2s;
         &:hover {
             color: #676d7b;
+            cursor: pointer;
         }
     }
     a {
@@ -351,4 +362,33 @@ ul {
 
 .nav-component {
     background-color: #ffffff;
+}
+
+[ref-component="sidenav"] {
+    background-color: #f0ece5;
+    padding: 15px;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+#iPadViewPort img {
+    height: 50%;
+    width: 60%;
+}
+
+#iPhoneViewPort img {
+    height: 50%;
+    width: 40%;
+}
+
+#iPhoneViewPort,
+#iPadViewPort {
+    display: none;
+}
+
+.viewPorts {
+    @extend .page-content;
+    padding-top: 0;
 }

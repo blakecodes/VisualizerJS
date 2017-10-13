@@ -74,8 +74,48 @@
   .comp-footer .info {
     text-align: center; } }
 
+.comp-footer p {
+  color: #afb0b1 !important; }
+
 /* CSS used for positioning the footers at the bottom of the page. */
 /* You can remove this. */
+.link-visualizer {
+  background: #f0f0f0;
+  min-height: 400px;
+  margin: 20px 0px;
+  box-shadow: 0px 2px 9px 2px rgba(0, 0, 0, 0.1); }
+  .link-visualizer .control-bar {
+    height: 35px;
+    background: #d8d8d8;
+    padding: 6px; }
+    .link-visualizer .control-bar img {
+      height: 22px;
+      margin-right: 10px; }
+      .link-visualizer .control-bar img:hover {
+        cursor: pointer; }
+  .link-visualizer .link-body {
+    padding: 10px; }
+    .link-visualizer .link-body .link-list, .link-visualizer .link-body .link-list-sub {
+      padding: 5px; }
+      .link-visualizer .link-body .link-list li, .link-visualizer .link-body .link-list-sub li {
+        margin-bottom: 10px; }
+        .link-visualizer .link-body .link-list li img, .link-visualizer .link-body .link-list-sub li img {
+          float: left;
+          display: inline-block;
+          height: 20px;
+          margin-top: 1px;
+          margin-right: 10px; }
+    .link-visualizer .link-body .link-list-sub {
+      padding-left: 15px; }
+      .link-visualizer .link-body .link-list-sub li {
+        margin-bottom: 2px; }
+
+.blue-highlight {
+  background: rgba(49, 120, 224, 0.52);
+  position: absolute;
+  z-index: 8;
+  cursor: pointer; }
+
 html,
 body {
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -86,7 +126,11 @@ body {
   display: -webkit-flex;
   flex-direction: column;
   -webkit-flex-direction: column;
-  height: 100%; }
+  height: 100%;
+  padding: 0;
+  background: white;
+  box-shadow: 0px 4px 13px -4px rgba(0, 0, 0, 0.4);
+  margin-top: 2px; }
 
 [ref-component] {
   width: 100%; }
@@ -119,7 +163,7 @@ body {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
   margin-top: 62px; }
 
-.page-content {
+.page-content, .viewPorts {
   margin-left: 250px;
   padding: 60px 20px;
   padding-left: 21px;
@@ -279,6 +323,9 @@ ul {
 .no-float {
   float: none !important; }
 
+.no-right-pad {
+  padding-right: 0; }
+
 .editor-buttons {
   text-align: center;
   margin-bottom: 20px; }
@@ -357,7 +404,8 @@ ul {
   color: #d8d8df;
   transition: ease-in 0.2s; }
   .nav-icons i:hover {
-    color: #676d7b; }
+    color: #676d7b;
+    cursor: pointer; }
 
 .nav-icons a {
   color: #676d7b;
@@ -369,3 +417,25 @@ ul {
 
 .nav-component {
   background-color: #ffffff; }
+
+[ref-component="sidenav"] {
+  background-color: #f0ece5;
+  padding: 15px; }
+
+.row {
+  margin: 0 !important; }
+
+#iPadViewPort img {
+  height: 50%;
+  width: 60%; }
+
+#iPhoneViewPort img {
+  height: 50%;
+  width: 40%; }
+
+#iPhoneViewPort,
+#iPadViewPort {
+  display: none; }
+
+.viewPorts {
+  padding-top: 0; }

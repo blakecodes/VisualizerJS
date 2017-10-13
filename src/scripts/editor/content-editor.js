@@ -54,13 +54,15 @@ $(function () {
     $("body").on('click', componentSelector, function (event) {
         event.stopPropagation();
 
-        if (!$(this).hasClass('selected-content')) {
-            componentInit(this);
-        } else {
-            if (editableToolbar.is(':visible') && editingOn == false) {
-                componentDestroy(this);
-            } else {
+        if (!previewMode) {
+            if (!$(this).hasClass('selected-content')) {
                 componentInit(this);
+            } else {
+                if (editableToolbar.is(':visible') && editingOn == false) {
+                    componentDestroy(this);
+                } else {
+                    componentInit(this);
+                }
             }
         }
     });
@@ -90,21 +92,41 @@ $(function () {
         });
     });
 
-    $('#preview-mode').on('click', function () {
+    $('#preview-mode').on('click', function (e) {
+        e.preventDefault();
         togglePreview();
-    })
+    });
 
     // Export current theme
-    $('#export').on('click', function () {
+    $('#export').on('click', function (e) {
+        e.preventDefault();
         let content = $('.page-content').html();
 
         console.log(content);
     });
 
-    $('#import').on('click', function () {
+    $('#import').on('click', function (e) {
+        e.preventDefault();
         var importData = window.prompt('Import data');
 
         $('.page-content').html(importData);
+    });
+
+    // Preview handlers
+    $('#toggleIpad').on('click', function () {
+        previewIpad();
+    });
+    // Preview handlers
+    $('#toggleIphone').on('click', function () {
+        previewIphone();
+    });
+    // Preview handlers
+    $('#toggleDesktop').on('click', function () {
+        previewDesktop();
+    });
+    $('.nav-icons i').on('click', function () {
+        $('.selected-icon').removeClass('selected-icon');
+        $(this).addClass('selected-icon');
     });
 
     // ────────────────────────────────────────────────────────────────────────────────
@@ -116,9 +138,11 @@ $(function () {
     function togglePreview() {
         if (previewMode == true) {
             $('.col-title').show();
+            $('.addContent').css('border', '1px solid #a2a2a2');
             previewMode = false;
         } else {
             $('.col-title').hide();
+            $('.addContent').css('border', 'none');
             previewMode = true;
         }
     }
@@ -491,5 +515,44 @@ $(function () {
 
     // ────────────────────────────────────────────────────────────────────────────────
 
+    //
+    // ─── PREVIEW MODES ──────────────────────────────────────────────────────────────
+    //
+
+    function getTheme() {
+        let data = '';
+
+        $.ajax({
+            url: '/src/app/themes/simple/theme.html',
+            type: 'GET',
+            async: false,
+            success: function (res) {
+                data = res;
+            }
+        });
+
+        return data;
+    }
+
+    function hideAll() {
+        $('#iPadViewPort, #iPhoneViewPort, .desktopViewPort').hide();
+    }
+
+    function previewDesktop() {
+        hideAll();
+        $('.desktopViewPort').fadeIn();
+    }
+
+    function previewIpad() {
+        hideAll();
+        $('#iPadViewPort').fadeIn();
+    }
+
+    function previewIphone() {
+        hideAll();
+        $('#iPhoneViewPort').fadeIn();
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
 
 });

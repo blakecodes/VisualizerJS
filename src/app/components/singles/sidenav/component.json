@@ -1,0 +1,14 @@
+{
+    "name": "Side Navigation Component",
+    "tools": [{
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "settings"
+        }
+    ],
+    "version": 1.0,
+    "content": "<div ref-component=\"sidenav\" class=\"selected-content\">\n    <div class=\"section-header\">\n        <h4 style=\"text-align: right;\">Welcome to eVetSites</h4>\n    </div>\n    <div class=\"section-body\">\n        <div class=\"terms-section\">\n            <p style=\"text-align: right;\">Home of the best vet sites in the world.</p>\n            <p style=\"text-align: right;\">&nbsp;</p>\n            <p style=\"text-align: right;\">Hours of Operation:</p>\n            <p style=\"text-align: right;\">M: 9AM-5PM</p>\n            <p style=\"text-align: right;\">M: 9AM-5PM</p>\n            <p style=\"text-align: right;\">M: 9AM-5PM</p>\n            <p style=\"text-align: right;\">M: 9AM-5PM</p>\n            <p style=\"text-align: right;\">M: 9AM-5PM</p>\n            <p style=\"text-align: right;\">&nbsp;</p>\n            <p style=\"text-align: right;\">Contact:</p>\n            <p style=\"text-align: right;\">E: <a href=\"mailto:help@evet.net\">help@evet.net</a></p>\n            <p style=\"text-align: right;\">P: 918-600-2000</p>\n            <p style=\"text-align: right;\">522 S. Boston Ave</p>\n            <p style=\"text-align: right;\">Tulsa, OK 74103</p>\n        </div>\n    </div>\n</div>"
+}
