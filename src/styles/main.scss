@@ -13,9 +13,7 @@ body {
     flex-direction: column;
     -webkit-flex-direction: column;
     height: 100%;
-    padding: 0;
-    background: white;
-    box-shadow: 0px 4px 13px -4px rgba(0, 0, 0, 0.4);
+    padding: 0; //box-shadow: 0px 4px 13px -4px rgba(0, 0, 0, 0.4);
     margin-top: 2px;
 }
 
@@ -278,6 +276,10 @@ ul {
     min-height: 50px;
     border: 1px solid #a2a2a2;
     margin-bottom: 1px;
+    border: none;
+    background: none;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .component-header {

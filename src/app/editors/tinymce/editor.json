@@ -5,6 +5,6 @@
     "content": " <textarea id=\"tinymce\"></textarea><button class=\"btn btn-primary editor-btn\" id=\"save-tiny\">Save</button > <button class = \"btn btn-secondary editor-btn\" id=\"cancel-tiny\">Cancel</button>",
     "scripts": [
         "/node_modules/tinymce/tinymce.min.js",
-        "/src/app/editors/editor.tinymce.js"
+        "/src/app/editors/tinymce/editor.js"
     ]
 }

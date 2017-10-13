@@ -97,21 +97,6 @@ $(function () {
         togglePreview();
     });
 
-    // Export current theme
-    $('#export').on('click', function (e) {
-        e.preventDefault();
-        let content = $('.page-content').html();
-
-        console.log(content);
-    });
-
-    $('#import').on('click', function (e) {
-        e.preventDefault();
-        var importData = window.prompt('Import data');
-
-        $('.page-content').html(importData);
-    });
-
     // Preview handlers
     $('#toggleIpad').on('click', function () {
         previewIpad();
@@ -273,7 +258,7 @@ $(function () {
         determineEditorView('#regular-editor', '#special-editor');
 
         if (!checkEditorRecord()) {
-            $.getJSON("/src/app/editors/editor." + type + ".json", function (data) {
+            $.getJSON(`/src/app/editors/${type}/editor.json`, function (data) {
                 specialEditor.html(data.content);
 
                 $.each(data.scripts, function () {

@@ -15,6 +15,7 @@
     <link href="/src/assets/fonts/devices/devices.css" rel="stylesheet" type="text/css">
     <link href="/node_modules/dragula/dist/dragula.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/libraries/animate.css">
 </head>
 
 <body>
@@ -65,214 +66,88 @@
         <!-- Page Content -->
         <div class="page-content">
             <div class="container-fluid addContent desktopViewPort" id="mainContent">
-
-                <nav class="navbar navbar-toggleable-md navbar-light bg-faded nav-component row" ref-component="navigation" ref-highlight="navigation">
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Navigation  -->
+                <div id="navBody" ref-highlight="navigation">
+                    <nav class="navbar navbar-toggleable-md navbar-light bg-faded nav-component row" ref-component="navigation" ref-highlight="navigation">
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Navbar</a>
+                        <a class="navbar-brand" href="#">Navbar</a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </div>
-                </nav>
-                <div id="contentBody" ref-highlight="content">
-                    <div class="row addContent" ref-component="html">
-                        <div class="hero">
-                            <div class="hero-body">
-                                <h4 class="hero-title">Find a top vet!</h4>
-                                <p>Exclusive membership singups available today only!</p>
-                                <div class="hero-input">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email Address">
-                                        <button class="btn btn-primary">Sign Up</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
                         </div>
-                    </div>
-                    <div ref-component="row" class="row addContent">
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-3 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="html" class="">
-                                <div class="section-header">
-                                    <h4>Template Editor</h4>
-                                </div>
-                                <div class="section-body">
-                                    <div class="terms-section">
-                                        <h5>Welcome to eVetSites</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis
-                                            accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus
-                                            at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit amet ligula
-                                            sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit rhoncus est,
-                                            ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-3 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="html" class="">
-                                <div class="section-header">
-                                    <h4>Template Editor</h4>
-                                </div>
-                                <div class="section-body">
-                                    <div class="terms-section">
-                                        <h5>Welcome to eVetSites</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis
-                                            accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus
-                                            at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit amet ligula
-                                            sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit rhoncus est,
-                                            ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-3 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="html" class="">
-                                <div class="section-header">
-                                    <h4>Template Editor</h4>
-                                </div>
-                                <div class="section-body">
-                                    <div class="terms-section">
-                                        <h5>Welcome to eVetSites</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis
-                                            accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus
-                                            at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit amet ligula
-                                            sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit rhoncus est,
-                                            ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-3 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="html" class="">
-                                <div class="section-header">
-                                    <h4>Template Editor</h4>
-                                </div>
-                                <div class="section-body">
-                                    <div class="terms-section">
-                                        <h5>Welcome to eVetSites</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis
-                                            accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus
-                                            at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit amet ligula
-                                            sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit rhoncus est,
-                                            ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div ref-component="row" class="row addContent">
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-5 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="html" class="">
-                                <div class="section-header">
-                                    <h4>Template Editor</h4>
-                                </div>
-                                <div class="section-body">
-                                    <div class="terms-section">
-                                        <h5>Welcome to eVetSites</h5>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus enim, laoreet eget pharetra sed, varius sit amet lacus.
-                                            Mauris hendrerit dolor pretium turpis congue faucibus. Vivamus auctor risus quis
-                                            accumsan tempor. Praesent blandit vestibulum dolor, nec iaculis dolor. Vivamus
-                                            at quam id nisl vestibulum rutrum ut in orci. Praesent iaculis sit amet ligula
-                                            sit amet ornare. Maecenas et convallis quam. Vestibulum suscipit rhoncus est,
-                                            ac sodales tortor pretium ut. Pellentesque aliquam euismod erat, ac bibendum
-                                            nibh. Proin massa justo, varius eget neque a, convallis facilisis dui.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div ref-component="column" ref-retrieve="cSize" class="col-md-7 addContent">
-                            <span class="col-title">column</span>
-                            <div ref-component="image" class="">
-                                <img src="/src/assets/images/clean-office.jpg" class="img-responsive img-component" ref-retrieve="iURL">
-                                <span class="image-sub-text" ref-retrieve="iSubText"></span>
-                            </div>
-                        </div>
-                    </div>
+                    </nav>
                 </div>
+
+                <!-- Main Content  -->
+                <div id="contentBody" ref-highlight="content">
+
+                </div>
+
+                <!-- Footer  -->
                 <div id="footerBody" ref-highlight="footer">
-                    <div ref-component="row" class="row addContent">
-                        <footer class="comp-footer" ref-component="footer">
+                    <footer class="comp-footer" ref-component="footer" ref-highlight="footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Get started</h5>
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Sign up</a></li>
+                                        <li><a href="#">Downloads</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>About us</h5>
+                                    <ul>
+                                        <li><a href="#">Company Information</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                        <li><a href="#">Reviews</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Support</h5>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Help desk</a></li>
+                                        <li><a href="#">Forums</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3 info">
+                                    <h5>Information</h5>
+                                    <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet.
+                                        Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-bar">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5>Get started</h5>
-                                        <ul>
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Sign up</a></li>
-                                            <li><a href="#">Downloads</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h5>About us</h5>
-                                        <ul>
-                                            <li><a href="#">Company Information</a></li>
-                                            <li><a href="#">Contact us</a></li>
-                                            <li><a href="#">Reviews</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col">
-                                        <h5>Support</h5>
-                                        <ul>
-                                            <li><a href="#">FAQ</a></li>
-                                            <li><a href="#">Help desk</a></li>
-                                            <li><a href="#">Forums</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3 info">
-                                        <h5>Information</h5>
-                                        <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet.
-                                            Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-                                    </div>
+                                <h2 class="logo"><a href="#"> LOGO </a></h2>
+                                <div class="social-icons">
+                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                                 </div>
                             </div>
-                            <div class="second-bar">
-                                <div class="container">
-                                    <h2 class="logo"><a href="#"> LOGO </a></h2>
-                                    <div class="social-icons">
-                                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
+                        </div>
+                    </footer>
+                </div>
+
+                <div id="editorBody">
+
                 </div>
             </div>
         </div>
