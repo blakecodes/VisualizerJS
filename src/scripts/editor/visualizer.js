@@ -1,3 +1,6 @@
+//TODO: Add on and off switches for major event handlers
+//This includes everything for video edits, content, etc.
+
 $(function () {
     let currentHighlighted,
         currentView;
@@ -10,14 +13,7 @@ $(function () {
     //
     $(document).ready(function () {
         loadEditorConfigs();
-    });
-    $('body').on('mouseover', '[ref-highlight]', function () {
-        let target = $(this).attr('ref-highlight');
-
-        $(`[ref-highlight="${target}"]`).each(function (e) {
-            currentHighlighted = target
-            generateHighlight(this, target);
-        });
+        turnOnHighlight();
     });
 
     $('body').on('mouseout', '.blue-highlight', function () {
@@ -58,6 +54,14 @@ $(function () {
         setTimeout(function () {
             $('#component-sidebar').addClass('animated slideInLeft').show();
         }, 500);
+
+        cleanClasses('#navBody, #footerBody', 'animated fadeOutUp');
+        cleanClasses('#component-sidebar', 'animated slideInLeft');
+    });
+
+    // Reset 
+    $('.back-arrow').on('click', function () {
+        reinstateView();
     });
 
     // ────────────────────────────────────────────────────────────────────────────────
@@ -67,7 +71,14 @@ $(function () {
     //
 
     function turnOnHighlight() {
+        $('body').on('mouseover', '[ref-highlight]', function () {
+            let target = $(this).attr('ref-highlight');
 
+            $(`[ref-highlight="${target}"]`).each(function (e) {
+                currentHighlighted = target
+                generateHighlight(this, target);
+            });
+        });
     }
 
     function turnOffHighlight() {
@@ -165,6 +176,32 @@ $(function () {
     }
 
 
+    // ────────────────────────────────────────────────────────────────────────────────
+
+    //
+    // ─── REINSTATE VIEWER ───────────────────────────────────────────────────────────
+    //
+
+    function reinstateView() {
+        // Turn off any event handlers that aren't going to be used
+
+        // Determine which views to re-add
+        $('#navBody, #contentBody, #footerBody').each(function () {
+            if (!$(this).is(':visible')) {
+                $(this).addClass('animated fadeInDown').show();
+            }
+        });
+        // Change the component bar
+
+        //Re-enable highlighting
+        turnOnHighlight();
+    }
+
+    function cleanClasses(e, classes) {
+        setTimeout(function () {
+            $(e).removeClass(classes);
+        }, 500);
+    }
 
     // ────────────────────────────────────────────────────────────────────────────────
 
