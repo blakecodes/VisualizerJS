@@ -1,5 +1,5 @@
 .blue-highlight {
-    background: rgba(49, 120, 224, 0.52);
+    background: rgba(49, 120, 224, 0.2);
     position: absolute;
     z-index: 8;
     cursor: pointer;
@@ -10,4 +10,8 @@
     display: -webkit-flex;
     flex-direction: column;
     -webkit-flex-direction: column;
+}
+
+#component-sidebar {
+    display: none;
 }

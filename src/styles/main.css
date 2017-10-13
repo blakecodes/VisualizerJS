@@ -111,7 +111,7 @@
         margin-bottom: 2px; }
 
 .blue-highlight {
-  background: rgba(49, 120, 224, 0.52);
+  background: rgba(49, 120, 224, 0.2);
   position: absolute;
   z-index: 8;
   cursor: pointer; }
@@ -121,6 +121,9 @@
   display: -webkit-flex;
   flex-direction: column;
   -webkit-flex-direction: column; }
+
+#component-sidebar {
+  display: none; }
 
 html,
 body {
@@ -195,7 +198,8 @@ body {
   cursor: pointer; }
 
 .sidebar-header {
-  padding: 20px 0px 10px 0px; }
+  padding: 10px 0px 3px 0px;
+  background: #eaeaea; }
 
 .section-header {
   border-bottom: 1px solid #ebebeb;
