@@ -328,7 +328,6 @@ $(function () {
 
                         obj.options.map((item) => {
                             e.append(generateOption(item));
-                            console.log(item);
                         });
                         break;
                 }

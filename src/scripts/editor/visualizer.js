@@ -6,6 +6,8 @@ $(function () {
         currentView;
 
     let editors = [];
+    let contentEditor = false;
+    let navEditor = false;
 
 
     //
@@ -130,6 +132,8 @@ $(function () {
     }
 
     function loadComponentBar() {
+        $('#component-sidebar .component-list').html(' ');
+
         let current = editors[0].components;
         current.map((component) => {
             let li = document.createElement('li');
@@ -141,19 +145,25 @@ $(function () {
     }
 
     function loadNavEditor(type) {
-        $.getJSON(`/src/app/editors/navigation/editor.json`, function (editor) {
-            $('#editorBody').html(editor.content);
-            $('#editorBody').addClass('animated fadeInLeft');
-            $('#editorBody').show();
+        if (!navEditor) {
+            $.getJSON(`/src/app/editors/navigation/editor.json`, function (editor) {
+                $('#editorBody').html(editor.content);
+                $('#editorBody').addClass('animated fadeInLeft');
+                $('#editorBody').show();
 
-            loadScripts(editor.scripts);
-        });
+                loadScripts(editor.scripts);
+            });
+            navEditor = true;
+        }
     }
 
     function loadContentEditor() {
-        $.getJSON('/src/app/editors/content/editor.json', function (editor) {
-            loadScripts(editor.scripts);
-        });
+        if (!contentEditor) {
+            $.getJSON('/src/app/editors/content/editor.json', function (editor) {
+                loadScripts(editor.scripts);
+            });
+            contentEditor = true;
+        }
         $('.addContent').css('border', '1px solid #a2a2a2');
         loadComponentBar();
         swapSideBar();
@@ -172,6 +182,7 @@ $(function () {
         $('#sidebar').addClass('animated slideOutLeft');
         setTimeout(function () {
             $('#sidebar').hide();
+            cleanClasses('#sidebar', 'animated slideOutLeft');
         }, 1000);
     }
 
@@ -192,6 +203,18 @@ $(function () {
             }
         });
         // Change the component bar
+        let currentSidebar = $('.sidebar-left:visible').attr('id');
+        $(`#${currentSidebar}`).addClass('animated slideOutLeft');
+
+        setTimeout(function () {
+            // Clean classes
+            cleanClasses(`#${currentSidebar}`, 'animated slideOutLeft');
+        }, 500);
+
+        setTimeout(function () {
+            $('#sidebar').addClass('animated slideInLeft');
+            $('#sidebar').show();
+        }, 500);
 
         //Re-enable highlighting
         turnOnHighlight();

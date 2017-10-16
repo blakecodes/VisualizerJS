@@ -5,27 +5,78 @@
                 <div class="control-bar">
                     <span>Link Editor</span>
                     <div class="float-right">
-                        <img src="/src/assets/icons/path-finder/folder.png">
-                        <img src="/src/assets/icons/path-finder/document.png">
+                        <ul class="nav-draggable">
+                            <li><img src="/src/assets/icons/path-finder/folder.png" class="drag-icon">Folder
+                                <i class="fa fa-times-circle delete-nav" aria-hidden="true"></i>
+                                <ul class="link-list-sub addNav sub-folder">
+
+                                </ul>
+                            </li>
+                            <li><img src="/src/assets/icons/path-finder/document.png" class="drag-icon">Page
+                                <i class="fa fa-times-circle delete-nav" aria-hidden="true"></i>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="link-body">
                     <ul class="link-list">
                         <li><img src="/src/assets/icons/path-finder/folder.png"> Home
-                            <ul class="link-list-sub">
-                                <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
-                                <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
-                                <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
-                                <li><img src="/src/assets/icons/path-finder/document.png">Test</li>
+                            <ul class="link-list-sub addNav">
+                                <li><img src="/src/assets/icons/path-finder/document.png">Test
+                                    <i class="fa fa-times-circle delete-nav" aria-hidden="true"></i>
+                                </li>
                             </ul>
                         </li>
-                        <li><img src="/src/assets/icons/path-finder/folder.png">About</li>
-                        <li><img src="/src/assets/icons/path-finder/folder.png">Others</li>
-                        <li><img src="/src/assets/icons/path-finder/folder.png">Admin</li>
+                        <li><img src="/src/assets/icons/path-finder/folder.png">About
+                            <ul class="link-list-sub addNav">
+
+                            </ul>
+                        </li>
+                        <li><img src="/src/assets/icons/path-finder/folder.png">Others
+                            <ul class="link-list-sub addNav">
+
+                            </ul>
+                        </li>
+                        <li><img src="/src/assets/icons/path-finder/folder.png">Admin
+                            <ul class="link-list-sub addNav">
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class=" col-md-8 "></div>
+        <div class=" col-md-8">
+            <div class="page-nav-editor">
+                <div class="header">
+                    Page Attribute Editor
+                </div>
+                <div class="body">
+                    <form action="">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label for="">Title</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="">Description</label>
+                                <textarea class="form-control md-text"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="">URL</label>
+                                <input disabled type="text" class="form-control" value="http://yoursite.com/home/test">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
