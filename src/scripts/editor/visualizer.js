@@ -8,6 +8,7 @@ $(function () {
     let editors = [];
     let contentEditor = false;
     let navEditor = false;
+    let insideEditor = false;
 
 
     //
@@ -16,6 +17,7 @@ $(function () {
     $(document).ready(function () {
         loadEditorConfigs();
         turnOnHighlight();
+        editorOnly();
     });
 
     $('body').on('mouseout', '.blue-highlight', function () {
@@ -32,6 +34,9 @@ $(function () {
     // Navigation trigger
     $('body').on('click', "[ref-trigger-section=\"navigation\"]", function () {
         turnOffHighlight();
+        insideEditor = true;
+        editorOnly();
+
         $('#contentBody, #footerBody').addClass('animated fadeOutUp');
 
         setTimeout(function () {
@@ -39,12 +44,16 @@ $(function () {
         }, 500);
         setTimeout(function () {
             loadNavEditor();
+            cleanClasses('#contentBody, #footerBody', 'animated fadeOutUp');
         }, 500);
     });
 
     // Content trigger
     $('body').on('click', "[ref-trigger-section=\"content\"]", function () {
         turnOffHighlight();
+        insideEditor = true;
+        editorOnly();
+
         $('#navBody, #footerBody').addClass('animated fadeOutUp');
 
         setTimeout(function () {
@@ -64,6 +73,8 @@ $(function () {
     // Reset 
     $('.back-arrow').on('click', function () {
         reinstateView();
+        insideEditor = false;
+        editorOnly();
     });
 
     // ────────────────────────────────────────────────────────────────────────────────
@@ -145,15 +156,20 @@ $(function () {
     }
 
     function loadNavEditor(type) {
+        $()
         if (!navEditor) {
             $.getJSON(`/src/app/editors/navigation/editor.json`, function (editor) {
-                $('#editorBody').html(editor.content);
-                $('#editorBody').addClass('animated fadeInLeft');
-                $('#editorBody').show();
+                $('#editorBody').html(editor.content)
+                    .addClass('animated fadeInLeft')
+                    .show();
 
                 loadScripts(editor.scripts);
             });
             navEditor = true;
+        } else {
+            $('#editorBody')
+                .addClass('animated fadeInLeft')
+                .show();
         }
     }
 
@@ -196,12 +212,25 @@ $(function () {
     function reinstateView() {
         // Turn off any event handlers that aren't going to be used
 
+
+        //Remove outlines
+        $('.addContent').css('border', 'none');
+
+        //Hide the navigation editor
+        $('#editorBody').addClass('animated fadeOutDown');
+
         // Determine which views to re-add
-        $('#navBody, #contentBody, #footerBody').each(function () {
-            if (!$(this).is(':visible')) {
-                $(this).addClass('animated fadeInDown').show();
-            }
-        });
+        setTimeout(function () {
+            $('#navBody, #contentBody, #footerBody').each(function () {
+                if (!$(this).is(':visible')) {
+                    $(this).addClass('animated fadeInDown').show();
+                }
+            });
+
+            cleanClasses('#editorBody', 'animated fadeOutDown');
+            $('#editorBody').hide();
+        }, 500);
+
         // Change the component bar
         let currentSidebar = $('.sidebar-left:visible').attr('id');
         $(`#${currentSidebar}`).addClass('animated slideOutLeft');
@@ -218,6 +247,16 @@ $(function () {
 
         //Re-enable highlighting
         turnOnHighlight();
+    }
+
+    function editorOnly() {
+        if (insideEditor) {
+            setTimeout(function () {
+                $('.editor-only').fadeIn();
+            }, 700);
+        } else {
+            $('.editor-only').fadeOut();
+        }
     }
 
     function cleanClasses(e, classes) {

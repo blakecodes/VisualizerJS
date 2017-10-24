@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 .comp-footer {
   background-color: #3a3f46;
   color: white; }
@@ -175,10 +176,22 @@
     cursor: pointer;
     color: #646464; }
 
+.sidebar-left.compressed {
+  display: none;
+  width: 65px;
+  text-align: center; }
+  .sidebar-left.compressed i {
+    margin-left: 22px; }
+  .sidebar-left.compressed .sidebar-header {
+    min-height: 46px; }
+
+.editor-only {
+  display: none; }
+
 html,
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #f0f0f0; }
+  font-family: 'Open Sans', sans-serif;
+  background: #edeef2; }
 
 #mainContent {
   display: flex;
@@ -193,19 +206,19 @@ body {
   width: 100%; }
 
 .notification-nav {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #d6d7db;
   width: 100%;
   background-color: #fefefe;
   color: white;
   padding: 11px 20px;
   position: fixed;
-  z-index: 9;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.3); }
+  z-index: 9; }
 
 .float-left {
   padding-top: 5px;
-  color: #383838;
-  font-size: 17px; }
+  color: #565656;
+  font-size: 17px;
+  font-weight: 600; }
 
 .notification-nav > .left,
 .notification-nav > .center,
@@ -217,8 +230,8 @@ body {
   width: 250px;
   position: fixed;
   background: #fefefe;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
-  margin-top: 62px; }
+  border-right: 1px solid #d6d7db;
+  margin-top: 57px; }
 
 .page-content, .viewPorts {
   margin-left: 250px;
@@ -239,7 +252,11 @@ body {
   border-top: 2px solid #ececec;
   padding: 10px;
   text-align: center;
-  transition: ease-in 0.2s; }
+  transition: ease-in 0.2s;
+  /* text-transform: uppercase; */
+  font-weight: 600;
+  font-size: 14px;
+  color: #636060; }
   .component-list > li:last-child {
     border-bottom: 2px solid #ececec; }
 
@@ -248,8 +265,14 @@ body {
   cursor: pointer; }
 
 .sidebar-header {
-  padding: 10px 0px 3px 0px;
-  background: #eaeaea; }
+  padding: 10px 0px 10px 0px;
+  background: #f8f8fa; }
+  .sidebar-header h5 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: #696969;
+    margin-top: 6px; }
 
 .section-header {
   border-bottom: 1px solid #ebebeb;
@@ -501,3 +524,8 @@ ul {
 
 .viewPorts {
   padding-top: 0; }
+
+#contentBody {
+  padding: 10px;
+  border-top: 1px solid #d6d7db;
+  background-color: white; }

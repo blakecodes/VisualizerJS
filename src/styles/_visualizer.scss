@@ -28,3 +28,21 @@
         ;
     }
 }
+
+.sidebar-left {
+    &.compressed {
+        display: none;
+        width: 65px;
+        text-align: center;
+        i {
+            margin-left: 22px;
+        }
+        .sidebar-header {
+            min-height: 46px;
+        }
+    }
+}
+
+.editor-only {
+    display: none;
+}

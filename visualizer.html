@@ -64,6 +64,7 @@
         <!-- Section Sidebar  -->
         <div class="sidebar-left" id="sidebar">
             <div class="sidebar-header text-center">
+                <i class="fa fa-arrow-left back-arrow editor-only" aria-hidden="true"></i>
                 <h5>Sections</h5>
             </div>
             <ul class="component-list">
@@ -91,6 +92,17 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="Javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+          Dropdown link
+        </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
@@ -172,7 +184,9 @@
     </div>
     <!-- <div id="player"></div> -->
     <!-- Editor Scripts  -->
-    <script src="/src/scripts/jquery.js">
+    <script src="/src/scripts/jquery.js"></script>
+    <script src="/node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js">
     </script>
     <script src='/node_modules/dragula/dist/dragula.min.js'>
     </script>
