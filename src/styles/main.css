@@ -151,6 +151,9 @@
   height: 100px;
   resize: none; }
 
+.nav-label:hover {
+  cursor: pointer; }
+
 .blue-highlight {
   background: rgba(49, 120, 224, 0.2);
   position: absolute;

@@ -92,3 +92,9 @@
     height: 100px;
     resize: none;
 }
+
+.nav-label {
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,3 +1,8 @@
+// TODO
+// Setup clicking on nav items to show config for that item
+// Setup content editable trigger to change names
+// Verify exportd ata is correct
+
 $(function () {
     var navIndex = 0;
 
@@ -44,12 +49,22 @@ $(function () {
             app.navigation = [];
         }
 
+        init() {
+            this.build();
+            this.design();
+        }
+
         //Set a unique identifier to each label
         assing() {
+            navIndex = 0;
             $('.nav-label').each(function () {
-                $(this).data('nav-index', navIndex);
-                $(this).attr('data-nav-index', navIndex);
-                navIndex++;
+                let current = $(this).data('nav-index');
+
+                if (!current) {
+                    $(this).data('nav-index', navIndex);
+                    $(this).attr('data-nav-index', navIndex);
+                    navIndex++;
+                }
             });
         }
 
@@ -175,7 +190,11 @@ $(function () {
                 app.navigation.push({
                     text: html,
                     index: index,
-                    nested: app.checkDouble(this)
+                    nested: app.checkDouble(this),
+                    pageTitle: 'test',
+                    pageName: 'test',
+                    pageDescription: 'test',
+                    pageUrl: 'test'
                 });
             });
         }
@@ -185,6 +204,26 @@ $(function () {
     // ────────────────────────────────────────────────────────────────────────────────
 
 
+    //
+    // ─── CONTENT EDITOR ─────────────────────────────────────────────────────────────
+    //
+
+
+    function formControl(name) {
+        return $('.form-control[name="' + name + '"]');
+    }
+
+    function loadModel(model) {
+        console.log('Page Model', model)
+        formControl('pageTitle').val(model.pageTitle);
+        formControl('pageName').val(model.pageName);
+        formControl('pageDescription').val(model.pageDescription);
+
+        formControl('pageUrl').val(model.pageUrl);
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
+
 
     //
     // ─── PAGE LEVEL FUNCTIONALITY ───────────────────────────────────────────────────
@@ -192,27 +231,30 @@ $(function () {
 
     // Run
     var app = new NavBuilder();
-    app.build();
-    app.design();
+    app.init();
 
     builder.on('drop', function (el, target, source, sibling) {
-        app.build();
-        app.design();
-
-        // Add content editables for new items
-        $('#link-list .nav-label').each(function () {
-            $(this).attr('contenteditable', true);
-        })
+        app.init();
     });
 
     $('body').on('click', '.delete-nav', function () {
-        app.build();
-        app.design();
+        app.init();
     });
 
     $('body').on('keyup', '.nav-label', function () {
-        app.build();
-        app.design();
+        app.init();
+    });
+
+    $('body').on('click', '.nav-label', function () {
+        let index = $(this).data('nav-index');
+
+        console.log(index);
+
+        var result = $.grep(app.navigation, function (e) {
+            return e.index == index;
+        });
+
+        loadModel(result[0]);
     });
 
     // ────────────────────────────────────────────────────────────────────────────────
