@@ -49,16 +49,17 @@
             </div>
         </div>
         <div class=" col-md-8">
-            <div class="page-nav-editor">
-                <div class="header">
-                    Page Attribute Editor
-                </div>
-                <div class="body">
-                    <form action="">
+            <form action="" id="attrForm">
+                <div class="page-nav-editor">
+                    <div class="header">
+                        Page Attribute Editor
+                    </div>
+                    <div class="body">
                         <div class="row form-group">
                             <div class="col-md-6">
                                 <label for="">Title</label>
                                 <input type="text" class="form-control" name="pageTitle">
+                                <input type="hidden" class="form-control" name="pageIndex">
                             </div>
                             <div class="col-md-6">
                                 <label for="">Name</label>
@@ -77,9 +78,14 @@
                                 <input disabled type="text" class="form-control" value="http://yoursite.com/home/test" name="pageUrl">
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                <div class="editor-bottom">
+                    <div class="row form-group text-center">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

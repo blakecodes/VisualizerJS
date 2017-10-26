@@ -42,16 +42,52 @@ $(function () {
     // ─── OBJECT BUILDER ─────────────────────────────────────────────────────────────
     //
 
-    //Navigation building component
-    class NavBuilder {
+    class LinkEditor {
         constructor() {
+            this.editor = $('#link-list');
+        }
+
+        buildLinks(links) {
+            links.map(link => {
+                let li = document.createElement('li');
+                let img = document.createElement('img');
+                let span = document.createElement('span');
+
+
+                span.innerHTML = link.text;
+            });
+        }
+
+        buildLinkEditor() {
+
+        }
+    }
+
+    //Navigation building component
+    class NavBuilder extends LinkEditor {
+        constructor() {
+            super();
+
             var app = this;
             app.navigation = [];
+
+            this.buildLinkEditor();
+            this.get();
         }
 
         init() {
             this.build();
             this.design();
+        }
+
+        // Get the websites navigation content on initial page load
+        get() {
+            $.ajax({
+                url: '/api/navigation/main.json',
+                type: 'GET'
+            }).done(res => {
+                app.navigation = res;
+            });
         }
 
         //Set a unique identifier to each label
@@ -213,13 +249,28 @@ $(function () {
         return $('.form-control[name="' + name + '"]');
     }
 
+    // Load model into the form
     function loadModel(model) {
-        console.log('Page Model', model)
+        console.log('Page Model', model);
         formControl('pageTitle').val(model.pageTitle);
         formControl('pageName').val(model.pageName);
         formControl('pageDescription').val(model.pageDescription);
+        formControl('pageIndex').val(model.index);
 
         formControl('pageUrl').val(model.pageUrl);
+    }
+
+    function saveModel() {
+        let index = formControl('pageIndex').val();
+
+        var update = $.grep(app.navigation, function (model) {
+            if (model.index == index) {
+                console.log(model);
+                model.pageTitle = formControl('pageTitle').val();
+                model.pageName = formControl('pageName').val();
+                model.pageDescription = formControl('pageDescription').val();
+            }
+        });
     }
 
     // ────────────────────────────────────────────────────────────────────────────────
@@ -241,21 +292,34 @@ $(function () {
         app.init();
     });
 
-    $('body').on('keyup', '.nav-label', function () {
-        app.init();
+    // Navigation labels
+    $('body').on({
+        'keyup': function () {
+            app.init();
+        },
+        'click': function () {
+            let index = $(this).data('nav-index');
+
+            var result = $.grep(app.navigation, function (e) {
+                return e.index == index;
+            });
+
+            loadModel(result[0]);
+        }
+    }, '.nav-label');
+
+
+    //Save attributes
+    $('#attrForm').on({
+        'submit': function (e) {
+            e.preventDefault();
+
+            saveModel();
+        }
     });
 
-    $('body').on('click', '.nav-label', function () {
-        let index = $(this).data('nav-index');
 
-        console.log(index);
 
-        var result = $.grep(app.navigation, function (e) {
-            return e.index == index;
-        });
-
-        loadModel(result[0]);
-    });
 
     // ────────────────────────────────────────────────────────────────────────────────
 
