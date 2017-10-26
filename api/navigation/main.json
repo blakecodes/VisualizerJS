@@ -1,32 +1,36 @@
 [{
     "text": "Home",
+    "type": "folder",
     "index": 2,
     "nested": false,
-    "pageTitle": "test",
+    "pageTitle": "Home",
     "pageName": "test",
     "pageDescription": "test",
     "pageUrl": "test"
 }, {
     "text": "About",
+    "type": "folder",
     "index": 3,
     "nested": false,
-    "pageTitle": "test",
+    "pageTitle": "About",
     "pageName": "test",
     "pageDescription": "test",
     "pageUrl": "test"
 }, {
     "text": "Others",
+    "type": "folder",
     "index": 4,
     "nested": false,
-    "pageTitle": "test",
+    "pageTitle": "Contact",
     "pageName": "test",
     "pageDescription": "test",
     "pageUrl": "test"
 }, {
     "text": "Admin",
+    "type": "folder",
     "index": 5,
     "nested": false,
-    "pageTitle": "test",
+    "pageTitle": "More",
     "pageName": "test",
     "pageDescription": "test",
     "pageUrl": "test"
