@@ -1,8 +1,8 @@
 [{
     "text": "Home",
     "type": "folder",
-    "index": 2,
-    "nested": false,
+    "index": 0,
+    "nested": [],
     "pageTitle": "Home",
     "pageName": "test",
     "pageDescription": "test",
@@ -10,8 +10,8 @@
 }, {
     "text": "About",
     "type": "folder",
-    "index": 3,
-    "nested": false,
+    "index": 1,
+    "nested": [],
     "pageTitle": "About",
     "pageName": "test",
     "pageDescription": "test",
@@ -19,8 +19,8 @@
 }, {
     "text": "Others",
     "type": "folder",
-    "index": 4,
-    "nested": false,
+    "index": 2,
+    "nested": [],
     "pageTitle": "Contact",
     "pageName": "test",
     "pageDescription": "test",
@@ -28,8 +28,8 @@
 }, {
     "text": "Admin",
     "type": "folder",
-    "index": 5,
-    "nested": false,
+    "index": 3,
+    "nested": [],
     "pageTitle": "More",
     "pageName": "test",
     "pageDescription": "test",

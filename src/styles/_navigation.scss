@@ -97,3 +97,23 @@
         cursor: pointer;
     }
 }
+
+.tabs {
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    color: #7b7b7b;
+    .tab {
+        display: inline-block;
+        padding: 4px 12px;
+        max-width: 170px;
+        text-align: center;
+        transition: ease-in 0.2s;
+        &.selected {
+            background: #ececec;
+        }
+        &:hover {
+            cursor: pointer;
+            background: #f4f4f4;
+        }
+    }
+}

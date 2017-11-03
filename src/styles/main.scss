@@ -413,3 +413,18 @@ ul {
     border-top: 1px solid #d6d7db;
     background-color: white;
 }
+
+.form-check-label {
+    margin-left: 10px;
+}
+
+.form-check {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+    span {
+        padding: 7px;
+    }
+}

@@ -110,7 +110,6 @@
         margin-bottom: 10px; }
         .link-visualizer .link-body .link-list li img, .link-visualizer .link-body .link-list-sub li img {
           float: left;
-          display: inline-block;
           height: 20px;
           margin-top: 1px;
           margin-right: 10px; }
@@ -153,6 +152,22 @@
 
 .nav-label:hover {
   cursor: pointer; }
+
+.tabs {
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  color: #7b7b7b; }
+  .tabs .tab {
+    display: inline-block;
+    padding: 4px 12px;
+    max-width: 170px;
+    text-align: center;
+    transition: ease-in 0.2s; }
+    .tabs .tab.selected {
+      background: #ececec; }
+    .tabs .tab:hover {
+      cursor: pointer;
+      background: #f4f4f4; }
 
 .blue-highlight {
   background: rgba(49, 120, 224, 0.2);
@@ -532,3 +547,14 @@ ul {
   padding: 10px;
   border-top: 1px solid #d6d7db;
   background-color: white; }
+
+.form-check-label {
+  margin-left: 10px; }
+
+.form-check {
+  display: inline-block; }
+
+.flex {
+  display: flex; }
+  .flex span {
+    padding: 7px; }

@@ -3,6 +3,8 @@
 // Setup content editable trigger to change names
 // Verify exportd ata is correct
 
+
+
 $(function () {
     var navIndex = 0;
 
@@ -54,6 +56,7 @@ $(function () {
             let img = document.createElement('img');
             let span = document.createElement('span');
             let ul = document.createElement('ul'); // optional
+            let icon = document.createElement('i');
 
 
             img.src = '/src/assets/icons/path-finder/' + item.type + '.png';
@@ -62,8 +65,11 @@ $(function () {
             span.className = 'nav-label';
             span.setAttribute('data-nav-index', item.index);
 
+            icon.className = 'fa fa-times-circle delete-nav';
+
             li.append(img);
             li.append(span);
+            li.append(icon);
 
             // Add additional section to add files if it's a folder
             if (item.type === 'folder') {
@@ -82,8 +88,19 @@ $(function () {
 
             setTimeout(function () {
                 app.navigation.map(item => {
-                    app.editor.append(app.buildItem(item));
+                    let e = app.buildItem(item);
+
+                    // Add first level items to the object
+                    if (item.nested.length > 0) {
+                        let one = item.nested;
+
+                        one.map(item => {
+                            $(e).find('ul').append(app.buildItem(item));
+                        });
+                    }
+                    app.editor.append(e);
                 });
+
 
                 if (typeof callback === 'function') {
                     callback();
@@ -91,6 +108,33 @@ $(function () {
             }, 10);
         }
     }
+
+    //
+    // ─── DROP FUNCTIONALITY ─────────────────────────────────────────────────────────
+    //
+    class Page {
+        constructor(index) {
+            this.index = index; // generate dynamic index for item
+            this.nested = []; //default
+            this.pageDescription = 'Page description can go here';
+            this.pageName = 'Page';
+            this.pageTitle = 'Page';
+            this.type = 'page';
+        }
+    }
+
+    class Folder {
+        constructor(index) {
+            this.index = index; // generate dynamic index for item
+            this.nested = []; //default
+            this.pageDescription = 'Page description can go here';
+            this.pageName = 'Folder';
+            this.pageTitle = 'Folder';
+            this.type = 'folder';
+        }
+    }
+
+    // ────────────────────────────────────────────────────────────────────────────────
 
     //Navigation building component
     class NavBuilder extends LinkEditor {
@@ -106,6 +150,10 @@ $(function () {
         init() {
             this.design();
         }
+
+        //
+        // ─── CONTENT MANAGEMENT ─────────────────────────────────────────────────────────
+        //
 
         //Set a unique identifier to each label
         assing() {
@@ -168,7 +216,7 @@ $(function () {
                     var el = document.createElement('a');
                     el.className = 'dropdown-item';
                     el.href = 'href';
-                    el.innerHTML = item.text;
+                    el.innerHTML = item.pageTitle;
 
                     main.append(el);
                 });
@@ -216,7 +264,6 @@ $(function () {
 
         // Build the html content layout for the navigation
         design() {
-            console.log(app.navigation)
             var navBar = $('#link-holder');
             navBar.html(' ');
             app.navigation.map(nav => {
@@ -228,38 +275,13 @@ $(function () {
                 }
             });
         }
-    }
 
-    // ────────────────────────────────────────────────────────────────────────────────
+        // ────────────────────────────────────────────────────────────────────────────────
 
 
-    //
-    // ─── DROP FUNCTIONALITY ─────────────────────────────────────────────────────────
-    //
-    class Page {
-        constructor(index) {
-            this.index = index; // generate dynamic index for item
-            this.nested = false; //default
-            this.pageDescription = 'Page description can go here';
-            this.pageName = 'New Page';
-            this.pageTitle = 'New Page';
-            this.type = 'page';
-        }
-    }
-
-    class Folder {
-        constructor(index) {
-            this.index = index; // generate dynamic index for item
-            this.nested = false; //default
-            this.pageDescription = 'Page description can go here';
-            this.pageName = 'New Page';
-            this.pageTitle = 'New Page';
-            this.type = 'folder';
-        }
-    }
-
-    class DropDetection {
-        constructor() {}
+        //
+        // ─── DROP MANAGEMENT ─────────────────────────────────────────────
+        //
 
         // Determine type of element that is being added
         typeDetection(source) {
@@ -267,33 +289,45 @@ $(function () {
         }
 
         generateIndex() {
-            return 0;
+            let total = 0;
+
+            $('[data-nav-index]').each(function () {
+                total++;
+            });
+
+            return total;
         }
 
         // Check to find what index to nest into
         // This checks the closest parent element with an nav-index assigned.
         checkNested(target) {
-            return $(target).prev('[data-nav-index]').data('nav-index');
+            return $(target).prev().prev('[data-nav-index]').data('nav-index');
         }
 
         // Creates a new object to add to the global scope
         add(target, source) {
             let type = this.typeDetection(source);
+            let obj = type === 'folder' ? new Folder(this.generateIndex()) : new Page(this.generateIndex());
+            let location = this.checkNested(target);
 
-            var obj = type === 'folder' ? new Folder(this.generateIndex()) : new Page(this.generateIndex());
+            var update = $.grep(app.navigation, function (model) {
+                if (model.index === location) {
+                    model.nested.push(obj);
+                }
+            });
 
-            var location = this.checkNested(target);
-
-            console.log(location);
+            this.design();
         }
+
+        // Removes an object from the global scope
+        // Cleans the UI as well.
+        remove() {
+
+        }
+        // ─────────────────────────────────────────────────────────────────
     }
 
-
     // ────────────────────────────────────────────────────────────────────────────────
-
-
-
-
 
     //
     // ─── CONTENT EDITOR ─────────────────────────────────────────────────────────────
@@ -315,15 +349,110 @@ $(function () {
     }
 
     function saveModel() {
-        let index = formControl('pageIndex').val();
+        let model = new Page();
 
-        var update = $.grep(app.navigation, function (model) {
-            if (model.index == index) {
-                model.pageTitle = formControl('pageTitle').val();
-                model.pageName = formControl('pageName').val();
-                model.pageDescription = formControl('pageDescription').val();
+        model.index = formControl('pageIndex').val();
+        model.pageTitle = formControl('pageTitle').val();
+        model.pageName = formControl('pageName').val();
+        model.pageDescription = formControl('pageDescription').val();
+
+        return model;
+    }
+
+    // Find the object required inside of the object
+    function getObject(theObject, index) {
+        var result = null;
+        if (theObject instanceof Array) {
+            for (var i = 0; i < theObject.length; i++) {
+                result = getObject(theObject[i], index);
+                if (result) {
+                    break;
+                }
             }
-        });
+        } else {
+            for (var prop in theObject) {
+                if (prop == 'index') {
+                    if (theObject[prop] == index) {
+                        return theObject;
+                    }
+                }
+                if (theObject[prop] instanceof Object || theObject[prop] instanceof Array) {
+                    result = getObject(theObject[prop], index);
+                    if (result) {
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    // Set the newly edited object
+    function setObject(theObject, index, model) {
+        var result = null;
+        if (theObject instanceof Array) {
+            for (var i = 0; i < theObject.length; i++) {
+                result = setObject(theObject[i], index, model);
+                if (result) {
+                    break;
+                }
+            }
+        } else {
+            for (var prop in theObject) {
+                if (prop == 'index') {
+                    if (theObject[prop] == index) {
+                        theObject.pageTitle = model.pageTitle;
+                        theObject.pageName = model.pageName;
+                        theObject.pageDescription = model.pageDescription;
+
+                        console.log('Object Here', theObject);
+
+                        return theObject;
+                    }
+                }
+                if (theObject[prop] instanceof Object || theObject[prop] instanceof Array) {
+                    result = setObject(theObject[prop], index, model);
+                    if (result) {
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    //Remove the object
+    function removeObject(theObject, index, model) {
+        var result = null;
+        if (theObject instanceof Array) {
+            for (var i = 0; i < theObject.length; i++) {
+                result = setObject(theObject[i], index, model);
+                if (result) {
+                    break;
+                }
+            }
+        } else {
+            for (var prop in theObject) {
+                if (prop == 'index') {
+                    if (theObject[prop] == index) {
+                        theObject.pageTitle = model.pageTitle;
+                        theObject.pageName = model.pageName;
+                        theObject.pageDescription = model.pageDescription;
+
+                        console.log('Object Here', theObject);
+
+                        return theObject;
+                    }
+                }
+                if (theObject[prop] instanceof Object || theObject[prop] instanceof Array) {
+                    result = setObject(theObject[prop], index, model);
+                    if (result) {
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     // ────────────────────────────────────────────────────────────────────────────────
@@ -335,14 +464,13 @@ $(function () {
 
     // Run
     var app = new NavBuilder();
-    var dropDetection = new DropDetection();
 
 
 
     builder.on('drop', function (el, target, source, sibling) {
         app.design();
-
-        dropDetection.add(target, el);
+        app.add(target, el);
+        app.buildLinkEditor('#link-list', app.design);
     });
 
     $('body').on('click', '.delete-nav', function () {
@@ -355,14 +483,10 @@ $(function () {
             app.init();
         },
         'click': function () {
-            let index = $(this).data('nav-index');
+            let index = $(this).attr('data-nav-index');
 
-            var result = $.grep(app.navigation, function (e) {
-                return e.index == index;
-            });
-
-            console.log(result[0]);
-            loadModel(result[0]);
+            let result = getObject(app.navigation, index);
+            loadModel(result);
         }
     }, '.nav-label');
 
@@ -372,7 +496,9 @@ $(function () {
         'submit': function (e) {
             e.preventDefault();
 
-            saveModel();
+            let index = formControl('pageIndex').val();
+
+            setObject(app.navigation, index, saveModel());
             app.buildLinkEditor('#link-list', app.design);
         }
     });

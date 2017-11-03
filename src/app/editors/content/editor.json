@@ -29,10 +29,6 @@
         {
             "id": "hero",
             "name": "Hero"
-        },
-        {
-            "id": "footer",
-            "name": "Footer"
         }
     ]
 }

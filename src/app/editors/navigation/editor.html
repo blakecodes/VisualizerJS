@@ -13,7 +13,7 @@
 
                                 </ul>
                             </li>
-                            <li data-type="page"><img class="drag-icon" src="/src/assets/icons/path-finder/document.png">
+                            <li data-type="page"><img class="drag-icon" src="/src/assets/icons/path-finder/page.png">
                                 <span class="nav-label">Page</span>
                                 <i class="fa fa-times-circle delete-nav" aria-hidden="true"></i>
                             </li>
@@ -33,7 +33,12 @@
                     <div class="header">
                         Page Attribute Editor
                     </div>
-                    <div class="body">
+                    <div class="tabs">
+                        <div class="tab selected" data-view-tab="information">Information</div>
+                        <div class="tab" data-view-tab="security">Security</div>
+                    </div>
+                    <div class="body tab-content" data-show-tab="security" style="display: none;">security</div>
+                    <div class="body tab-content" data-show-tab="information">
                         <div class="row form-group">
                             <div class="col-md-6">
                                 <label for="">Title</label>
@@ -53,8 +58,58 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="">URL</label>
-                                <input disabled type="text" class="form-control" value="http://yoursite.com/home/test" name="pageUrl">
+                                <label for="">Page Author</label>
+                                <input type="text" class="form-control" name="pageAuthor">
+                            </div>
+                        </div>
+                        <!-- Check boxes  -->
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div>
+                                    <label>Hidden page?</label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="hiddenPage" value="hidden" checked>
+                                    Yes
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="hiddenPage" value="unhidden">
+                                    No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div>
+                                    <label>Hidden from search engines?</label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="hideSearch" value="hidden" checked>
+                                    Yes
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="hideSearch" value="unhidden">
+                                    No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End check boxes  -->
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label for="">Page Slug</label>
+                                <div class="flex">
+                                    <span class="site-url">http://yoursite.com/</span>
+                                    <input type="text" class="form-control" name="pageUrl">
+                                    <span>.pml</span>
+                                </div>
                             </div>
                         </div>
                     </div>
