@@ -428,3 +428,15 @@ ul {
         padding: 7px;
     }
 }
+
+.add-meta {
+    i {
+        margin: auto;
+        opacity: 0.3;
+        transition: ease-in 0.2s;
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+}

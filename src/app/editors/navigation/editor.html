@@ -36,7 +36,9 @@
                     <div class="tabs">
                         <div class="tab selected" data-view-tab="information">Information</div>
                         <div class="tab" data-view-tab="security">Security</div>
+                        <div class="tab" data-view-tab="meta">Meta Tags</div>
                     </div>
+                    <!-- Information Tab  -->
                     <div class="body tab-content" data-show-tab="information">
                         <div class="row form-group">
                             <div class="col-md-12">
@@ -103,11 +105,12 @@
                                 <div class="flex">
                                     <span class="site-url">http://yoursite.com/</span>
                                     <input type="text" class="form-control" name="pageUrl">
-                                    <span>.pml</span>{}
+                                    <span>.pml</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Security Tab  -->
                     <div class="body tab-content" data-show-tab="security" style="display: none;">
                         <div class="row form-group">
                             <div class="col-md-12">
@@ -128,6 +131,30 @@
                                 <div class="form-link-area">
                                     <a href="#">Click here to add all users for updating access</a>
                                     <a href="#">Click here to add all groups for updating access</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Meta Details Tab  -->
+                    <div class="body tab-content" data-show-tab="meta" style="display: none;">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label>Add additional meta tags to your page</label>
+                                <!-- Add meta section  -->
+                                <div class="added-meta">
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <label for="">Meta Key</label>
+                                            <input type="text" class="form-control" name="pageAuthor">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Meta Value</label>
+                                            <input type="text" class="form-control" name="pageAuthor">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group text-center add-meta">
+                                    <i class="fa fa-plus-circle new-meta" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
