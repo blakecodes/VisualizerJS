@@ -169,6 +169,22 @@
       cursor: pointer;
       background: #f4f4f4; }
 
+.form-link-area a {
+  display: block;
+  color: #737373; }
+
+.lock-ico {
+  height: 20px;
+  margin-top: -5px; }
+
+.tooltip-ico {
+  height: 13px;
+  opacity: 0.2;
+  margin-top: -3px;
+  transition: ease-in 0.2s; }
+  .tooltip-ico:hover {
+    opacity: 0.4; }
+
 .blue-highlight {
   background: rgba(49, 120, 224, 0.2);
   position: absolute;

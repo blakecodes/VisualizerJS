@@ -37,17 +37,12 @@
                         <div class="tab selected" data-view-tab="information">Information</div>
                         <div class="tab" data-view-tab="security">Security</div>
                     </div>
-                    <div class="body tab-content" data-show-tab="security" style="display: none;">security</div>
                     <div class="body tab-content" data-show-tab="information">
                         <div class="row form-group">
-                            <div class="col-md-6">
-                                <label for="">Title</label>
+                            <div class="col-md-12">
+                                <label for="">Page Title</label>
                                 <input type="text" class="form-control" name="pageTitle">
                                 <input type="hidden" class="form-control" name="pageIndex">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="">Name</label>
-                                <input type="text" class="form-control" name="pageName">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -66,7 +61,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <div>
-                                    <label>Hidden page?</label>
+                                    <label>Hidden page? <img src="/src/assets/icons/tooltip.png" class="tooltip-ico sp-tooltip" title="Hide this page from the public on your site."></label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -85,7 +80,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <div>
-                                    <label>Hidden from search engines?</label>
+                                    <label>Hidden from search engines? <img src="/src/assets/icons/tooltip.png" class="tooltip-ico sp-tooltip" title="Hide this page from search engine queries."></label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -104,11 +99,35 @@
                         <!-- End check boxes  -->
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="">Page Slug</label>
+                                <label for="">Page Slug <img src="/src/assets/icons/tooltip.png" class="tooltip-ico sp-tooltip" title="Set a custom name that will appear in the url box for this page."></label>
                                 <div class="flex">
                                     <span class="site-url">http://yoursite.com/</span>
                                     <input type="text" class="form-control" name="pageUrl">
-                                    <span>.pml</span>
+                                    <span>.pml</span>{}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body tab-content" data-show-tab="security" style="display: none;">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <img src="/src/assets/icons/locked.png" class="lock-ico">
+                                <label for="">Members with access</label>
+                                <textarea class="form-control md-text" name="pageDescription"></textarea>
+                                <div class="form-link-area">
+                                    <a href="#">Click here to add all users for viewing access</a>
+                                    <a href="#">Click here to add all groups for viewing access</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <img src="/src/assets/icons/locked.png" class="lock-ico">
+                                <label for="">Contributors with access</label>
+                                <textarea class="form-control md-text" name="pageDescription"></textarea>
+                                <div class="form-link-area">
+                                    <a href="#">Click here to add all users for updating access</a>
+                                    <a href="#">Click here to add all groups for updating access</a>
                                 </div>
                             </div>
                         </div>

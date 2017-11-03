@@ -117,3 +117,25 @@
         }
     }
 }
+
+.form-link-area {
+    a {
+        display: block;
+        color: #737373;
+    }
+}
+
+.lock-ico {
+    height: 20px;
+    margin-top: -5px;
+}
+
+.tooltip-ico {
+    height: 13px;
+    opacity: 0.2;
+    margin-top: -3px;
+    transition: ease-in 0.2s;
+    &:hover {
+        opacity: 0.4;
+    }
+}

@@ -12,7 +12,8 @@
     "bootstrap": "^4.0.0-alpha.6",
     "dragula": "^3.7.2",
     "tether": "^1.4.0",
-    "tinymce": "^4.7.0"
+    "tinymce": "^4.7.0",
+    "tooltipster": "^4.2.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
