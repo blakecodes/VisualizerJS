@@ -46,3 +46,35 @@
 .editor-only {
     display: none;
 }
+
+.compressed-sidebar {
+    display: inline-block;
+    width: 70px;
+    border-right: 1px solid #ececec;
+    i {
+        color: #d8d8df;
+        transition: ease-in 0.2s;
+        &.selected {
+            color: #676d7b;
+        }
+        &:hover {
+            color: #676d7b !important;
+            cursor: pointer;
+        }
+    }
+    i:before {
+        font-size: 32px;
+        margin-left: 12px;
+    }
+    .glyph {
+        margin: 10px 0;
+    }
+}
+
+.double-sided {
+    display: flex;
+}
+
+.right-side {
+    width: 100%;
+}

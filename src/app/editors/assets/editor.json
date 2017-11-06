@@ -1,0 +1,9 @@
+{
+    "name": "asset-manager",
+    "version": 1.0,
+    "content": "",
+    "scripts": [
+        "/src/scripts/editor/navigation.js",
+        "/src/app/editors/navigation/editor.js"
+    ]
+}

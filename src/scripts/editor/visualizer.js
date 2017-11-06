@@ -70,6 +70,27 @@ $(function () {
         cleanClasses('#component-sidebar', 'animated slideInLeft');
     });
 
+    // Asset manager
+    $('#asset-view').on('click', function () {
+
+        $('#navBody, #footerBody, #contentBody').addClass('animated fadeOutUp');
+
+        setTimeout(function () {
+            $('#navBody, #footerBody, #contentBody').hide();
+        }, 500);
+
+        setTimeout(function () {
+            $('#asset-manager').addClass('animated slideInLeft').show();
+        }, 500);
+
+        setTimeout(function () {
+            cleanClasses('#navBody, #footerBody, #contentBody', 'animated fadeOutUp');
+            cleanClasses('#asset-manager', 'animated slideInLeft');
+        }, 500);
+
+
+    });
+
     // Reset 
     $('.back-arrow').on('click', function () {
         reinstateView();
@@ -77,6 +98,7 @@ $(function () {
         editorOnly();
     });
 
+    // Add tooltips
     $('.sp-tooltip').tooltipster();
 
     // ────────────────────────────────────────────────────────────────────────────────

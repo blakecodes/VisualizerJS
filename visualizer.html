@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/src/libraries/animate.css">
     <link rel="stylesheet" type="text/css" href="/node_modules/tooltipster/dist/css/tooltipster.bundle.min.css" />
+
+    <!-- Special fonts  -->
+    <link rel="stylesheet" href="/src/assets/fonts/ui/ui.css">
 </head>
 
 <body>
@@ -63,16 +66,29 @@
             </ul>
         </div>
         <!-- Section Sidebar  -->
-        <div class="sidebar-left" id="sidebar">
-            <div class="sidebar-header text-center">
-                <i class="fa fa-arrow-left back-arrow editor-only" aria-hidden="true"></i>
-                <h5>Sections</h5>
+        <div class="sidebar-left double-sided" id="sidebar">
+            <div class="compressed-sidebar">
+                <div class="glyph">
+                    <i class="glyph-icon ui-047-file-1 selected"></i>
+                </div>
+                <div class="glyph">
+                    <i class="glyph-icon ui-019-image"></i>
+                </div>
+                <div class="glyph">
+                    <i class="glyph-icon ui-006-settings"></i>
+                </div>
             </div>
-            <ul class="component-list">
-                <li ref-highlight="navigation">Navigation</li>
-                <li ref-highlight="content">Content</li>
-                <li ref-highlight="footer">Footer</li>
-            </ul>
+            <div class="right-side">
+                <div class="sidebar-header text-center">
+                    <i class="fa fa-arrow-left back-arrow editor-only" aria-hidden="true"></i>
+                    <h5>Sections</h5>
+                </div>
+                <ul class="component-list">
+                    <li ref-highlight="navigation">Navigation</li>
+                    <li ref-highlight="content">Content</li>
+                    <li ref-highlight="footer">Footer</li>
+                </ul>
+            </div>
         </div>
         <!-- Page Content -->
         <div class="page-content">
@@ -160,6 +176,10 @@
 
                 <div id="editorBody">
 
+                </div>
+
+                <div id="asset-manager">
+                    Asset manager
                 </div>
             </div>
         </div>

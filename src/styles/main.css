@@ -222,6 +222,33 @@
 .editor-only {
   display: none; }
 
+.compressed-sidebar {
+  display: inline-block;
+  width: 70px;
+  border-right: 1px solid #ececec; }
+  .compressed-sidebar i {
+    color: #d8d8df;
+    transition: ease-in 0.2s; }
+    .compressed-sidebar i.selected {
+      color: #676d7b; }
+    .compressed-sidebar i:hover {
+      color: #676d7b !important;
+      cursor: pointer; }
+  .compressed-sidebar i:before {
+    font-size: 32px;
+    margin-left: 12px; }
+  .compressed-sidebar .glyph {
+    margin: 10px 0; }
+
+.double-sided {
+  display: flex; }
+
+.right-side {
+  width: 100%; }
+
+#asset-manager {
+  display: none; }
+
 html,
 body {
   font-family: 'Open Sans', sans-serif;
@@ -261,7 +288,7 @@ body {
 
 .sidebar-left {
   height: 100vh;
-  width: 250px;
+  width: 300px;
   position: fixed;
   background: #fefefe;
   border-right: 1px solid #d6d7db;
@@ -269,8 +296,8 @@ body {
 
 .page-content, .viewPorts {
   margin-left: 250px;
-  padding: 60px 20px;
-  padding-left: 21px;
+  padding: 65px 35px;
+  padding-left: 65px;
   padding-right: 15px;
   overflow-x: hidden; }
 
