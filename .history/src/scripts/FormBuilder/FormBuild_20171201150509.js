@@ -26,6 +26,8 @@ class FormBuild {
         this.apiService = new APIService();
         this.Assert = new Assert();
         this.config = config;
+
+        console.log(1)
     }
 
     /**

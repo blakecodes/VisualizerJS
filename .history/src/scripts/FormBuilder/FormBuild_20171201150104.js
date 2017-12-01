@@ -25,6 +25,7 @@ class FormBuild {
         // Service management
         this.apiService = new APIService();
         this.Assert = new Assert();
+
         this.config = config;
     }
 

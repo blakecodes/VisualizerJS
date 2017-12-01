@@ -60,19 +60,19 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__ = __webpack_require__(3);
+
 
 
 /**
@@ -96,9 +96,10 @@ class FormBuild {
      *      
      */
     constructor(config) {
+        // Service management
+        this.apiService = new __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__["a" /* default */]();
+        this.Assert = new __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__["a" /* default */]();
         this.config = config;
-        var service = new __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__["a" /* default */]();
-        service.test();
     }
 
     /**
@@ -142,7 +143,7 @@ class FormBuild {
 var form = new FormBuild();
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -195,6 +196,88 @@ class APIService {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (APIService);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Configuration_Configuration__ = __webpack_require__(4);
+
+
+/**
+ * @name Assertion V1.0
+ * @author Blake Connally with Sequoyah Technologies
+ * @version 1.0.0
+ * @summary This class is developed to provide Unit Testing on a basic level
+ * with Javascript
+ * 
+ * This frameworks primary functions include form building and data binding. 
+ */
+class Assert {
+
+    constructor() {
+        // Services
+        this.config = new __WEBPACK_IMPORTED_MODULE_0__Configuration_Configuration__["a" /* default */]();
+
+        console.log(this.config.environment);
+    }
+
+    /**
+     * Check if the value is a string
+     * @param {string} arg 
+     */
+    isString(arg) {
+        return typeof arg === 'string' ? true : false;
+    }
+
+    /**
+     * Check if the value is a number
+     * @param {number} arg 
+     */
+    isNumber(arg) {
+        return typeof arg === 'number' ? true : false;
+    }
+
+    /**
+     * Check if the value is a boolean
+     * @param {boolean} arg 
+     */
+    isBoolean(arg) {
+        return typeof arg === 'boolean' ? true : false;
+    }
+
+    /**
+     * Check if the value is true
+     * @param {boolean} arg 
+     */
+    isTrue(arg) {
+        return arg === true ? true : false;
+    }
+
+    /**
+     * Check if the value is false
+     * @param {boolean} arg 
+     */
+    isFalse(arg) {
+        return arg === false ? true : false;
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Assert);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Configuration {
+    constructor() {
+        this.environment = 'prod'
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Configuration);
 
 /***/ })
 /******/ ]);
