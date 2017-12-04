@@ -43,20 +43,22 @@ class FormBuilder {
         let options = this.fetch('hours');
     }
 
-    /**
-     * Load the alpaca form with the component structure
-     * @param {json} res response from the component fetch
-     */
     load(res) {
         let args = res.alpacaArgs;
-        $("#regular-editor").alpaca(args);
+        $("#form1").alpaca(args);
+    }
+
+    /**
+     * Clean the entire editing form
+     */
+    completeClean() {
+
     }
 
     /**
      * 
      * @param {string} componentType 
      * @param {function} callback 
-     * @returns {JSON} response for the components alpaca schematic
      */
     fetch(componentType, callback = function () {}) {
         let $this = this;

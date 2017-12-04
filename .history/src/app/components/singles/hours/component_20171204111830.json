@@ -46,27 +46,10 @@
                     "type": "string",
                     "title": "Name"
                 },
-                "color": {
-                    "type": "string",
-                    "title": "Color"
-                },
                 "ranking": {
                     "type": "string",
                     "title": "Rankings",
                     "enum": ["excellent", "not too shabby", "alpaca built my hotrod"]
-                }
-            }
-        },
-        "options": {
-            "fields": {
-                "name": {
-                    "fieldClass": "col-md-6"
-                },
-                "color": {
-                    "fieldClass": "col-md-6"
-                },
-                "email": {
-                    "fieldClass": "col-md-6"
                 }
             }
         },

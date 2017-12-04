@@ -46,10 +46,6 @@
                     "type": "string",
                     "title": "Name"
                 },
-                "color": {
-                    "type": "string",
-                    "title": "Color"
-                },
                 "ranking": {
                     "type": "string",
                     "title": "Rankings",
@@ -60,15 +56,26 @@
         "options": {
             "fields": {
                 "name": {
-                    "fieldClass": "col-md-6"
-                },
-                "color": {
-                    "fieldClass": "col-md-6"
+                    "fieldClass": "col-md-6",
+                    "type": "text",
+                    "label": "Name:"
                 },
                 "email": {
-                    "fieldClass": "col-md-6"
-                }
-            }
+                    "fieldClass": "col-md-6",
+                    "type": "email",
+                    "label": "Email Address:"
+                },
+                "organization": {
+                    "fieldClass": "col-md-12",
+                    "type": "text",
+                    "label": "Organization:"
+                },
+                "workPhone": {
+                    "fieldClass": "col-md-12",
+                    "type": "phone",
+                    "label": "Work phone:"
+                },
+            },
         },
         "view": "bootstrap-edit"
     }

@@ -43,25 +43,46 @@ class FormBuilder {
         let options = this.fetch('hours');
     }
 
-    /**
-     * Load the alpaca form with the component structure
-     * @param {json} res response from the component fetch
-     */
     load(res) {
-        let args = res.alpacaArgs;
-        $("#regular-editor").alpaca(args);
+        let args = res.schema;
+
+        console.log('Alpaca Config:' + args);
+
+        $("#form1").alpaca({
+            "schema": {
+                "title": "What do you think of Alpaca?",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "ranking": {
+                        "type": "string",
+                        "title": "Rankings",
+                        "enum": ['excellent', 'not too shabby', 'alpaca built my hotrod']
+                    }
+                }
+            },
+            "view": "bootstrap-edit"
+        });
+    }
+
+    /**
+     * Clean the entire editing form
+     */
+    completeClean() {
+
     }
 
     /**
      * 
      * @param {string} componentType 
      * @param {function} callback 
-     * @returns {JSON} response for the components alpaca schematic
      */
     fetch(componentType, callback = function () {}) {
-        let $this = this;
         this.apiService.get('/src/app/components/singles/' + componentType + '/component.json', function (res) {
-            $this.load(res);
+            this.load(res);
         });
     }
 

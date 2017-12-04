@@ -37,18 +37,13 @@
             "node": "iSubText"
         }
     ],
-    "alpacaArgs": {
-        "schema": {
+    "alpacaConfig": ["schema": {
             "title": "What do you think of Alpaca?",
             "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
                     "title": "Name"
-                },
-                "color": {
-                    "type": "string",
-                    "title": "Color"
                 },
                 "ranking": {
                     "type": "string",
@@ -57,19 +52,6 @@
                 }
             }
         },
-        "options": {
-            "fields": {
-                "name": {
-                    "fieldClass": "col-md-6"
-                },
-                "color": {
-                    "fieldClass": "col-md-6"
-                },
-                "email": {
-                    "fieldClass": "col-md-6"
-                }
-            }
-        },
         "view": "bootstrap-edit"
-    }
+    ]
 }
