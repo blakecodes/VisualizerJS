@@ -46,16 +46,7 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        this.clean('#alpacaEdit');
         $("#alpacaEdit").alpaca(args);
-    }
-
-    /**
-     * Destroys the alpaca form to ready for a new install
-     * @param {string} form form identifier
-     */
-    clean(form) {
-        $(form).alpaca('destroy');
     }
 
     /**

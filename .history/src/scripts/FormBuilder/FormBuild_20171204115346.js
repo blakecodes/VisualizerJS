@@ -46,7 +46,7 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        this.clean('#alpacaEdit');
+        this.clean();
         $("#alpacaEdit").alpaca(args);
     }
 

@@ -14129,18 +14129,15 @@ class FormBuilder {
         this.apiService = new __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__["a" /* default */]();
         this.Assert = new __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__["a" /* default */]();
         this.config = config;
-
-        this.setup();
     }
 
     /**
      * Initial form setup
-     * @param {AlpacaJS Object} config
      * @param {string} componentType
      * schema: http://www.alpacajs.org
      */
-    setup(config, componentType) {
-        let options = this.fetch('hours');
+    setup(componentType) {
+        let options = this.fetch(componentType);
     }
 
     /**
@@ -14149,7 +14146,16 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        $("#regular-editor").alpaca(args);
+        this.clean('#alpacaEdit');
+        $("#alpacaEdit").alpaca(args);
+    }
+
+    /**
+     * Destroys the alpaca form to ready for a new install
+     * @param {string} form form identifier
+     */
+    clean(form) {
+        $(form).alpaca('destroy');
     }
 
     /**

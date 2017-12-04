@@ -14129,18 +14129,15 @@ class FormBuilder {
         this.apiService = new __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__["a" /* default */]();
         this.Assert = new __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__["a" /* default */]();
         this.config = config;
-
-        this.setup();
     }
 
     /**
      * Initial form setup
-     * @param {AlpacaJS Object} config
      * @param {string} componentType
      * schema: http://www.alpacajs.org
      */
-    setup(config, componentType) {
-        let options = this.fetch('hours');
+    setup(componentType) {
+        let options = this.fetch(componentType);
     }
 
     /**
@@ -14149,7 +14146,16 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        $("#regular-editor").alpaca(args);
+        this.clean('#alpacaEdit');
+        $("#alpacaEdit").alpaca(args);
+    }
+
+    /**
+     * Destroys the alpaca form to ready for a new install
+     * @param {string} form form identifier
+     */
+    clean(form) {
+        $(form).alpaca('destroy');
     }
 
     /**
@@ -47871,98 +47877,12 @@ $(function () {
     // Basic level editor
     // Dynamically generate fields based on config settings
     function loadSettingsEditor(type) {
-        var form = document.createElement('form');
+        let current = getCurrentComponent();
 
         determineEditorView('#special-editor', '#regular-editor');
-
-        settingsEditorService(type, data => {
-            // Create a group for each set
-            $.each(data.config, function () {
-                var g = document.createElement("div");
-                g.className = "form-group";
-                g.append(generateLabel(this));
-                g.append(generateField(this));
-                form.append(g);
-            });
-
-            // WORK -- need to finish adding of labels and element
-            // Generate editing field
-            function generateField(obj) {
-                var e = document.createElement(obj.type);
-                e.setAttribute('ref-set', obj.node);
-                e.setAttribute('ref-element-type', obj.elementType);
-
-                // Craft element by type
-                switch (obj.type) {
-                    case 'Input':
-                        e.type = "text";
-                        e.className = "form-control";
-                        e.value = generateValue(obj);
-                        break;
-                        // WORK -- need to finish setup for check boxes
-                    case 'Checkbox':
-                        var label = document.createElement('label');
-                        var input = document.createElement('input');
-                        var span = document.createElement('span');
-
-                        label.className = 'form-check-label';
-                        input.type = "checkbox";
-                        input.className = 'form-check-input';
-                        span.innerHTML = obj.name;
-
-                        input.append(span);
-                        label.append(input);
-
-                        e = label;
-
-                        break;
-                    case 'Select':
-                        e.className = "form-control";
-
-                        obj.options.map((item) => {
-                            e.append(generateOption(item));
-                        });
-                        break;
-                }
-                return e;
-            }
-
-            // Generate input labels
-            function generateLabel(obj) {
-                var l = document.createElement("label");
-                l.innerHTML = obj.name;
-
-                return l;
-            }
-
-            // Auto load the elements value into the editor
-            function generateValue(obj) {
-                var e = $('.selected-content [ref-retrieve="' + obj.node + '"]');
-
-                switch (obj.elementType) {
-                    case 'image':
-                        return e.attr('src');
-                    case 'text':
-                        return e.html();
-                    case 'video':
-                        e = $('.selected-content[ref-retrieve="' + obj.node + '"]');
-                        return e.attr('ref-jw-video');
-                    default:
-                        return '';
-                }
-            }
-
-            function generateOption(obj) {
-                var option = document.createElement("option");
-                option.text = obj.label;
-                option.value = obj.value;
-
-                return option;
-            }
-        });
-        $('#regular-editor .editor-body').html('');
-        $('#regular-editor .editor-body').append(form);
         specialEditorHolder.show();
+
+        fBuilder.setup(current);
     }
 
     function saveSettings() {

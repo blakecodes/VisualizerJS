@@ -283,12 +283,10 @@ $(function () {
     // Basic level editor
     // Dynamically generate fields based on config settings
     function loadSettingsEditor(type) {
-        let current = getCurrentComponent();
+        var form = document.createElement('form');
 
         determineEditorView('#special-editor', '#regular-editor');
         specialEditorHolder.show();
-
-        fBuilder.setup(current);
     }
 
     function saveSettings() {

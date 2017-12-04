@@ -283,12 +283,11 @@ $(function () {
     // Basic level editor
     // Dynamically generate fields based on config settings
     function loadSettingsEditor(type) {
-        let current = getCurrentComponent();
-
         determineEditorView('#special-editor', '#regular-editor');
         specialEditorHolder.show();
 
-        fBuilder.setup(current);
+        console.log(getCurrentComponent());
+        // fBuilder.setup(getCurrentComponent());
     }
 
     function saveSettings() {

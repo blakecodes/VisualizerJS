@@ -288,6 +288,8 @@ $(function () {
         determineEditorView('#special-editor', '#regular-editor');
         specialEditorHolder.show();
 
+
+
         fBuilder.setup(current);
     }
 

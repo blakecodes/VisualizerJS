@@ -29,15 +29,18 @@ class FormBuilder {
         this.apiService = new APIService();
         this.Assert = new Assert();
         this.config = config;
+
+        this.setup();
     }
 
     /**
      * Initial form setup
+     * @param {AlpacaJS Object} config
      * @param {string} componentType
      * schema: http://www.alpacajs.org
      */
-    setup(componentType) {
-        let options = this.fetch(componentType);
+    setup(config, componentType) {
+        let options = this.fetch('hours');
     }
 
     /**
@@ -46,16 +49,7 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        this.clean('#alpacaEdit');
         $("#alpacaEdit").alpaca(args);
-    }
-
-    /**
-     * Destroys the alpaca form to ready for a new install
-     * @param {string} form form identifier
-     */
-    clean(form) {
-        $(form).alpaca('destroy');
     }
 
     /**

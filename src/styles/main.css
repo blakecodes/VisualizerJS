@@ -609,3 +609,6 @@ ul {
   .add-meta i:hover {
     opacity: 0.6;
     cursor: pointer; }
+
+#alpacaEdit {
+  padding: 15px; }
