@@ -1,6 +1,6 @@
 import APIService from '../ApiService/ApiService';
 import Assert from '../Assertion/Assert';
-import Configuration from '../Configuration/Configuration';
+import configuration from '../Configuration/Configuration';
 
 import alpaca from '../../libraries/alpaca/alpaca';
 
@@ -30,6 +30,8 @@ class FormBuilder {
         this.apiService = new APIService();
         this.Assert = new Assert();
         this.config = new Configuration();
+
+        console.log(this.config.environment);
     }
 
     /**
@@ -47,8 +49,8 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        this.clean(this.config.alpacaEditor);
-        $(this.config.alpacaEditor).alpaca(args);
+        this.clean('#alpacaEdit');
+        $("#alpacaEdit").alpaca(args);
     }
 
     /**
@@ -76,13 +78,8 @@ class FormBuilder {
      * Takes the selected identifier and saves the form content
      * @param {string} identifier submit the entire form to save it's parameters 
      */
-    save() {
-        $(this.config.alpacaEditor + ' input').each(function () {
-            let name = $(this).attr('name');
-            let val = $(this).val();
+    save(identifier) {
 
-            $('.selected-content > div[data-fill="' + name + '"]').html(val);
-        });
     }
 }
 

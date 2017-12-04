@@ -78,10 +78,8 @@ class FormBuilder {
      */
     save() {
         $(this.config.alpacaEditor + ' input').each(function () {
-            let name = $(this).attr('name');
             let val = $(this).val();
-
-            $('.selected-content > div[data-fill="' + name + '"]').html(val);
+            console.log(val);
         });
     }
 }

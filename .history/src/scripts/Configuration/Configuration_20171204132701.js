@@ -1,7 +1,7 @@
 class Configuration {
     constructor() {
         this.environment = 'prod'
-        this.alpacaEditor = '#alpacaEdit';
+        this.alpacaEditor = 'alpacaEdit';
     }
 }
 

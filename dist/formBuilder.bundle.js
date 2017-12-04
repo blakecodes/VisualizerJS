@@ -14096,8 +14096,10 @@ var Popover = function ($) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libraries_alpaca_alpaca__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__libraries_alpaca_alpaca___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__libraries_alpaca_alpaca__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Configuration_Configuration__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca__);
+
 
 
 
@@ -14128,7 +14130,7 @@ class FormBuilder {
         // Service management
         this.apiService = new __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__["a" /* default */]();
         this.Assert = new __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__["a" /* default */]();
-        this.config = config;
+        this.config = new __WEBPACK_IMPORTED_MODULE_2__Configuration_Configuration__["a" /* default */]();
     }
 
     /**
@@ -14146,8 +14148,8 @@ class FormBuilder {
      */
     load(res) {
         let args = res.alpacaArgs;
-        this.clean('#alpacaEdit');
-        $("#alpacaEdit").alpaca(args);
+        this.clean(this.config.alpacaEditor);
+        $(this.config.alpacaEditor).alpaca(args);
     }
 
     /**
@@ -14172,11 +14174,16 @@ class FormBuilder {
     }
 
     /**
-     * 
-     * @param {form} form submit the entire form to save it's parameters 
+     * Takes the selected identifier and saves the form content
+     * @param {string} identifier submit the entire form to save it's parameters 
      */
-    submit(form) {
+    save() {
+        $(this.config.alpacaEditor + ' input').each(function () {
+            let name = $(this).attr('name');
+            let val = $(this).val();
 
+            $('.selected-content > div[data-fill="' + name + '"]').html(val);
+        });
     }
 }
 
@@ -14312,6 +14319,7 @@ class Assert {
 class Configuration {
     constructor() {
         this.environment = 'prod'
+        this.alpacaEditor = '#alpacaEdit';
     }
 }
 

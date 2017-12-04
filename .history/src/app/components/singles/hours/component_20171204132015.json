@@ -20,7 +20,7 @@
         }
     ],
     "version": 1.0,
-    "content": "<div class=\"row addContent\" ref-component=\"hours\">\n    <div data-fill=\"regDays\"></div>\n    <div data-fill=\"saturday\"></div>\n    <div data-fill=\"sunday\"></div>\n</div>",
+    "content": "<div class=\"row addContent\" ref-component=\"hours\">\n    hours of operation\n</div>",
     "scripts": [
         "/src/app/components/singles/hours/hours.js"
     ],
@@ -39,6 +39,7 @@
     ],
     "alpacaArgs": {
         "schema": {
+            "title": "What do you think of Alpaca?",
             "type": "object",
             "properties": {
                 "regDays": {

@@ -85,7 +85,7 @@ $(function () {
     });
 
     $('#save-settings').on('click', function () {
-        fBuilder.save(this);
+        fBuilder.save();
         closeSettings();
     });
 

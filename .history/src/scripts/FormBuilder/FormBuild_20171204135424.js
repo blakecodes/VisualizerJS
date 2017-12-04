@@ -76,13 +76,11 @@ class FormBuilder {
      * Takes the selected identifier and saves the form content
      * @param {string} identifier submit the entire form to save it's parameters 
      */
-    save() {
+    save(identifier) {
         $(this.config.alpacaEditor + ' input').each(function () {
-            let name = $(this).attr('name');
             let val = $(this).val();
-
-            $('.selected-content > div[data-fill="' + name + '"]').html(val);
-        });
+            console.log(val);
+        })
     }
 }
 
