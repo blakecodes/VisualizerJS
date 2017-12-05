@@ -14,10 +14,6 @@ import alpaca from '../../libraries/alpaca/alpaca';
  * event handling with forms. 
  * 
  * This frameworks primary functions include form building and data binding. 
- * 
- * TODO Items:
- * - Add video load definitons
- * - Verify video save definitions
  */
 class FormBuilder {
 
@@ -108,10 +104,8 @@ class FormBuilder {
         let self = this;
 
         $('.selected-content [data-fill]').each(function () {
-            let name = $(this).data('fill');
-            let value = $(this).html();
-
-            let element = $(this);
+            let dataAttr = $(this).data('fill');
+            let val = $(this).html();
 
             /**
              * Fill the value in Alpaca
@@ -119,46 +113,13 @@ class FormBuilder {
              * of the form
              */
             setTimeout(function () {
-                let target = $(self.config.alpacaEditor + ' [name="' + name + '"]');
-                // target.val(value);
-
-                self.loadDefinition(name, element, target);
+                let target = $(self.config.alpacaEditor + ' [name="' + dataAttr + '"]');
+                target.val(val);
             }, 200);
         });
     }
 
     /**
-     * Definitions for loading components into the editor
-     * @param {string} name name of the elemnt
-     * @param {DOM Element} element target element used to determine value placement
-     * @param {DOM Element} target element that is targeted inside the form
-     * Text: Target inner html
-     * Image: Target src attribute
-     * Video: Target JWPlayer attribute
-     */
-    loadDefinition(name, element, target) {
-        let type = this.currentVideo.alpacaArgs.schema.properties[name].componentType;
-        let val = '';
-
-        switch (type) {
-            case 'text':
-                val = element.html();
-                break;
-            case 'video': // Need to add this
-                break;
-            case 'image':
-                val = element.attr('src');
-                break;
-            default:
-                break;
-        }
-
-        // Assign final value
-        target.val(val);
-    }
-
-    /**
-     * Definitions for saving components
      * @param {string} name the value of the field name
      * @param {DOM Element} target determine what type of component
      * @param {string} value value to replace in the component

@@ -14,10 +14,6 @@ import alpaca from '../../libraries/alpaca/alpaca';
  * event handling with forms. 
  * 
  * This frameworks primary functions include form building and data binding. 
- * 
- * TODO Items:
- * - Add video load definitons
- * - Verify video save definitions
  */
 class FormBuilder {
 
@@ -111,8 +107,6 @@ class FormBuilder {
             let name = $(this).data('fill');
             let value = $(this).html();
 
-            let element = $(this);
-
             /**
              * Fill the value in Alpaca
              * Addiitonal timeout is added to account for initial load 
@@ -120,41 +114,35 @@ class FormBuilder {
              */
             setTimeout(function () {
                 let target = $(self.config.alpacaEditor + ' [name="' + name + '"]');
-                // target.val(value);
+                target.val(value);
 
-                self.loadDefinition(name, element, target);
+                this.loadDefinition(name, value);
             }, 200);
         });
     }
 
     /**
      * Definitions for loading components into the editor
-     * @param {string} name name of the elemnt
-     * @param {DOM Element} element target element used to determine value placement
-     * @param {DOM Element} target element that is targeted inside the form
      * Text: Target inner html
      * Image: Target src attribute
      * Video: Target JWPlayer attribute
      */
-    loadDefinition(name, element, target) {
+    loadDefinition(name, value) {
         let type = this.currentVideo.alpacaArgs.schema.properties[name].componentType;
-        let val = '';
 
         switch (type) {
             case 'text':
-                val = element.html();
+                target.html(value);
                 break;
-            case 'video': // Need to add this
+            case 'video':
+                this.videoHandler(value);
                 break;
             case 'image':
-                val = element.attr('src');
+                this.imageHandler(target, value);
                 break;
             default:
                 break;
         }
-
-        // Assign final value
-        target.val(val);
     }
 
     /**

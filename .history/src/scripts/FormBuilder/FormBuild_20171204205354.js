@@ -14,10 +14,6 @@ import alpaca from '../../libraries/alpaca/alpaca';
  * event handling with forms. 
  * 
  * This frameworks primary functions include form building and data binding. 
- * 
- * TODO Items:
- * - Add video load definitons
- * - Verify video save definitions
  */
 class FormBuilder {
 
@@ -144,7 +140,8 @@ class FormBuilder {
             case 'text':
                 val = element.html();
                 break;
-            case 'video': // Need to add this
+            case 'video':
+                this.videoHandler(value);
                 break;
             case 'image':
                 val = element.attr('src');
