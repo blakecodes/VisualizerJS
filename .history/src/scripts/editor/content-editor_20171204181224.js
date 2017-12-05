@@ -76,7 +76,7 @@ $(function () {
     $('body').on("keyup", "#regular-editor input", function (e) {
         if (e.which == 13) {
             fBuilder.save(this);
-            closeSettings();
+            //closeSettings();
         }
     });
 

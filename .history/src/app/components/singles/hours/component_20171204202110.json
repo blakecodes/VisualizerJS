@@ -48,13 +48,11 @@
                 },
                 "saturday": {
                     "type": "string",
-                    "title": "Saturday Hours",
-                    "componentType": "text"
+                    "title": "Saturday Hours"
                 },
                 "sunday": {
                     "type": "string",
-                    "title": "Sunday Hours",
-                    "componentType": "text"
+                    "title": "Sunday Hours"
                 }
             }
         },

@@ -130,12 +130,14 @@ class FormBuilder {
     typeDefinition(name, target, value) {
         let type = this.currentVideo.alpacaArgs.schema.properties[name].componentType;
 
+        console.log(type);
+
         switch (type) {
             case 'string':
                 console.log('String found');
                 break;
             case 'video':
-                this.videoHandler(value);
+                console.log('Video found');
                 break;
             case 'image':
                 console.log('Image found');
@@ -144,19 +146,6 @@ class FormBuilder {
             default:
                 break;
         }
-    }
-
-    /**
-     * Handler for parsing the JWPlayer out of the
-     * currently selected component
-     * @param {string} value new video URL to update the player with
-     */
-    videoHandler(value) {
-        let currentVideo = $('.selected-content .jwplayer').attr('id');
-
-        jwplayer(currentVideo).load([{
-            file: value
-        }]);
     }
 }
 

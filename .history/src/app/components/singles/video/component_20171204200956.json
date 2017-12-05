@@ -28,8 +28,7 @@
             "properties": {
                 "vURl": {
                     "type": "string",
-                    "title": "Video URL",
-                    "componentType": "video"
+                    "title": "Video URL"
                 }
             }
         },

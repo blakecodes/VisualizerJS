@@ -90,7 +90,7 @@ class FormBuilder {
 
             let target = $('.selected-content div[data-fill="' + name + '"]');
 
-            self.typeDefinition(name, target, val);
+            self.typeDefinition(target, val);
         });
     }
 
@@ -120,43 +120,27 @@ class FormBuilder {
     }
 
     /**
-     * @param {string} name the value of the field name
+     * 
      * @param {DOM Element} target determine what type of component
      * @param {string} value value to replace in the component
      * Text: No modification
      * Image: IMG src modified
      * Video: JWPlayer source is modified
      */
-    typeDefinition(name, target, value) {
-        let type = this.currentVideo.alpacaArgs.schema.properties[name].componentType;
+    typeDefinition(target, value) {
+        console.log('Current', this.currentVideo);
+        // let type = $(this).componentType;
 
-        switch (type) {
-            case 'string':
-                console.log('String found');
-                break;
-            case 'video':
-                this.videoHandler(value);
-                break;
-            case 'image':
-                console.log('Image found');
-                target.attr('src', value);
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Handler for parsing the JWPlayer out of the
-     * currently selected component
-     * @param {string} value new video URL to update the player with
-     */
-    videoHandler(value) {
-        let currentVideo = $('.selected-content .jwplayer').attr('id');
-
-        jwplayer(currentVideo).load([{
-            file: value
-        }]);
+        // switch (type) {
+        //     case 'Video':
+        //         break;
+        //     case 'Image':
+        //         target.attr('src', value);
+        //         break;
+        //     default:
+        //         target
+        //         break;
+        // }
     }
 }
 

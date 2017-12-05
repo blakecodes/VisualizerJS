@@ -20,7 +20,7 @@
         }
     ],
     "version": 1.0,
-    "content": "<div class=\"row addContent\" ref-component=\"hours\">\n    <h3>Hours of Operation</h3>\n    <div class=\"row\">\n        <label>Monday - Friday</label>\n        <div class=\"full-width\" data-fill=\"regDays\">\n            8AM - 5PM\n        </div>\n    </div>\n    <div class=\"row\">\n        <label>Saturday</label>\n        <div class=\"full-width\" data-fill=\"saturday\">\n            10AM - 2PM\n        </div>\n    </div>\n    <div class=\"row\">\n        <label>Sunday</label>\n        <div class=\"full-width\" data-fill=\"sunday\">\n            Closed\n        </div>\n    </div>\n</div>",
+    "content": "<div class=\"row addContent\" ref-component=\"hours\">\n    <h3>Hours of Operation</h3>\n    <div class=\"row\" data-fill=\"regDays\"></div>\n    <div class=\"row\" data-fill=\"saturday\"></div>\n    <div class=\"row\" data-fill=\"sunday\"></div>\n</div>",
     "scripts": [
         "/src/app/components/singles/hours/hours.js"
     ],
@@ -43,18 +43,15 @@
             "properties": {
                 "regDays": {
                     "type": "string",
-                    "title": "Regular Hours",
-                    "componentType": "text"
+                    "title": "Regular Hours"
                 },
                 "saturday": {
                     "type": "string",
-                    "title": "Saturday Hours",
-                    "componentType": "text"
+                    "title": "Saturday Hours"
                 },
                 "sunday": {
                     "type": "string",
-                    "title": "Sunday Hours",
-                    "componentType": "text"
+                    "title": "Sunday Hours"
                 }
             }
         },

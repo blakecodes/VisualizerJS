@@ -612,3 +612,11 @@ ul {
 
 #alpacaEdit {
   padding: 15px; }
+
+.row {
+  width: 100%; }
+  .row label {
+    margin-bottom: 2px; }
+
+.full-width {
+  width: 100%; }

@@ -135,7 +135,7 @@ class FormBuilder {
                 console.log('String found');
                 break;
             case 'video':
-                this.videoHandler(value);
+                console.log('Video found');
                 break;
             case 'image':
                 console.log('Image found');
@@ -152,9 +152,9 @@ class FormBuilder {
      * @param {string} value new video URL to update the player with
      */
     videoHandler(value) {
-        let currentVideo = $('.selected-content .jwplayer').attr('id');
+        let currentVideo = $('.selected-content .jwplayer').attr(id);
 
-        jwplayer(currentVideo).load([{
+        jwplayer(video).load([{
             file: value
         }]);
     }

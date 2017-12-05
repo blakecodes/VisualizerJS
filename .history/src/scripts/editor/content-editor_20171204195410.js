@@ -289,6 +289,7 @@ $(function () {
         specialEditorHolder.show();
 
         fBuilder.setup(current);
+        fBuilder.import();
     }
 
     function saveSettings() {

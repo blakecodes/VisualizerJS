@@ -135,6 +135,7 @@ class FormBuilder {
                 console.log('String found');
                 break;
             case 'video':
+                console.log(value);
                 this.videoHandler(value);
                 break;
             case 'image':
