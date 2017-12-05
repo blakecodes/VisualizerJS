@@ -14203,7 +14203,7 @@ class FormBuilder {
             let name = $(this).attr('name');
             let val = $(this).val();
 
-            let target = $('.selected-content div[data-fill="' + name + '"]');
+            let target = $('.selected-content [data-fill="' + name + '"]');
 
             self.typeDefinition(name, target, val);
         });
@@ -14246,15 +14246,14 @@ class FormBuilder {
         let type = this.currentVideo.alpacaArgs.schema.properties[name].componentType;
 
         switch (type) {
-            case 'string':
-                console.log('String found');
+            case 'text':
+                target.html(value);
                 break;
             case 'video':
                 this.videoHandler(value);
                 break;
             case 'image':
-                console.log('Image found');
-                target.attr('src', value);
+                this.imageHandler(target, value);
                 break;
             default:
                 break;
@@ -14272,6 +14271,15 @@ class FormBuilder {
         jwplayer(currentVideo).load([{
             file: value
         }]);
+    }
+
+    /**
+     * Handler for setting the value of an image element
+     * @param {DOM Element} target  element to target
+     * @param {string} value image to replace the source with
+     */
+    imageHandler(target, value) {
+        target.attr('src', value);
     }
 }
 

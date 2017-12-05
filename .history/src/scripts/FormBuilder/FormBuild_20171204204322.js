@@ -164,6 +164,7 @@ class FormBuilder {
      * @param {string} value image to replace the source with
      */
     imageHandler(target, value) {
+        console.log('Replacing image value', target);
         target.attr('src', value);
     }
 }

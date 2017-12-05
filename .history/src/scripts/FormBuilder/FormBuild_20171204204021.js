@@ -88,7 +88,7 @@ class FormBuilder {
             let name = $(this).attr('name');
             let val = $(this).val();
 
-            let target = $('.selected-content [data-fill="' + name + '"]');
+            let target = $('.selected-content div[data-fill="' + name + '"]');
 
             self.typeDefinition(name, target, val);
         });
@@ -160,10 +160,9 @@ class FormBuilder {
 
     /**
      * Handler for setting the value of an image element
-     * @param {DOM Element} target  element to target
-     * @param {string} value image to replace the source with
      */
     imageHandler(target, value) {
+        console.log('Replacing image value', target);
         target.attr('src', value);
     }
 }
