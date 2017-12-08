@@ -22,8 +22,6 @@ class SlickBuilder {
 
     /**
      * Assign unique identifiers to each element and attach a slick instance to them
-     * This is only used on the initial load. 
-     * After, the onDrop function is triggered for new additons
      */
     assignIdentifiers() {
         self = this;
@@ -33,29 +31,14 @@ class SlickBuilder {
         });
     }
 
-    /**
-     * Generates a new idea for the element
-     */
     genId() {
         this.count++;
+
         console.log('Added new identifier to Slick Element. Position: ' + this.count);
         return 'slick-' + this.count;
     }
 
-    /**
-     * This function checks to make sure all slick sliders have ids
-     * If they do not, it creates a new one and opens a new slick instance for it
-     */
-    check() {
-        $('[ref-component="testimonials"]').each(function () {
-            console.log($(this).attr('id'));
-        });
-    }
-
     onDrop() {
-        let id = this.genId();
-
-        $()
 
     }
 }

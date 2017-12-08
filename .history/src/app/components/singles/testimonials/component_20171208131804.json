@@ -1,0 +1,40 @@
+{
+    "name": "Hero Component",
+    "selector": "component.html",
+    "editor": "editor.html",
+    "tools": [{
+            "name": "special",
+            "tool": "tinymce",
+            "special": true
+        }, {
+            "name": "inline",
+            "tool": "inline"
+        },
+        {
+            "name": "erase",
+            "tool": "erase"
+        },
+        {
+            "name": "fullscreen",
+            "tool": "settings"
+        }
+    ],
+    "version": 1.0,
+    "content": "test",
+    "scripts": [
+        "/src/app/components/singles/testimonials/component.js"
+    ],
+    "alpacaArgs": {
+        "schema": {
+            "type": "object",
+            "properties": {
+                "Sunday": {
+                    "type": "string",
+                    "title": "Regular Hours",
+                    "componentType": "text"
+                }
+            }
+        },
+        "view": "bootstrap-edit"
+    }
+}

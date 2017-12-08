@@ -9,8 +9,8 @@ import slick from 'slick-carousel';
 
 class SlickBuilder {
     constructor(element) {
-        this.count = 0;
         this.assignIdentifiers();
+        this.count = 0;
     }
 
     /**
@@ -22,40 +22,20 @@ class SlickBuilder {
 
     /**
      * Assign unique identifiers to each element and attach a slick instance to them
-     * This is only used on the initial load. 
-     * After, the onDrop function is triggered for new additons
      */
     assignIdentifiers() {
         self = this;
 
         $('[ref-component="testimonials"]').each(function () {
-            $(this).attr('id', self.genId());
+            console.log(self.genId());
         });
     }
 
-    /**
-     * Generates a new idea for the element
-     */
     genId() {
-        this.count++;
-        console.log('Added new identifier to Slick Element. Position: ' + this.count);
-        return 'slick-' + this.count;
-    }
-
-    /**
-     * This function checks to make sure all slick sliders have ids
-     * If they do not, it creates a new one and opens a new slick instance for it
-     */
-    check() {
-        $('[ref-component="testimonials"]').each(function () {
-            console.log($(this).attr('id'));
-        });
+        return 'slick-' + (this.count + 1).toString();
     }
 
     onDrop() {
-        let id = this.genId();
-
-        $()
 
     }
 }

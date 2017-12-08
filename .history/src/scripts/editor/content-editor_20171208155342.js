@@ -128,11 +128,11 @@ $(function () {
     function togglePreview() {
         if (previewMode == true) {
             $('.col-title').show();
-            $('[ref-component]').css('border', '1px solid #a2a2a21a');
+            $('.addContent').css('border', '1px solid #a2a2a21a;');
             previewMode = false;
         } else {
             $('.col-title').hide();
-            $('[ref-component]').css('border', 'none');
+            $('.addContent').css('border', 'none');
             previewMode = true;
         }
     }

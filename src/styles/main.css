@@ -669,3 +669,16 @@ i {
   background: #e5e6ea; }
   .hour-table tbody th {
     border-right: 1px solid #cbcbcb; }
+
+.testimonial-holder .testimonial {
+  padding: 20px;
+  width: 100%;
+  text-align: center; }
+  .testimonial-holder .testimonial h3 {
+    margin-bottom: 0; }
+  .testimonial-holder .testimonial span {
+    color: grey;
+    font-size: 12px;
+    margin-bottom: 15px; }
+  .testimonial-holder .testimonial p {
+    font-size: 13px; }

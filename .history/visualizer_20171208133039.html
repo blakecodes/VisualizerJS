@@ -21,9 +21,6 @@
     <!-- Special fonts  -->
     <link rel="stylesheet" href="/src/assets/fonts/ui/ui.css">
     <link rel="stylesheet" href="/src/assets/fonts/web/web.css">
-
-    <link rel="stylesheet" type="text/css" href="/node_modules/slick-carousel/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="/node_modules/slick-carousel/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -198,13 +195,21 @@
                 </div>
 
                 <div id="editorBody">
+                    <div class="row addContent testimonial-holder" ref-component="testimonials">
+                        <div class="testimonial">
+                            <div class="test-content">
+                                <h3>Blake Connally</h3>
+                                <span>January, 2nd 2017</span>
+                                <p>Blake does great work! We will definitely use him in the future</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="asset-manager">
                     Asset manager
                 </div>
             </div>
-
         </div>
         <div class="viewPorts">
             <div class="container-fluid text-center" id="iPadViewPort">
@@ -232,10 +237,6 @@
 
     <!-- Form Building -->
     <script src="/dist/formBuilder.bundle.js"></script>
-
-
-
-    <!-- <script type="text/javascript" src="/node_modules/slick-carousel/slick/slick.min.js"></script> -->
 </body>
 
 </html>
