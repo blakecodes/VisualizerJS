@@ -41,9 +41,6 @@ body {
             margin-right: 10px;
             font-size: 16px;
         }
-        &:hover {
-            cursor: pointer;
-        }
     }
 }
 
@@ -514,14 +511,5 @@ i {
 .fa-caret-down {
     &::before {
         color: #cacaca;
-    }
-}
-
-.hour-table {
-    tbody {
-        background: #e5e6ea;
-        th {
-            border-right: 1px solid #cbcbcb;
-        }
     }
 }

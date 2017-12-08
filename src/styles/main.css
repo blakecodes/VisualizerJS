@@ -283,6 +283,8 @@ body {
       margin-left: 10px;
       margin-right: 10px;
       font-size: 16px; }
+    .notification-nav .page-name:hover {
+      cursor: pointer; }
 
 .float-left {
   padding-top: 5px;
@@ -498,9 +500,7 @@ ul {
 
 .addContent {
   min-height: 50px;
-  border: 1px solid #a2a2a2;
   margin-bottom: 1px;
-  border: none;
   background: none;
   background-color: transparent;
   box-shadow: none; }
@@ -575,6 +575,9 @@ ul {
 [ref-component="sidenav"] {
   background-color: #f0ece5;
   padding: 15px; }
+
+[ref-component] {
+  border: 1px solid #a2a2a21a; }
 
 .row {
   margin: 0 !important; }
@@ -661,3 +664,8 @@ i {
 
 .fa-caret-down::before {
   color: #cacaca; }
+
+.hour-table tbody {
+  background: #e5e6ea; }
+  .hour-table tbody th {
+    border-right: 1px solid #cbcbcb; }

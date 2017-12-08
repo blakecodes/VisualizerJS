@@ -58,7 +58,7 @@
             </div>
             <!-- Buttons  -->
             <div class="inline btn-holder">
-                <button class="btn btn-default" id="preview-mode">Preview</button>
+                <button class="btn btn-default">Preview</button>
                 <button class="btn btn-green">Publish</button>
             </div>
         </div>
@@ -195,6 +195,43 @@
                 </div>
 
                 <div id="editorBody">
+                    <div class="row addContent" ref-component="hours">
+                        <h3>Hours of Operation</h3>
+                        <table class="table">
+                            <thead>
+                                <tr class="text-center">
+                                    test
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Monday</th>
+                                    <td>2AM - 10AM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                        <div class="row">
+                            <label>Monday - Friday</label>
+                            <div class="full-width" data-fill="regDays">
+                                8AM - 5PM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>Saturday</label>
+                            <div class="full-width" data-fill="saturday">
+                                10AM - 2PM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>Sunday</label>
+                            <div class="full-width" data-fill="sunday">
+                                Closed
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="asset-manager">

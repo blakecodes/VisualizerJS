@@ -75,7 +75,7 @@
                     "type": "string",
                     "title": "Regular Hours",
                     "componentType": "text"
-                }
+                },
             }
         },
         "view": "bootstrap-edit"

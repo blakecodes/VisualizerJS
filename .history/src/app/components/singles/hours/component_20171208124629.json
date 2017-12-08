@@ -41,39 +41,19 @@
         "schema": {
             "type": "object",
             "properties": {
-                "Sunday": {
+                "regDays": {
                     "type": "string",
                     "title": "Regular Hours",
                     "componentType": "text"
                 },
-                "Monday": {
+                "saturday": {
                     "type": "string",
-                    "title": "Regular Hours",
+                    "title": "Saturday Hours",
                     "componentType": "text"
                 },
-                "Tuesday": {
+                "sunday": {
                     "type": "string",
-                    "title": "Regular Hours",
-                    "componentType": "text"
-                },
-                "Wednesday": {
-                    "type": "string",
-                    "title": "Regular Hours",
-                    "componentType": "text"
-                },
-                "Thursday": {
-                    "type": "string",
-                    "title": "Regular Hours",
-                    "componentType": "text"
-                },
-                "Friday": {
-                    "type": "string",
-                    "title": "Regular Hours",
-                    "componentType": "text"
-                },
-                "Saturday": {
-                    "type": "string",
-                    "title": "Regular Hours",
+                    "title": "Sunday Hours",
                     "componentType": "text"
                 }
             }
