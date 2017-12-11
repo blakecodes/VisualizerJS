@@ -60,11 +60,44 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Configuration {
+    constructor() {
+        this.environment = 'prod'
+        this.alpacaEditor = '#alpacaEdit';
+    }
+
+    /**
+     * Fetch the components configuration file
+     * @param {string} name name of the component configuration to be fetched
+     */
+    getComponentConfig(name) {
+        let data;
+
+        $.ajax({
+            url: '/src/app/components/singles/' + name + '/component.json',
+            async: false,
+            type: 'GET',
+            success: function (res) {
+                data = res;
+            }
+        });
+
+        return data;
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Configuration);
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10324,20 +10357,6 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Configuration {
-    constructor() {
-        this.environment = 'prod'
-        this.alpacaEditor = '#alpacaEdit';
-    }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Configuration);
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
@@ -14110,7 +14129,7 @@ var Popover = function ($) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApiService_ApiService__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Assertion_Assert__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Configuration_Configuration__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Configuration_Configuration__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__libraries_alpaca_alpaca__);
 /**
@@ -14321,6 +14340,17 @@ class FormBuilder {
     imageHandler(target, value) {
         target.attr('src', value);
     }
+
+    /**
+     * Create the slick element and attatch an instance to it
+     */
+    tabParse(type) {
+        let data = this.config.getComponentConfig(type);
+
+        data.tabs.map(tab => {
+            console.log(tab);
+        });
+    }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (FormBuilder);
@@ -14385,7 +14415,7 @@ class APIService {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Configuration_Configuration__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Configuration_Configuration__ = __webpack_require__(0);
 
 
 /**
@@ -14462,12 +14492,12 @@ class Assert {
     if (umdEnabled && typeof exports === 'object')
     {
         // common js
-        module.exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4));
+        module.exports = factory(__webpack_require__(1), __webpack_require__(3), __webpack_require__(4));
     }
     else if (umdEnabled && "function" === 'function' && __webpack_require__(12))
     {
         // amd
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0),__webpack_require__(3),__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1),__webpack_require__(3),__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -47716,7 +47746,8 @@ module.exports = __webpack_amd_options__;
 
 /***/ }),
 /* 13 */,
-/* 14 */
+/* 14 */,
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -7,5 +7,5 @@ $(function () {
     $('.testimonial-holder').slick();
 
     let slickService = new SlickBuilder();
-    // slickService.create('testimonials');
+    slickService.create('testimonials');
 });

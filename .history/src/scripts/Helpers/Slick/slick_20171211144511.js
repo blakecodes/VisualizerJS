@@ -12,7 +12,6 @@ class SlickBuilder {
     constructor(element) {
         this.count = 0;
         this.assignIdentifiers();
-        this.config = new Configuration();
     }
 
     /**
@@ -58,6 +57,14 @@ class SlickBuilder {
         $(element).slick();
     }
 
+    /**
+     * Create the slick element and attatch an instance to it
+     */
+    create(tabs) {
+        tabs.map(tab => {
+            console.log(tab);
+        });
+    }
 
     onDrop() {
         let id = this.genId();

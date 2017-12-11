@@ -58,6 +58,16 @@ class SlickBuilder {
         $(element).slick();
     }
 
+    /**
+     * Create the slick element and attatch an instance to it
+     */
+    create(type) {
+        let data = this.config.getComponentConfig(type);
+
+        data.tabs.map(tab => {
+            console.log(tab);
+        });
+    }
 
     onDrop() {
         let id = this.genId();

@@ -67,7 +67,7 @@ body {
     position: fixed;
     background: #2e333a;
     border-right: 1px solid #d6d7db;
-    margin-top: 63px;
+    margin-top: 57px;
 }
 
 .page-content {
@@ -321,10 +321,6 @@ ul {
     width: 100% !important;
 }
 
-.form-control {
-    border-radius: 0;
-}
-
 
 /* Hero  */
 
@@ -463,7 +459,7 @@ ul {
 
 #alpacaEdit {
     padding: 15px;
-    height: 358px;
+    height: 396px;
     overflow-y: scroll;
 }
 
@@ -549,23 +545,4 @@ i {
             font-size: 13px;
         }
     }
-}
-
-.editor-tabs {
-    display: flex;
-    .tab {
-        background: #3d3d3d;
-        padding: 7px 20px;
-        border-right: 2px solid #555555;
-        transition: ease-in 0.2s;
-        &:hover {
-            background: #2d2c2c;
-            cursor: pointer;
-        }
-    }
-}
-
-.slick-prev:before,
-.slick-next:before {
-    color: #564f4f !important;
 }

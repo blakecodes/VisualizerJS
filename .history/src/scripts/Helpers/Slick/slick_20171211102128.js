@@ -6,13 +6,11 @@
  */
 
 import slick from 'slick-carousel';
-import Configuration from '../../Configuration/Configuration';
 
 class SlickBuilder {
     constructor(element) {
         this.count = 0;
         this.assignIdentifiers();
-        this.config = new Configuration();
     }
 
     /**
@@ -54,14 +52,13 @@ class SlickBuilder {
         });
     }
 
-    run(element) {
+    run(element){
         $(element).slick();
     }
 
-
     onDrop() {
         let id = this.genId();
-
+    
     }
 }
 

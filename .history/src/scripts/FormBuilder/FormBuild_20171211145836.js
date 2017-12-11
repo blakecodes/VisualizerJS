@@ -215,7 +215,7 @@ class FormBuilder {
 
         data.tabs.map(tab => {
             console.log(tab);
-        });
+        })
     }
 }
 

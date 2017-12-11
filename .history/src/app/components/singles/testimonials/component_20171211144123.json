@@ -47,57 +47,34 @@
         },
         "view": "bootstrap-edit"
     },
-    "tabs": [{
-            "name": "Slide 1",
-            "data": {
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "title1": {
-                            "type": "string",
-                            "title": "Slide 1: Title",
-                            "componentType": "text"
-                        },
-                        "date1": {
-                            "type": "string",
-                            "title": "Slide 1: Date",
-                            "componentType": "text"
-                        },
-                        "para1": {
-                            "type": "string",
-                            "title": "Slide 1: Testimonial",
-                            "componentType": "text"
-                        }
+    "tabs": {
+        "name": "Slide 1",
+        "data": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title1": {
+                        "type": "string",
+                        "title": "Slide 1: Title",
+                        "componentType": "text"
+                    },
+                    "date1": {
+                        "type": "string",
+                        "title": "Slide 1: Date",
+                        "componentType": "text"
+                    },
+                    "para1": {
+                        "type": "string",
+                        "title": "Slide 1: Testimonial",
+                        "componentType": "text"
                     }
-                },
-                "view": "bootstrap-edit"
-            }
+                }
+            },
+            "view": "bootstrap-edit"
         },
-        {
-            "name": "Slide 2",
-            "data": {
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "title1": {
-                            "type": "string",
-                            "title": "Slide 1: Title",
-                            "componentType": "text"
-                        },
-                        "date1": {
-                            "type": "string",
-                            "title": "Slide 1: Date",
-                            "componentType": "text"
-                        },
-                        "para1": {
-                            "type": "string",
-                            "title": "Slide 1: Testimonial",
-                            "componentType": "text"
-                        }
-                    }
-                },
-                "view": "bootstrap-edit"
-            }
+        "name": "Slide 2",
+        "data": {
+
         }
-    ]
+    }
 }

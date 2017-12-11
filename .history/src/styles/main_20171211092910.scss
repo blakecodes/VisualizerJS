@@ -67,7 +67,7 @@ body {
     position: fixed;
     background: #2e333a;
     border-right: 1px solid #d6d7db;
-    margin-top: 63px;
+    margin-top: 57px;
 }
 
 .page-content {
@@ -245,6 +245,7 @@ ul {
     min-height: 450px;
     width: 30%;
     position: inherit;
+    overflow: auto;
     height: 20rem;
     background-color: #555;
     box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
@@ -279,8 +280,8 @@ ul {
 
 .editor-header {
     background-color: #2d9bea;
+    padding-left: .9375rem;
     box-sizing: border-box;
-    padding: 5px 19px;
 }
 
 .editor-header h2 {
@@ -288,7 +289,7 @@ ul {
     line-height: 2.75rem;
     color: #e6e6e6;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .editor-btn {
@@ -319,10 +320,6 @@ ul {
 
 .jwplayer {
     width: 100% !important;
-}
-
-.form-control {
-    border-radius: 0;
 }
 
 
@@ -463,8 +460,6 @@ ul {
 
 #alpacaEdit {
     padding: 15px;
-    height: 358px;
-    overflow-y: scroll;
 }
 
 .row {
@@ -549,23 +544,4 @@ i {
             font-size: 13px;
         }
     }
-}
-
-.editor-tabs {
-    display: flex;
-    .tab {
-        background: #3d3d3d;
-        padding: 7px 20px;
-        border-right: 2px solid #555555;
-        transition: ease-in 0.2s;
-        &:hover {
-            background: #2d2c2c;
-            cursor: pointer;
-        }
-    }
-}
-
-.slick-prev:before,
-.slick-next:before {
-    color: #564f4f !important;
 }

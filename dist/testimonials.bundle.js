@@ -60,12 +60,46 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ({
 
 /***/ 0:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Configuration {
+    constructor() {
+        this.environment = 'prod'
+        this.alpacaEditor = '#alpacaEdit';
+    }
+
+    /**
+     * Fetch the components configuration file
+     * @param {string} name name of the component configuration to be fetched
+     */
+    getComponentConfig(name) {
+        let data;
+
+        $.ajax({
+            url: '/src/app/components/singles/' + name + '/component.json',
+            async: false,
+            type: 'GET',
+            success: function (res) {
+                data = res;
+            }
+        });
+
+        return data;
+    }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Configuration);
+
+/***/ }),
+
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10326,30 +10360,7 @@ return jQuery;
 
 /***/ }),
 
-/***/ 15:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slick_carousel__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slick_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_slick_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_Helpers_Slick_slick__ = __webpack_require__(17);
-
-
-
-
-
-$(function () {
-    $('.testimonial-holder').slick();
-
-    let slickService = new __WEBPACK_IMPORTED_MODULE_2__scripts_Helpers_Slick_slick__["a" /* default */]();
-});
-
-/***/ }),
-
-/***/ 16:
+/***/ 13:
 /***/ (function(module, exports) {
 
 /*
@@ -13382,12 +13393,37 @@ $(function () {
 
 /***/ }),
 
+/***/ 16:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slick_carousel__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slick_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_slick_carousel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_Helpers_Slick_slick__ = __webpack_require__(17);
+
+
+
+
+
+$(function () {
+    $('.testimonial-holder').slick();
+
+    let slickService = new __WEBPACK_IMPORTED_MODULE_2__scripts_Helpers_Slick_slick__["a" /* default */]();
+    // slickService.create('testimonials');
+});
+
+/***/ }),
+
 /***/ 17:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_slick_carousel__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_slick_carousel__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_slick_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_slick_carousel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Configuration_Configuration__ = __webpack_require__(0);
 /**
  * @name SlickBuilder V1.0
  * @author Blake Connally with Sequoyah Technologies
@@ -13397,10 +13433,12 @@ $(function () {
 
 
 
+
 class SlickBuilder {
     constructor(element) {
         this.count = 0;
         this.assignIdentifiers();
+        this.config = new __WEBPACK_IMPORTED_MODULE_1__Configuration_Configuration__["a" /* default */]();
     }
 
     /**
@@ -13442,10 +13480,13 @@ class SlickBuilder {
         });
     }
 
+    run(element) {
+        $(element).slick();
+    }
+
+
     onDrop() {
         let id = this.genId();
-
-        $()
 
     }
 }

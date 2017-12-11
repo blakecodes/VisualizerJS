@@ -557,15 +557,8 @@ i {
         background: #3d3d3d;
         padding: 7px 20px;
         border-right: 2px solid #555555;
-        transition: ease-in 0.2s;
         &:hover {
-            background: #2d2c2c;
             cursor: pointer;
         }
     }
-}
-
-.slick-prev:before,
-.slick-next:before {
-    color: #564f4f !important;
 }

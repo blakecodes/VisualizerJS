@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 .comp-footer {
   background-color: #3a3f46;
   color: white; }
@@ -252,7 +253,7 @@
 
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: #edeef2; }
 
 #mainContent {
@@ -303,7 +304,7 @@ body {
   position: fixed;
   background: #2e333a;
   border-right: 1px solid #d6d7db;
-  margin-top: 57px; }
+  margin-top: 63px; }
 
 .page-content, .viewPorts {
   margin-left: 250px;
@@ -453,10 +454,8 @@ ul {
   min-height: 450px;
   width: 30%;
   position: inherit;
-  overflow: auto;
   height: 20rem;
   background-color: #555;
-  border: .0625rem solid #333;
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2); }
 
 #regular-editor input,
@@ -482,15 +481,16 @@ ul {
   margin-bottom: 20px; }
 
 .editor-header {
-  background-color: #414141;
-  padding-left: .9375rem;
-  box-sizing: border-box; }
+  background-color: #2d9bea;
+  box-sizing: border-box;
+  padding: 5px 19px; }
 
 .editor-header h2 {
   margin: 0;
   line-height: 2.75rem;
   color: #e6e6e6;
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: 300; }
 
 .editor-btn {
   float: right;
@@ -516,6 +516,9 @@ ul {
 
 .jwplayer {
   width: 100% !important; }
+
+.form-control {
+  border-radius: 0; }
 
 /* Hero  */
 .hero {
@@ -622,7 +625,9 @@ ul {
     cursor: pointer; }
 
 #alpacaEdit {
-  padding: 15px; }
+  padding: 15px;
+  height: 358px;
+  overflow-y: scroll; }
 
 .row {
   width: 100%; }
@@ -678,7 +683,22 @@ i {
     margin-bottom: 0; }
   .testimonial-holder .testimonial span {
     color: grey;
-    font-size: 12px;
-    margin-bottom: 15px; }
+    font-size: 12px; }
   .testimonial-holder .testimonial p {
+    margin-top: 5px;
     font-size: 13px; }
+
+.editor-tabs {
+  display: flex; }
+  .editor-tabs .tab {
+    background: #3d3d3d;
+    padding: 7px 20px;
+    border-right: 2px solid #555555;
+    transition: ease-in 0.2s; }
+    .editor-tabs .tab:hover {
+      background: #2d2c2c;
+      cursor: pointer; }
+
+.slick-prev:before,
+.slick-next:before {
+  color: #564f4f !important; }
